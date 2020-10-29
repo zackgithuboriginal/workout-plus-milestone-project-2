@@ -1,0 +1,25 @@
+/* general styling*/
+body {
+    font-family: 'Montserrat';
+    font-size: 62.5%;
+}
+
+/* colour styles */
+.bg-color-primary {
+    background-color: #F39237;
+}
+
+.font-color-light {
+    color: #ffffff;
+}
+
+/* navbar styling */
+.navbar a.navbar-brand {
+    color: #ffffff;
+}
+
+
+.navbar a.navbar-brand:hover {
+    color: #ffffff;
+    cursor: pointer;
+}
