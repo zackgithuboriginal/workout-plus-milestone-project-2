@@ -16,23 +16,32 @@
             <ul class="navbar-nav nav bg-color font-color-light col-md">
                 <div class="">
                     <li class="nav-item">
-                        <a class="nav-link active" href="#">home</a>
+                        <a class="nav-link" href="index.html">home</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">workouts</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link text-nowrap" href="gym_finder.html">gym finder</a>
+                        <a class="nav-link text-nowrap active" href="#">gym finder</a>
                     </li>
                 </div>
             </ul>
         </div>
-            <!-- <div class="collapse navbar-collapse" id="navbarTarget">
-            </div> -->
     </nav>
+    <header class="">
+        <div class="page-heading">
+            <h1>Gym Finder</h1>
+        </div>
+    </header>
+    <section class="map-section">
+        <div id="map"></div>
+    </section>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://unpkg.com/@googlemaps/markerclustererplus/dist/index.min.js"></script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyByaYEvyooh2Zk233DEZkgD9YvqAynSsDM&callback=initMap" type="text/javascript"></script>
+    <script src="assets/js/gym_finder.js"></script>
 </body>
 
 </html>
