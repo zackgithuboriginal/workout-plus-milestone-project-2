@@ -92,6 +92,12 @@ ul div {
 
 /* map styling */
 
+div#map {
+    top: 10rem;
+    min-height: 360px;
+}
+
+
 /* media queries */
  @media(min-width: 768px) {
     .navbar .nav-item a.nav-link {
@@ -120,5 +126,3 @@ ul div {
     }
  }
 
-
-div#map {min-height: 360px;}
