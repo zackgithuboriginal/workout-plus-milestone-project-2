@@ -124,5 +124,19 @@ div#map {
     ul div {
         justify-content: end;
     }
+
+    .page-heading h1 {
+        text-align: left;
+    }
+
+    .page-heading {
+        position: relative;
+        left: 9rem;
+    }
+
+    div#map {
+        width: 50vw;
+        height: 45rem;
+    }
  }
 
