@@ -92,9 +92,25 @@ ul div {
 
 /* map styling */
 
-div#map {
+section.map-section {
+    position: relative;
     top: 10rem;
+    margin: 0;
+}
+
+div.search-box {
+    height: 5rem;
+    background-color: rgba(198, 221, 240, 0.5);
+}
+
+div#map {
     min-height: 360px;
+}
+
+div.search-box h2 {
+    font-size: 3rem;
+    font-weight: 600;
+    font-family: 'Raleway', sans-serif;
 }
 
 
@@ -137,6 +153,33 @@ div#map {
     div#map {
         width: 50vw;
         height: 45rem;
+    }
+
+    section.map-section {
+        margin: 0rem 10rem;
+    }
+
+    div.search-box {
+        height: 45rem;
+        justify-content: center;
+    }
+
+    div.search-box h2 {
+        margin-top: 5rem;
+    }
+
+    div.search-box form {
+        margin-top: 5rem;
+    }
+
+
+    div.search-box input, div.search-box button {
+        height: 3.4rem;
+        font-size: 2rem;
+    }
+
+    div.search-box input {
+        max-width: 80%;
     }
  }
 
