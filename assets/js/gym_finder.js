@@ -17,7 +17,7 @@ function initMap(userLocation) {
     }
     map = new google.maps.Map(document.getElementById("map"), {
         center: mapLocation,
-        zoom: 10,
+        zoom: 15,
     });
 
     findLocalGyms(mapLocation);
