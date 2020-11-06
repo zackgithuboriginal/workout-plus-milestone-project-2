@@ -35,3 +35,13 @@ function findLocalGyms(userLocation) {
     service = new google.maps.places.PlacesService(map);
     service.nearbySearch(request, markLocations);
 };
+
+function markLocations(results, status) {
+    if(status == google.maps.places.PlacesServiceStatus.OK){
+        for(var i = 0; i<results.length; i++){
+            createMarker(results[i]);
+        }
+    }
+}
+
+
