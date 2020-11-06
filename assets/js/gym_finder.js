@@ -44,4 +44,10 @@ function markLocations(results, status) {
     }
 }
 
-
+function createMarker(gym) {
+    new google.maps.Marker({
+      map: map,
+      title: gym.name,
+      position: gym.geometry.location,
+    });
+}
