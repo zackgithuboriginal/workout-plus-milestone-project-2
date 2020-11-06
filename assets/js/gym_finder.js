@@ -31,4 +31,7 @@ function findLocalGyms(userLocation) {
         rankBy: google.maps.places.RankBy.DISTANCE,
         keyword: 'gym'
     };
+
+    service = new google.maps.places.PlacesService(map);
+    service.nearbySearch(request, markLocations);
 };
