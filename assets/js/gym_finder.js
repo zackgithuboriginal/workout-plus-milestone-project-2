@@ -73,13 +73,29 @@ function createMarker(gym) {
 function displayDetails(placeResult, marker, status) {
     if (status == google.maps.places.PlacesServiceStatus.OK) {
     let placeInfowindow = new google.maps.InfoWindow();
-    placeInfowindow.setContent('<div>' + '<span class="gym-info-title">' + placeResult.name + '</span>' +
-        '<br>' + 'Rating: ' + placeResult.rating + '</div>');
+    placeInfowindow.setContent('<div>' + '<span class="gym-info-title">' + placeResult.name + '</span>' + '</div>');
     placeInfowindow.open(marker.map, marker);
     currentInfoWindow.close();
     currentInfoWindow = placeInfowindow;
+    showGymDetails(placeResult);
     } else {
     console.log('displayDetails failed: ' + status);
     }
 }
 
+function showGymDetails(gym) {
+    let gymName = document.querySelector(".location-name");
+    let gymAddress = document.querySelector(".location-address");
+    let gymRating = document.querySelector(".location-rating");
+
+    if (gym.rating != null) {
+        gymRating.textContent = gym.rating
+    } else {
+        gymRating.textContent = "Not yet rated."
+    };
+    
+    gymName.textContent = gym.name;
+    gymAddress.textContent = gym.formatted_address;
+
+    gymDetails.css("display", "inline-block")
+}
