@@ -1,6 +1,7 @@
 let map;
 let mapLocation;
 let gymDetails;
+let service;
 
 function getGeoLocation() {
     if(navigator.geolocation) {
@@ -45,9 +46,21 @@ function markLocations(results, status) {
 }
 
 function createMarker(gym) {
-    new google.maps.Marker({
+    let marker = new google.maps.Marker({
       map: map,
       title: gym.name,
       position: gym.geometry.location,
     });
+
+    google.maps.event.addListener(marker, 'click', () => {
+    let request = {
+    placeId: gym.place_id,
+    fields: ['name', 'formatted_address', 'geometry', 'rating',
+        'website', 'photos']
+    };
+
+    service.getDetails(request, (placeResult, status) => {
+        displayDetails(placeResult, marker, status)
+    })
+});
 }
