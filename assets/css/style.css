@@ -113,6 +113,9 @@ div.search-box h2 {
     font-family: 'Raleway', sans-serif;
 }
 
+div#information-box {
+    display: none;
+}
 
 /* media queries */
  @media(min-width: 768px) {

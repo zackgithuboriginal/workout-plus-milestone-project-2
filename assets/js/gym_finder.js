@@ -1,5 +1,6 @@
 let map;
 let mapLocation;
+let gymDetails;
 
 function getGeoLocation() {
     if(navigator.geolocation) {
@@ -10,6 +11,7 @@ function getGeoLocation() {
 }
 
 function initMap(userLocation) {
+    gymDetails = $("#information-box");
     if (userLocation){
         mapLocation =  {lat: userLocation.coords.latitude, lng: userLocation.coords.longitude};
     } else {
@@ -22,8 +24,6 @@ function initMap(userLocation) {
 
     findLocalGyms(mapLocation);
 };
-
-
 
 function findLocalGyms(userLocation) {
     let request = {

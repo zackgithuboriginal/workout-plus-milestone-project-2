@@ -34,13 +34,18 @@
         </div>
     </header>-->
     <section class="map-section row justify-content-center">
-        <div class="search-box col-md-5">
-            <h2 col>Search for a local gym.</h2>
-            <form>
-                <input type="text" placeholder="Your Location">
-                <input value="Go" onclick="getGeoLocation()">
-            </form>
-            <div class="search-results">
+        <div class="side-panel col-md-5">
+            <div class="search-box">
+                <h2 col>Search for a local gym.</h2>
+                <form>
+                    <input type="text" placeholder="Your Location">
+                    <input value="Go" onclick="getGeoLocation()">
+                </form>
+            </div>
+            <div id="information-box">
+                <h3 class="gym-name">Placeholder</h3>
+                <div class="gym-image"></div>
+                <p class="gym-address">Placeholder street, placeholder</p>
             </div>
         </div>
         <div id="map" class="col-md-7"></div>
