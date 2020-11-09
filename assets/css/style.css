@@ -117,6 +117,10 @@ div#information-box {
     display: none;
 }
 
+.gym-info-title {
+    font-size: 1.8rem;
+}
+
 /* media queries */
  @media(min-width: 768px) {
     .navbar .nav-item a.nav-link {

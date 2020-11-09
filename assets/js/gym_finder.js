@@ -1,7 +1,10 @@
 let map;
 let mapLocation;
 let gymDetails;
-let service;
+let service;   
+let infoWindow;
+let currentInfoWindow;
+
 
 function getGeoLocation() {
     if(navigator.geolocation) {
@@ -12,6 +15,8 @@ function getGeoLocation() {
 }
 
 function initMap(userLocation) {
+    infoWindow = new google.maps.InfoWindow;
+    currentInfoWindow = infoWindow;
     gymDetails = $("#information-box");
     if (userLocation){
         mapLocation =  {lat: userLocation.coords.latitude, lng: userLocation.coords.longitude};
@@ -64,3 +69,17 @@ function createMarker(gym) {
     })
 });
 }
+
+function displayDetails(placeResult, marker, status) {
+    if (status == google.maps.places.PlacesServiceStatus.OK) {
+    let placeInfowindow = new google.maps.InfoWindow();
+    placeInfowindow.setContent('<div>' + '<span class="gym-info-title">' + placeResult.name + '</span>' +
+        '<br>' + 'Rating: ' + placeResult.rating + '</div>');
+    placeInfowindow.open(marker.map, marker);
+    currentInfoWindow.close();
+    currentInfoWindow = placeInfowindow;
+    } else {
+    console.log('displayDetails failed: ' + status);
+    }
+}
+
