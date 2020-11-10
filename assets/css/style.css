@@ -31,6 +31,10 @@ body {
     color: #ffffff;
 }
 
+.font-color-orange {
+    color: #F39237;
+}
+
 /* navbar styling */
 div.navbar {
     line-height: 2.8rem;
@@ -118,6 +122,18 @@ div#information-box {
 }
 
 .gym-info-title {
+    font-size: 1.8rem;
+}
+
+/* footer styling */
+
+footer {
+    height: 5rem;
+    background-color: #F39237;
+}
+
+footer p {
+    padding-top: 1.2rem;
     font-size: 1.8rem;
 }
 
