@@ -87,7 +87,8 @@ function showGymDetails(gym) {
     let gymName = document.querySelector(".location-name");
     let gymAddress = document.querySelector(".location-address");
     let gymRating = document.querySelector(".location-rating");
-    let websiteLink = document.querySelector(".location-website");
+    let gymWebsite = document.querySelector(".location-website");
+    let gymPhoto = document.querySelector(".location-image");
 
     if (gym.rating != null) {
         gymRating.textContent = gym.rating
@@ -96,14 +97,24 @@ function showGymDetails(gym) {
     };
 
     if(gym.website) {
-        websiteLink.innerHTML =`${gym.name}'s Website`
-        websiteLink.href = gym.website
-        websiteLink.target ="_blank"
+        gymWebsite.innerHTML =`${gym.name}'s Website`
+        gymWebsite.href = gym.website
+        gymWebsite.target ="_blank"
     } else {
-        websiteLink.innerHTML = ""
-        websiteLink.href = ""
-        websiteLink.target = ""
+        gymWebsite.innerHTML = ""
+        gymWebsite.href = ""
+        gymWebsite.target = ""
     }
+
+    if (gym.photos != null) {
+    let firstPhoto = placeResult.photos[0];
+    gymPhoto.alt=  ``
+    gymPhoto.src = firstPhoto.getUrl();
+    } else {
+        gymPhoto = "";
+        gymPhoto.src = "";
+    }
+
 
     gymName.textContent = gym.name;
     gymAddress.textContent = gym.formatted_address;
