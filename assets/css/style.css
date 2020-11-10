@@ -181,7 +181,7 @@ footer p {
     section.map-section {
         margin: 0;
         top:0;
-        padding-bottom:4rem;
+        padding-bottom:0rem;
         height:100vh;
     }
 
