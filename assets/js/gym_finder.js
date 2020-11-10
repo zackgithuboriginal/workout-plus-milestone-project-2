@@ -87,13 +87,24 @@ function showGymDetails(gym) {
     let gymName = document.querySelector(".location-name");
     let gymAddress = document.querySelector(".location-address");
     let gymRating = document.querySelector(".location-rating");
+    let websiteLink = document.querySelector(".location-website");
 
     if (gym.rating != null) {
         gymRating.textContent = gym.rating
     } else {
         gymRating.textContent = "Not yet rated."
     };
-    
+
+    if(gym.website) {
+        websiteLink.innerHTML =`${gym.name}'s Website`
+        websiteLink.href = gym.website
+        websiteLink.target ="_blank"
+    } else {
+        websiteLink.innerHTML = ""
+        websiteLink.href = ""
+        websiteLink.target = ""
+    }
+
     gymName.textContent = gym.name;
     gymAddress.textContent = gym.formatted_address;
 
