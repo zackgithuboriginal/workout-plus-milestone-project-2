@@ -28,20 +28,21 @@
             </ul>
         </div>
     </nav>
-    <!--<header class="">
-        <div class="page-heading">
-            <h1>Gym Finder</h1>
-        </div>
-    </header>-->
     <section class="map-section row justify-content-center">
         <div class="side-panel col-md-5">
-            <div class="search-box">
-                <h2 col>Search for a local gym.</h2>
-                <form>
-                    <input type="text" placeholder="Your Location">
-                    <input value="Go" onclick="getGeoLocation()">
-                </form>
-            </div>
+        <div class="page-heading">
+            <h1>Gym Finder</h1>
+        </div>  
+        <div class="search-box">
+            <h2 col>Search around an area</h2>
+            <form>
+                <input type="text" placeholder="Your Location">
+                <button class="btn">Go</button>
+            </form>
+            <h2>Or use your location</h2>
+            <button class="btn"  onclick="getGeoLocation()">Go</button>
+        </div>
+            
             <div id="information-box">
                 <h3 class="location-name"></h3>
                 <p class="location-rating"></p>
