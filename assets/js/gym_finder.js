@@ -5,24 +5,11 @@ let service;
 let infoWindow;
 let currentInfoWindow;
 
-
-function getGeoLocation() {
-    if(navigator.geolocation) {
-       navigator.geolocation.getCurrentPosition(initMap);
-    } else {
-        console.log("nope")
-    } 
-}
-
-function initMap(userLocation) {
+function initMap() {
     infoWindow = new google.maps.InfoWindow;
     currentInfoWindow = infoWindow;
     gymDetails = $("#information-box");
-    if (userLocation){
-        mapLocation =  {lat: userLocation.coords.latitude, lng: userLocation.coords.longitude};
-    } else {
-        mapLocation =  {lat: 53.3498, lng: -6.2603};
-    }
+    mapLocation =  {lat: 53.3498, lng: -6.2603};
     map = new google.maps.Map(document.getElementById("map"), {
         center: mapLocation,
         zoom: 15,
@@ -31,7 +18,24 @@ function initMap(userLocation) {
     findLocalGyms(mapLocation);
 };
 
-function findLocalGyms(userLocation) {
+function repositionMap(location) {
+    map.setCenter(location);
+    findLocalGyms(location);
+}
+
+function getGeoLocation() {
+    if(navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(position => {
+           userLocation = {
+               lat: position.coords.latitude,
+               lng: position.coords.longitude
+           }
+           repositionMap(userLocation);
+    });
+}
+}
+
+  function findLocalGyms(userLocation) {
     let request = {
         location: userLocation,
         rankBy: google.maps.places.RankBy.DISTANCE,
