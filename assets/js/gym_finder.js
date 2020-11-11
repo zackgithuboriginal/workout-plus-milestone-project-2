@@ -24,17 +24,23 @@ function repositionMap(mapLocation) {
     findLocalGyms(mapLocation);
 }
 
+$(document).ready(function() {
+    $(document).on('submit', '#address-form', function() {
+        searchAddress();
+        return false;
+     });
+});
+
 function searchAddress() {
     let address = document.getElementById('address-input').value;
     geocoder.geocode({'address': address}, function(results, status) {
       if (status == 'OK') {
-          repositionMap(results[0].geometry.location);
+        repositionMap(results[0].geometry.location);
       } else {
         console.log('Geocode was not successful for the following reason: ' + status);
       }
     });
 }
-
 
 function getGeoLocation() {
     if(navigator.geolocation) {
