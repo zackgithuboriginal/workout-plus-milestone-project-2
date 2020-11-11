@@ -111,7 +111,7 @@ function showGymDetails(gym) {
     }
 
     if (gym.photos != null) {
-    let firstPhoto = placeResult.photos[0];
+    let firstPhoto = gym.photos[0];
     gymPhoto.alt=  ``
     gymPhoto.src = firstPhoto.getUrl();
     } else {
