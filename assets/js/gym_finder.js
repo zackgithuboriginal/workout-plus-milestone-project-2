@@ -39,6 +39,7 @@ function searchAddress() {
       } else {
         console.log('Geocode was not successful for the following reason: ' + status);
       }
+        document.getElementById('address-input').value="";
     });
 }
 
