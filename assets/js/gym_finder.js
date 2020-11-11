@@ -4,11 +4,12 @@ let gymDetails;
 let service;   
 let infoWindow;
 let currentInfoWindow;
+let geocoder;
 
 function initMap() {
     infoWindow = new google.maps.InfoWindow;
     currentInfoWindow = infoWindow;
-    gymDetails = $("#information-box");
+    geocoder = new google.maps.Geocoder();
     mapLocation =  {lat: 53.3498, lng: -6.2603};
     map = new google.maps.Map(document.getElementById("map"), {
         center: mapLocation,
@@ -18,10 +19,22 @@ function initMap() {
     findLocalGyms(mapLocation);
 };
 
-function repositionMap(location) {
-    map.setCenter(location);
-    findLocalGyms(location);
+function repositionMap(mapLocation) {
+    map.setCenter(mapLocation);
+    findLocalGyms(mapLocation);
 }
+
+function searchAddress() {
+    let address = document.getElementById('address-input').value;
+    geocoder.geocode({'address': address}, function(results, status) {
+      if (status == 'OK') {
+          repositionMap(results[0].geometry.location);
+      } else {
+        console.log('Geocode was not successful for the following reason: ' + status);
+      }
+    });
+}
+
 
 function getGeoLocation() {
     if(navigator.geolocation) {
@@ -31,8 +44,8 @@ function getGeoLocation() {
                lng: position.coords.longitude
            }
            repositionMap(userLocation);
-    });
-}
+        });
+    }
 }
 
   function findLocalGyms(userLocation) {
