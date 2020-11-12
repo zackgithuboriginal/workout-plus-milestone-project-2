@@ -19,7 +19,6 @@ function initMap() {
         zoom: 15,
     });
 
-
 // Handles autocomplete requests on address input
     let input = document.getElementById("address-input");
     let autocomplete = new google.maps.places.Autocomplete(input, options);
@@ -137,6 +136,7 @@ function displayDetails(placeResult, marker, status) {
 
 // Displays more extensive info in side panel when marker is clicked
 function showGymDetails(gym) {
+    gymDetails=$("#information-box")
     let gymName = document.querySelector(".location-name");
     let gymAddress = document.querySelector(".location-address");
     let gymRating = document.querySelector(".location-rating");
