@@ -1,3 +1,4 @@
+//initialising variables
 let map;
 let mapLocation;
 let gymDetails;
@@ -6,6 +7,7 @@ let infoWindow;
 let currentInfoWindow;
 let geocoder;
 
+// Handles the initial map creation
 function initMap() {
     infoWindow = new google.maps.InfoWindow;
     currentInfoWindow = infoWindow;
@@ -19,11 +21,13 @@ function initMap() {
     findLocalGyms(mapLocation);
 };
 
+// Handles the repositioning of the map due to search or geolocation
 function repositionMap(mapLocation) {
     map.setCenter(mapLocation);
     findLocalGyms(mapLocation);
 }
 
+// Listens to the search input form and returns false on submission to prevent the page from refreshing
 $(document).ready(function() {
     $(document).on('submit', '#address-form', function() {
         searchAddress();
@@ -31,6 +35,7 @@ $(document).ready(function() {
      });
 });
 
+// Handles geocoder request
 function searchAddress() {
     let address = document.getElementById('address-input').value;
     geocoder.geocode({'address': address}, function(results, status) {
@@ -43,6 +48,7 @@ function searchAddress() {
     });
 }
 
+// Handles geolocation request
 function getGeoLocation() {
     if(navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(position => {
@@ -55,6 +61,7 @@ function getGeoLocation() {
     }
 }
 
+// Handles placeservice request whenever the map repositions or intialises
   function findLocalGyms(userLocation) {
     let request = {
         location: userLocation,
@@ -66,6 +73,7 @@ function getGeoLocation() {
     service.nearbySearch(request, markLocations);
 };
 
+// Callback function for nearbySearch method, loops through results
 function markLocations(results, status) {
     if(status == google.maps.places.PlacesServiceStatus.OK){
         for(var i = 0; i<results.length; i++){
@@ -74,6 +82,7 @@ function markLocations(results, status) {
     }
 }
 
+// Handles the creation of markers on each identified result
 function createMarker(gym) {
     let marker = new google.maps.Marker({
       map: map,
@@ -81,6 +90,7 @@ function createMarker(gym) {
       position: gym.geometry.location,
     });
 
+// Upon clicking a marker this will request properties of the place object
     google.maps.event.addListener(marker, 'click', () => {
     let request = {
     placeId: gym.place_id,
@@ -94,6 +104,7 @@ function createMarker(gym) {
 });
 }
 
+// Displays basic info in an infowindow above marker when marker is clicked
 function displayDetails(placeResult, marker, status) {
     if (status == google.maps.places.PlacesServiceStatus.OK) {
     let placeInfowindow = new google.maps.InfoWindow();
@@ -107,6 +118,7 @@ function displayDetails(placeResult, marker, status) {
     }
 }
 
+// Displays more extensive info in side panel when marker is clicked
 function showGymDetails(gym) {
     let gymName = document.querySelector(".location-name");
     let gymAddress = document.querySelector(".location-address");
