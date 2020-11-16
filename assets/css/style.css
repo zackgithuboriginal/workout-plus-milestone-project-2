@@ -54,38 +54,31 @@ div.navbar {
 
 ul.navbar-nav.nav {
     position: fixed;
-    top: 6.5rem;
+    top: 6rem;
+    background-color: #F39237;
     padding: 0;
+    height: 4rem;
 }
 
 .navbar .nav-item a.nav-link {
     font-size: 2rem;
-    color: #F39237;
-    padding: 0px 5px;
+    color: #ffffff;
+    padding: 0px 3px;
     text-align: center;
     display: flex;
     margin: 0rem 1.5rem;
 }
 
 .navbar .nav-item a.nav-link.active {
-    color: #F39237;
+    color: #ffffff;
     border-bottom: solid 3px;
-    border-color: #F39237;
+    border-color: #ffffff;
 }
 
 .navbar .nav-item a.nav-link:hover {
-    color: #F39237;
-    border-bottom: solid 3px;
-    border-color: #F39237;
-}
-
-button.navbar-toggler {
-    border: none;
-}
-
-button.navbar-toggler i {
     color: #ffffff;
-    font-size: 2.8rem;
+    border-bottom: solid 3px;
+    border-color: #ffffff;
 }
 
 ul div {
