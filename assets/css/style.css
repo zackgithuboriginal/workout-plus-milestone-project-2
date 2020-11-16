@@ -10,18 +10,6 @@ body {
     margin:0;
 }
 
-.page-heading h1 {
-    font-family: 'Raleway', sans-serif;
-    font-size: 5rem;
-    color: #F39237;
-    text-align: center;
-}
-
-.page-heading {
-    position: relative;
-    top: 5rem;
-}
-
 /* colour styles */
 .bg-color-primary {
     background-color: #F39237;
@@ -38,7 +26,7 @@ body {
 /* navbar styling */
 div.navbar {
     line-height: 2.8rem;
-    height: 6rem;
+    height: 10rem;
 }
 .navbar a.navbar-brand {
     color: #ffffff;
@@ -89,18 +77,33 @@ ul div {
 
 /* map styling */
 
+.page-heading h1 {
+    font-family: 'Raleway', sans-serif;
+    font-size: 5rem;
+    color: #F39237;
+    text-align: center;
+}
+
+.page-heading {
+    position: relative;
+    top: 5rem;
+    margin-bottom: 6rem;
+}
+
 section.map-section {
     position: relative;
-    top: 10rem;
+    top: 0;
     margin: 0;
 }
 
 div.search-box {
+    position: relative;
     height: 5rem;
-    background-color: rgba(198, 221, 240, 0.5);
 }
 
 div#map {
+    position: relative;
+    top: 10rem;
     min-height: 360px;
 }
 
