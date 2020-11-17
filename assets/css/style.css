@@ -47,6 +47,7 @@ ul.navbar-nav.nav {
     background-color: #F39237;
     padding: 0;
     height: 4rem;
+    justify-content: center;
 }
 
 .navbar .nav-item a.nav-link {
@@ -165,8 +166,12 @@ footer p {
 
     ul.navbar-nav.nav {
         position: relative;
-        top: 0;
+        top: 0.4rem;
         right: 0rem;
+    }
+
+    div.navbar {
+        height: 6rem;
     }
 
     ul div {
@@ -183,6 +188,7 @@ footer p {
     }
 
     div#map {
+        top: 0;
         width: 50vw;
         height: 100%;
     }
