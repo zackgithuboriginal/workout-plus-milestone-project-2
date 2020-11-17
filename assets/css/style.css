@@ -124,15 +124,16 @@ div#information-box {
 }
 
 .gym-search-btn {
-    font-size: 2.2rem;
+    margin-left: 2rem;
+    font-size: 2rem;
     border-radius: 2rem;
-    height: 3.5rem;
-    width: 13rem;
+    padding: .4rem 2rem;
     font-family: 'Montserrat';
     background-color: #F39237;
     color: #ffffff;
     border-style: none;
     box-shadow: 0rem .4rem rgba(33, 37, 41, 0.1);
+    font-weight: normal;
 }
 
 /* footer styling */
