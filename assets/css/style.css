@@ -224,6 +224,7 @@ footer p {
         width: auto;
         min-width: 20rem;
         max-width: 32rem;
+        padding-left: .5rem;
     }
 
     div.side-panel {
