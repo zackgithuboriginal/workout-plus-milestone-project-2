@@ -149,6 +149,22 @@ div#information-box {
     max-width: 20rem;
     height: auto;
 }
+
+.location-name {
+    font-size:3rem;
+    font-weight: 400;
+    font-family: 'Raleway', sans-serif;
+}
+
+.location-rating {
+    font-size: 1.6rem;
+    font-family: 'Montserrat', sans-serif;
+
+}
+
+.location-address, .location-website {
+    font-size: 2rem;
+}
 /* footer styling */
 
 footer {
@@ -185,6 +201,8 @@ footer p {
     }
 
     div.navbar {
+        margin-right: 0rem;
+        margin-left: 0rem;
         height: 6rem;
     }
 
@@ -250,6 +268,10 @@ footer p {
 
     div.row.justify-content-center {
         padding: 0rem 2rem;
+    }
+
+    .search-box .justify-content-between {
+        max-width: 50rem;
     }
 
     hr {

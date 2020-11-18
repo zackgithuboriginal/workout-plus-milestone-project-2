@@ -144,9 +144,9 @@ function showGymDetails(gym) {
     let gymPhoto = document.querySelector(".location-image");
 
     if (gym.rating != null) {
-        gymRating.textContent = gym.rating
+        gymRating.textContent = `Rating: ${gym.rating}`
     } else {
-        gymRating.textContent = "Not yet rated."
+        gymRating.textContent = "Rating: Not yet rated."
     };
 
     if(gym.website) {
