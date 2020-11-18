@@ -34,12 +34,15 @@
             <h1>Gym Finder</h1>
         </div>  
         <div class="search-box">
-            <h2 col>Search around an area</h2>
-            <form action="" id="address-form">
-                <input id="address-input" type="text" placeholder="Your Location" required>
-                <input type="submit" class="gym-search-btn" value="Search">
+            <h2>Search an area</h2>
+            <form class="row justify-content-between" action="" id="address-form">
+                <input id="address-input" class="col" type="text" placeholder="Your Location" required>
+                <input type="submit" class="gym-search-btn col" value="Search">
             </form>
-            <h2>Or use your location <span class="gym-search-btn" onclick="getGeoLocation()">Search</span></h2>
+            <div class="row justify-content-between">
+                <h2 class="col">Search your location</h2>
+                <button class="gym-search-btn col" onclick="getGeoLocation()">Search</button>
+            </div>
             <!-- <button class="gym-search-btn" onclick="getGeoLocation()">Search</button> -->
         </div>
             <div id="information-box">

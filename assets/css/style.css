@@ -83,7 +83,7 @@ ul div {
     font-family: 'Raleway', sans-serif;
     font-size: 5rem;
     color: #F39237;
-    text-align: center;
+    text-align:center;
 }
 
 .page-heading {
@@ -100,7 +100,7 @@ section.map-section {
 
 div.search-box {
     position: relative;
-    height: 5rem;
+    height: 3rem;
 }
 
 div#map {
@@ -110,6 +110,7 @@ div#map {
 }
 
 div.search-box h2 {
+    padding-left: 0rem;
     font-size: 3rem;
     font-weight: 600;
     font-family: 'Raleway', sans-serif;
@@ -134,8 +135,20 @@ div#information-box {
     border-style: none;
     box-shadow: 0rem .4rem rgba(33, 37, 41, 0.1);
     font-weight: normal;
+    line-height: 2.4rem;
+    width: 12rem;
+    max-width: 13rem;
+    height: 3.4rem;
 }
 
+.information-box {
+    margin-left: 5rem;
+}
+
+.location-image {
+    max-width: 20rem;
+    height: auto;
+}
 /* footer styling */
 
 footer {
@@ -179,13 +192,10 @@ footer p {
         justify-content: end;
     }
 
-    .page-heading h1 {
-        text-align: left;
-    }
-
     .page-heading {
         position: relative;
-        left: 9rem;
+        margin-left: auto;
+        margin-right: auto;
     }
 
     div#map {
@@ -202,25 +212,36 @@ footer p {
     }
 
     div.search-box {
-        height: 45rem;
+        position:relative;
+        top: 5rem;
+        height: 30rem;
         justify-content: center;
     }
 
-    div.search-box h2 {
-        margin-top: 5rem;
-    }
-
-    div.search-box form {
-        margin-top: 5rem;
-    }
-
-    div.search-box input, div.search-box button {
+    input#address-input {
         height: 3.4rem;
         font-size: 2rem;
+        width: auto;
+        min-width: 20rem;
+        max-width: 32rem;
     }
 
-    div.search-box input {
-        max-width: 80%;
+    div.side-panel {
+        padding-left: 2%;
+    }
+
+    div#information-box {
+        position: relative;
+        top: 0;
+    }
+
+    div.search-box form, div.search-box div {
+        margin-top: 4rem;
+        padding: 0rem 2rem;
+    }
+
+    div.row.justify-content-center {
+        padding: 0rem 2rem;
     }
  }
 
