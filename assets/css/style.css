@@ -225,6 +225,9 @@ footer p {
         min-width: 20rem;
         max-width: 32rem;
         padding-left: .5rem;
+        border: none;
+        background-color: #F9F9F9;
+        box-shadow: 0rem .4rem rgba(33, 37, 41, 0.1);
     }
 
     div.side-panel {
@@ -236,13 +239,24 @@ footer p {
         top: 0;
     }
 
-    div.search-box form, div.search-box div {
+    div.search-box div {
         margin-top: 4rem;
+        padding: 0rem 2rem;
+    }
+
+    div.search-box form, div.search-box div {
         padding: 0rem 2rem;
     }
 
     div.row.justify-content-center {
         padding: 0rem 2rem;
     }
+
+    hr {
+        margin-top: 6rem;
+        border-bottom: .4rem solid #F39237;
+        box-shadow: 0rem .4rem rgba(33, 37, 41, 0.1);
+    }
+
  }
 
