@@ -17,6 +17,7 @@ function initMap() {
     map = new google.maps.Map(document.getElementById("map"), {
         center: mapLocation,
         zoom: 15,
+        mapId: "6be0d83f76395e4"
     });
 
 // Handles autocomplete requests on address input
