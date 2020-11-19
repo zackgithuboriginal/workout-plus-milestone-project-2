@@ -29,7 +29,7 @@
         </div>
     </nav>
     <section class="map-section row justify-content-center">
-        <div class="side-panel col-md-5">
+        <div class="side-panel col-md-4">
         <div class="page-heading">
             <h1>Gym Finder</h1>
         </div>  
@@ -40,21 +40,25 @@
                 <input type="submit" class="gym-search-btn col" value="Search">
             </form>
             <div class="row justify-content-between">
-                <h2 class="col">Search your location</h2>
+                <h2 class="col">Use your location</h2>
                 <button class="gym-search-btn col" onclick="getGeoLocation()">Search</button>
             </div>
             <!-- <button class="gym-search-btn" onclick="getGeoLocation()">Search</button> -->
             <hr class="section-seperator">
         </div>
-            <div id="information-box">
-                <h3 class="location-name"></h3>
-                <p class="location-rating"></p>
-                <a class="location-website"></a>
-                <img class="location-image">
-                <p class="location-address"></p>
+            <div id="information-box" class="justify-content-center">
+                    <h3 class="location-name"></h3>
+                    <div class="row justify-content-between">
+                        <div class="col">
+                            <p class="location-rating"></p>
+                            <p class="location-address"></p>
+                            <a class="location-website"></a>
+                        </div>
+                        <img class="location-image col">
+                    </div>
             </div>
         </div>
-        <div id="map" class="col-md-7"></div>
+        <div id="map" class="col-md-8"></div>
     </section>
     <footer class="page-footer container-fluid">
         <p class="justify-content-center text-center font-color-light">workout plus - Zack Gibbons 2020</p>

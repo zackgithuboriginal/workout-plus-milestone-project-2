@@ -100,12 +100,12 @@ section.map-section {
 
 div.search-box {
     position: relative;
-    height: 3rem;
+    height: 100%;
 }
 
 div#map {
     position: relative;
-    top: 10rem;
+    top: 2rem;
     min-height: 360px;
 }
 
@@ -141,32 +141,75 @@ div#information-box {
     height: 3.4rem;
 }
 
-.information-box {
-    margin-left: 5rem;
+
+#information-box div.col {
+    padding:0;
 }
 
+
 .location-image {
+    padding: 0;
     max-width: 20rem;
     height: auto;
 }
 
 .location-name {
-    font-size:3rem;
-    font-weight: 400;
+    letter-spacing: .1rem;
+    font-size:2.4rem;
+    font-weight: 500;
     font-family: 'Raleway', sans-serif;
 }
 
 .location-rating {
-    font-size: 1.6rem;
+    padding: 0;
+    font-size: 1.5rem;
     font-family: 'Montserrat', sans-serif;
+}
 
+div.side-panel.col-md-4{
+    height: 100%;
+}
+
+div#information-box div.row.justify-content-between {
+    top: 3rem;
+    position: relative;
+    margin: 2rem 0rem;
 }
 
 .location-address, .location-website {
-    font-size: 2rem;
+    font-size: 1.5rem;
 }
-/* footer styling */
 
+    input#address-input {
+        height: 3.4rem;
+        font-size: 2rem;
+        width: auto;
+        min-width: 20rem;
+        max-width: 32rem;
+        padding-left: .5rem;
+        border: none;
+        background-color: #F9F9F9;
+        box-shadow: 0rem .4rem rgba(33, 37, 41, 0.1);
+    }
+div.search-box {
+        position:relative;
+        top: 5rem;
+        height: 30rem;
+        justify-content: center;
+    }
+    div.search-box form, div.search-box div {
+        padding: 0rem 2rem;
+    }
+
+    div.row.justify-content-center {
+        padding: 0rem 2rem;
+    }
+
+    .search-box .justify-content-between {
+        max-width: 50rem;
+    }
+
+/* footer styling */
 footer {
     height: 5rem;
     background-color: #F39237;
@@ -236,21 +279,6 @@ footer p {
         justify-content: center;
     }
 
-    input#address-input {
-        height: 3.4rem;
-        font-size: 2rem;
-        width: auto;
-        min-width: 20rem;
-        max-width: 32rem;
-        padding-left: .5rem;
-        border: none;
-        background-color: #F9F9F9;
-        box-shadow: 0rem .4rem rgba(33, 37, 41, 0.1);
-    }
-
-    div.side-panel {
-        padding-left: 2%;
-    }
 
     div#information-box {
         position: relative;
@@ -275,7 +303,7 @@ footer p {
     }
 
     hr {
-        margin-top: 6rem;
+        margin-top: 4rem;
         border-bottom: .4rem solid #F39237;
         box-shadow: 0rem .4rem rgba(33, 37, 41, 0.1);
     }
