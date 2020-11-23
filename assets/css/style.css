@@ -111,11 +111,10 @@ div#map {
 
 div.search-box h2 {
     padding-left: 0rem;
-    font-size: 3rem;
+    font-size: 2.5rem;
     font-weight: 600;
     font-family: 'Raleway', sans-serif;
 }
-
 div#information-box {
     display: none;
 }
@@ -151,6 +150,10 @@ div#information-box {
     padding: 0;
     max-width: 20rem;
     height: auto;
+}
+
+#address-form {
+    margin:0;
 }
 
 .location-name {
@@ -197,9 +200,6 @@ div.search-box {
         height: 30rem;
         justify-content: center;
     }
-    div.search-box form, div.search-box div {
-        padding: 0rem 2rem;
-    }
 
     div.row.justify-content-center {
         padding: 0rem 2rem;
@@ -207,6 +207,10 @@ div.search-box {
 
     .search-box .justify-content-between {
         max-width: 50rem;
+        padding-right:0;
+        padding-left:0;
+        margin-right:0;
+        margin-left:0;
     }
 
 /* footer styling */
@@ -287,10 +291,6 @@ footer p {
 
     div.search-box div {
         margin-top: 4rem;
-        padding: 0rem 2rem;
-    }
-
-    div.search-box form, div.search-box div {
         padding: 0rem 2rem;
     }
 
