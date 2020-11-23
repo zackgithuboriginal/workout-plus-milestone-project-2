@@ -25,8 +25,12 @@ body {
 
 /* navbar styling */
 div.navbar {
+    z-index: 10;
+    position: fixed;
     line-height: 2.8rem;
+    width: 100vw;
     height: 10rem;
+    box-shadow: 0rem .4rem rgba(33, 37, 41, 0.1);
 }
 
 .navbar a.navbar-brand {
@@ -94,7 +98,7 @@ ul div {
 
 section.map-section {
     position: relative;
-    top: 0;
+    top: 10rem;
     margin: 0;
 }
 
