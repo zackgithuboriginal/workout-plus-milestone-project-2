@@ -81,6 +81,19 @@ ul div {
     flex-direction: row;
 }
 
+
+/* landing page styling */
+
+section.landing-page {
+    position: relative;
+    top: 10rem;
+}
+
+.landing-page h1 {
+    font-size: 4rem;
+    color: #1E3231;
+}
+
 /* map styling */
 
 .page-heading h1 {
@@ -216,6 +229,8 @@ div.search-box {
         margin-right:0;
         margin-left:0;
     }
+
+
 
 /* footer styling */
 footer {
