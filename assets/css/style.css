@@ -234,6 +234,8 @@ div.search-box {
 
 /* footer styling */
 footer {
+    position: absolute;
+    bottom: 0;
     height: 5rem;
     background-color: #F39237;
 }
