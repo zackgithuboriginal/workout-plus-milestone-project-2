@@ -83,15 +83,26 @@ ul div {
 
 
 /* landing page styling */
+.landing-page div.sidebar {
+    position: relative;
+    min-width: 40rem;
+    background-color: rgba(243, 146, 55, .8);
+    width: 100%;
+}
 
 section.landing-page {
     position: relative;
+    height: 100%;
     top: 10rem;
 }
 
 .landing-page h1 {
+    font-family: 'Raleway', sans-serif;
     font-size: 4rem;
     color: #1E3231;
+    position: relative;
+    top: 12rem;
+    left: 4rem;
 }
 
 /* map styling */
@@ -247,6 +258,10 @@ footer p {
 
 /* media queries */
  @media(min-width: 768px) {
+     body{
+         height: 100vh;
+         overflow: hidden;
+     }
     .navbar .nav-item a.nav-link {
         color: #ffffff;
         border-color:#ffffff;
@@ -327,6 +342,10 @@ footer p {
         margin-top: 4rem;
         border-bottom: .4rem solid #F39237;
         box-shadow: 0rem .4rem rgba(33, 37, 41, 0.1);
+    }
+
+    section.landing-page {
+        top: 6rem;
     }
 
  }
