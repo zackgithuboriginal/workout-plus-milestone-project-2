@@ -19,6 +19,7 @@ function initMap() {
         zoom: 15,
         mapTypeControl: false,
         rotateControl: false,
+        mapId: '6be0d83f76395e4'
     });
 
 // Handles autocomplete requests on address input
