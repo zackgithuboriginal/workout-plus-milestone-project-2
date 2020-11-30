@@ -84,9 +84,10 @@ ul div {
 
 /* landing page styling */
 .landing-page div.landing-information {
-    position: relative;
+    position: absolute;
     min-width: 40rem;
     width: 100%;
+    z-index: 10;
 }
 
 section.landing-page {
@@ -106,8 +107,10 @@ section.landing-page {
 
 .map-image {
     width: 100vw;
-    height: auto;
+    height: 100vh;
     overflow-x: hidden;
+    position:absolute;
+    opacity: .5;
 }
 
 .dark-overlay {
