@@ -321,6 +321,7 @@ footer p {
          height: 100vh;
          overflow: hidden;
      }
+
     .navbar .nav-item a.nav-link {
         color: #ffffff;
         border-color:#ffffff;
@@ -338,11 +339,17 @@ footer p {
 
     ul.navbar-nav.nav {
         position: relative;
-        top: 0.4rem;
+        top: 0rem;
         right: 0rem;
+        height:auto;
     }
 
-    div.navbar {
+    .navbar a.navbar-brand {
+        position: relative;
+        top:0rem;
+    }
+
+    nav.navbar {
         margin-right: 0rem;
         margin-left: 0rem;
         height: 6rem;
