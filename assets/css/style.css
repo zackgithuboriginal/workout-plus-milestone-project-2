@@ -31,7 +31,7 @@ nav.navbar {
     padding:0;
     margin:0;
     width: 100%;
-    height: 10rem;
+    height: 9rem;
     box-shadow: 0rem .4rem rgba(33, 37, 41, 0.1);
     background-color: #F39237;
 }
@@ -39,8 +39,10 @@ nav.navbar {
 .navbar a.navbar-brand {
     color: #ffffff;
     font-size: 2.8rem;
-    position: relative;
-    top: 0rem;
+    position: absolute;
+    top: 2rem;
+    left: 2rem;
+    padding: 0;
 }
 
 .navbar a.navbar-brand:hover {
@@ -50,8 +52,7 @@ nav.navbar {
 
 ul.navbar-nav.nav {
     position: fixed;
-    top: 6rem;
-    background-color: #F39237;
+    top: 5rem;
     padding: 0;
     height: 4rem;
     justify-content: center;
@@ -99,7 +100,7 @@ ul div {
 
 section.landing-page {
     height: 100vh;
-    top: 10rem;
+    top: 9rem;
     margin:0;
     position: relative;
     background-color: #F9F9F9;
