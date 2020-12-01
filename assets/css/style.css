@@ -85,70 +85,75 @@ ul div {
 /* landing page styling */
 .landing-page div.landing-information {
     position: absolute;
-    min-width: 40rem;
-    width: 100%;
+    max-width: 80%;
+    left: 10%;
+    right: 10%;
     z-index: 10;
+    justify-content: center;
+    align-content: center;
+    text-align: left;
 }
 
 section.landing-page {
-    position: relative;
-    height: 100%;
+    height: 100vh;
     top: 10rem;
+    position: relative;
+    background-color: #F9F9F9;
 }
 
 .landing-page h1 {
     font-family: 'Raleway', sans-serif;
-    font-size: 4rem;
-    color: #1E3231;
+    font-size: 3rem;
+    color: #F9F9F9;
     position: relative;
     margin-top: 10rem;
-    left: 4rem;
-}
-
-.map-image {
-    width: 100vw;
-    height: 100vh;
-    overflow-x: hidden;
-    position:absolute;
-    opacity: .5;
-}
-
-.dark-overlay {
     width: 100%;
-    height:100%;
-    background-color: rgba(0,0,0, .1);
-    z-index: 5;
+    min-height: 11rem;
 }
 
-.map-image img, .dark-overlay {
+
+.image-container {
+    margin: 0;
+    justify-content: center;
+    align-content: center;
+    right: 0;
+    height: 50vh;
+    max-height: 50vh;
+    width: 100%;
+    overflow: hidden;
+}
+
+.background-image {
     position: absolute;
     top: 0;
-    left: 0;
-    height: 100vh;
-    width:auto;
+    right: 0;
+    width: 100%;
+    height: auto;
+    min-height: 100%;
 }
 
 .h1-link {
-color: #ffffff;
+    color: #ffffff;
   background-color: #F39237;
   border-radius: 3.5rem;
-  padding: .5rem 20.rem;  
+  padding: .5rem 2rem;  
   line-height: 3rem;
 }
 
 .h1-link span {
-    font-size: 12rem;
+    font-size: 3rem;
     font-weight: 200;
     color:#ffffff;
 }
 
-.landing-page p{
-    max-width: 85%;
+.landing-page p {
     position: relative;
-    left: 4rem;
-    margin-top: 5rem;
-    font-size: 2.2rem;
+    padding-top: 2rem;
+    border-top: #F39237 2px solid;
+    margin-top: 20rem;
+    font-size: 2rem;
     font-weight: 500;
+    text-align: left;
     color: #1E3231;
     font-family: 'Raleway', sans-serif;
 }
@@ -398,7 +403,6 @@ footer p {
 
 
     .landing-page div.landing-information {
-
         background-color: rgba(243, 146, 55, .8);
     }
 
