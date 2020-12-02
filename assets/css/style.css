@@ -433,13 +433,64 @@ footer p {
     }
 
     section.landing-page {
-        top: 6rem;
+        top: 0rem;
+        margin-top: 6rem;
+        margin-bottom: 5rem;
+    }  
+
+    nav.navbar {
+        top: 0;
     }
-
-
-    .landing-page div.landing-information {
-        background-color: rgba(243, 146, 55, .8);
-    }
-
- }
     
+    .landing-page div.landing-information {
+        position: relative;
+        background-color: rgba(243, 146, 55, .8);
+        left:0;
+        right:0;
+    }
+    .image-container {
+        margin: 0;
+        justify-content: center;
+        align-content:center;
+        position: relative;
+        width: 100%;
+        max-height: 100vh;
+        right: 0;
+    }
+
+    img.background-image {
+        position: absolute;
+        width: auto;
+        height: 100%;
+        top: 0;
+        right: 0;
+        bottom: 0;
+    }
+
+    .image-container {
+        height: 100%;
+        overflow: hidden;
+    }
+
+    .landing-page h1 {
+        margin-top: 4.8rem;
+        color:#1E3231;
+        font-size: 4rem;
+    }
+
+    .landing-page p {
+        border: none;
+        margin-top: 6rem;
+    }
+
+    div.landing-information {
+        max-height: 100%;
+    }
+
+    footer {
+        position: absolute;
+        bottom:0;
+        margin-top: 2rem;
+    }
+ }
+
