@@ -379,7 +379,7 @@ footer p {
     }
 
     .page-heading {
-        top: 6rem;
+        top: 2rem;
         position: relative;
         margin-left: auto;
         margin-right: auto;
@@ -403,8 +403,8 @@ footer p {
 
     div.search-box {
         position:relative;
-        top: 5rem;
-        height: 30rem;
+        top: 2rem;
+        height: 20rem;
         justify-content: center;
     }
 
