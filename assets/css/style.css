@@ -195,24 +195,27 @@ section.landing-page {
 
 .page-heading {
     position: relative;
-    top: 6rem;
+    top: 0rem;
     margin-bottom: 4rem;
 }
 
 section.map-section {
     position: relative;
-    top: 10rem;
+    top: 9rem;
     margin: 0;
 }
 
 div.search-box {
-    position: relative;
+    position:relative;
+    top: 0rem;
     height: 100%;
+    justify-content: center;
 }
+
 
 div#map {
     position: relative;
-    top: 2rem;
+    top: 0;
     min-height: 360px;
 }
 
@@ -301,12 +304,6 @@ input#address-input {
     box-shadow: 0rem .4rem rgba(33, 37, 41, 0.1);
 }
 
-div.search-box {
-    position:relative;
-    top: 5rem;
-    height: 30rem;
-    justify-content: center;
-}
 
 div.row.justify-content-center {
     padding: 0rem 2rem;
@@ -382,6 +379,7 @@ footer p {
     }
 
     .page-heading {
+        top: 6rem;
         position: relative;
         margin-left: auto;
         margin-right: auto;
