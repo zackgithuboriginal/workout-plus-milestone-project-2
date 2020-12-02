@@ -129,6 +129,19 @@ section.landing-page {
     overflow: hidden;
 }
 
+.dark-overlay {
+    z-index: 2;
+    position: absolute;
+    top: 0;
+    right:0;
+    left:0;
+    bottom:0;
+    width: 100%;
+    height: 100%;
+    background-color: #000000;
+    opacity: .4;
+}
+
 .background-image {
     position: absolute;
     top: 0;
