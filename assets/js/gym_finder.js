@@ -177,3 +177,8 @@ function showGymDetails(gym) {
 
     gymDetails.css("display", "inline-block")
 }
+
+function hideInformation() {
+    gymDetails=$("#information-box")
+    gymDetails.css("display", "none")
+}
