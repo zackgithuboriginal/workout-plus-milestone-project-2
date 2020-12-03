@@ -188,15 +188,18 @@ section.landing-page {
 
 .page-heading h1 {
     font-family: 'Raleway', sans-serif;
-    font-size: 5rem;
+    font-size: 4rem;
     color: #F39237;
     text-align:center;
 }
 
+
 .page-heading {
     position: relative;
-    top: 0rem;
-    margin-bottom: 4rem;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 4rem;
+    margin-bottom: 2rem;
 }
 
 section.map-section {
@@ -345,8 +348,11 @@ footer p {
     margin-left: 2rem;
     border-radius: 2rem;
     }
-}
 
+    .page-heading h1 {
+        font-size:5rem;
+    }
+}
  @media(min-width: 768px) {
      body{
          height: 100vh;
@@ -356,6 +362,9 @@ footer p {
          overflow: hidden;
      }
 
+    .page-heading {
+        margin-bottom: 4rem;
+    }
     .navbar .nav-item a.nav-link {
         color: #ffffff;
         border-color:#ffffff;
@@ -391,13 +400,6 @@ footer p {
 
     ul div {
         justify-content: end;
-    }
-
-    .page-heading {
-        top: 2rem;
-        position: relative;
-        margin-left: auto;
-        margin-right: auto;
     }
 
     div#map {
