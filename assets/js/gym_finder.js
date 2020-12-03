@@ -6,6 +6,7 @@ let infoWindow;
 let currentInfoWindow;
 let geocoder;
 let options;
+let currentMarkers = [];
 let gymDetailsDOM = {
     gymDetails: $("#information-box"),
     gymName: document.querySelector(".location-name"),
@@ -97,6 +98,8 @@ function getGeoLocation() {
 
     service = new google.maps.places.PlacesService(map);
     service.nearbySearch(request, markLocations);
+
+    deleteMarkers();
 };
 
 // Callback function for nearbySearch method, loops through results
@@ -115,6 +118,7 @@ function createMarker(gym) {
       title: gym.name,
       position: gym.geometry.location,
     });
+    currentMarkers.push(marker);
 
 // Upon clicking a marker this will request properties of the place object
     google.maps.event.addListener(marker, 'click', () => {
@@ -181,3 +185,19 @@ function showGymDetails(gym) {
 function hideInformation() {
     gymDetailsDOM.gymDetails.css("display", "none")
 }
+
+function clearMarkers() {
+  setMapOnAll(null);
+}
+
+function deleteMarkers() {
+  clearMarkers();
+  currentMarkers = [];
+}
+
+function setMapOnAll(map) {
+  for (let i = 0; i < currentMarkers.length; i++) {
+    currentMarkers[i].setMap(map);
+  }
+}
+
