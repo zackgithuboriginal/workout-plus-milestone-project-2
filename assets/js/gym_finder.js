@@ -1,12 +1,19 @@
 //initialising variables
 let map;
 let mapLocation;
-let gymDetails;
 let service;   
 let infoWindow;
 let currentInfoWindow;
 let geocoder;
 let options;
+let gymDetailsDOM = {
+    gymDetails: $("#information-box"),
+    gymName: document.querySelector(".location-name"),
+    gymAddress: document.querySelector(".location-address"),
+    gymRating: document.querySelector(".location-rating"),
+    gymWebsite: document.querySelector(".location-website"),
+    gymPhoto: document.querySelector(".location-image"),
+}
 
 // Handles the initial map creation
 function initMap() {
@@ -139,46 +146,38 @@ function displayDetails(placeResult, marker, status) {
 
 // Displays more extensive info in side panel when marker is clicked
 function showGymDetails(gym) {
-    gymDetails=$("#information-box")
-    let gymName = document.querySelector(".location-name");
-    let gymAddress = document.querySelector(".location-address");
-    let gymRating = document.querySelector(".location-rating");
-    let gymWebsite = document.querySelector(".location-website");
-    let gymPhoto = document.querySelector(".location-image");
 
     if (gym.rating != null) {
-        gymRating.textContent = `Rating: ${gym.rating}`
+        gymDetailsDOM.gymRating.textContent = `Rating: ${gym.rating}`
     } else {
-        gymRating.textContent = "Rating: Not yet rated."
+        gymDetailsDOM.gymRating.textContent = "Rating: Not yet rated."
     };
 
     if(gym.website) {
-        gymWebsite.innerHTML =`${gym.name}'s Website`
-        gymWebsite.href = gym.website
-        gymWebsite.target ="_blank"
+        gymDetailsDOM.gymWebsite.innerHTML =`${gym.name}'s Website`
+        gymDetailsDOM.gymWebsite.href = gym.website
+        gymDetailsDOM.gymWebsite.target ="_blank"
     } else {
-        gymWebsite.innerHTML = ""
-        gymWebsite.href = ""
-        gymWebsite.target = ""
+        gymDetailsDOM.gymWebsite.innerHTML = ""
+        gymDetailsDOM.gymWebsite.href = ""
+        gymDetailsDOM.gymWebsite.target = ""
     }
 
     if (gym.photos != null) {
     let firstPhoto = gym.photos[0];
-    gymPhoto.alt=  ``
-    gymPhoto.src = firstPhoto.getUrl();
+    gymDetailsDOM.gymPhoto.alt=  `Photo of ${gym.name}`
+    gymDetailsDOM.gymPhoto.src = firstPhoto.getUrl();
     } else {
-        gymPhoto = "";
-        gymPhoto.src = "";
+        gymDetailsDOM.gymPhoto = "";
+        gymDetailsDOM.gymPhoto.src = "";
     }
 
+    gymDetailsDOM.gymName.textContent = gym.name;
+    gymDetailsDOM.gymAddress.textContent = gym.formatted_address;
 
-    gymName.textContent = gym.name;
-    gymAddress.textContent = gym.formatted_address;
-
-    gymDetails.css("display", "inline-block")
+    gymDetailsDOM.gymDetails.css("display", "inline-block")
 }
 
 function hideInformation() {
-    gymDetails=$("#information-box")
-    gymDetails.css("display", "none")
+    gymDetailsDOM.gymDetails.css("display", "none")
 }
