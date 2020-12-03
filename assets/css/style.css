@@ -211,10 +211,8 @@ section.map-section {
 div.search-box {
     position:relative;
     top: 0rem;
-    height: 100%;
     display:flex;
     flex-direction: column;
-    justify-content: center;
 }
 
 
@@ -233,6 +231,13 @@ div.search-box h2 {
 
 div#information-box {
     display: none;
+    width: 100%;
+}
+
+div#information-box i {
+    font-size: 2rem;
+    color:#1E3231;
+    line-height: 2.2rem;
 }
 
 .gym-info-title {
@@ -262,10 +267,6 @@ div#information-box {
     border-radius: 0rem 2rem 2rem 0rem;
 }
 
-#information-box div.col {
-    padding:0;
-}
-
 .location-image {
     padding: 0;
     max-width: 20rem;
@@ -293,7 +294,7 @@ div.side-panel.col-md-4{
     height: 100%;
 }
 
-div#information-box div.row.justify-content-between {
+div#information-box div.information-box-bottom-row {
     top: 3rem;
     position: relative;
     margin: 2rem 0rem;
@@ -420,8 +421,7 @@ footer p {
 
     div.search-box {
         position:relative;
-        top: 2rem;
-        height: 20rem;
+        margin-bottom: 2rem;
         justify-content: center;
     }
 
