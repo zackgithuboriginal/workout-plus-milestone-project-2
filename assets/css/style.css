@@ -219,7 +219,7 @@ div.search-box {
 
 div#map {
     position: relative;
-    top: 0;
+    bottom: 0;
     min-height: 360px;
 }
 
@@ -329,9 +329,9 @@ div.row.justify-content-center {
 
 /* footer styling */
 footer {
-    position: absolute;
+    position: relative;
     z-index: 5;
-    bottom: 0;
+    margin-top: 9rem;
     height: 4.5rem;
     background-color: #F39237;
 }
