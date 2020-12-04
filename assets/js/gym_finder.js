@@ -182,19 +182,22 @@ function showGymDetails(gym) {
     gymDetailsDOM.gymDetails.css("display", "inline-block")
 }
 
+//Hides the gym details section when button is clicked
 function hideInformation() {
     gymDetailsDOM.gymDetails.css("display", "none")
+}
+
+//Handles the clearing of the existing markers array, calls function to clear markers from map
+function deleteMarkers() {
+  clearMarkers();
+  currentMarkers = [];
 }
 
 function clearMarkers() {
   setMapOnAll(null);
 }
 
-function deleteMarkers() {
-  clearMarkers();
-  currentMarkers = [];
-}
-
+//Loops through current markers and sets their location to null, removing them from map
 function setMapOnAll(map) {
   for (let i = 0; i < currentMarkers.length; i++) {
     currentMarkers[i].setMap(map);
