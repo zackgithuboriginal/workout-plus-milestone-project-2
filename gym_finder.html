@@ -29,12 +29,14 @@
             <h1>Gym Finder</h1>
         </div>  
         <div class="search-box">
-            <h2>Search an area</h2>
-            <form class="row justify-content-between" action="" id="address-form">
-                <input id="address-input" class="col" type="text" placeholder="Address" required>
-                <button type="submit" class="gym-search-btn-straight-edge col"><i class="fas fa-arrow-right"></i></button>
-            </form>
-            <div class="row justify-content-between">
+            <div class=" address-search">
+                <h2>Search an area</h2>
+                <form class="row justify-content-between" action="" id="address-form">
+                    <input id="address-input" class="col" type="text" placeholder="Address" required>
+                    <button type="submit" class="gym-search-btn-straight-edge col"><i class="fas fa-arrow-right"></i></button>
+                </form>
+            </div>
+            <div class="row local-search justify-content-between">
                 <h2 class="col">Use your location</h2>
                 <button class="gym-search-btn col" onclick="getGeoLocation()"><i class="fas fa-arrow-right"></i></button>
             </div>
