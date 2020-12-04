@@ -235,11 +235,6 @@ div#information-box {
     width: 100%;
 }
 
-div#information-box i {
-    font-size: 2rem;
-    color:#1E3231;
-    line-height: 2.2rem;
-}
 
 .gym-info-title {
     font-size: 1.8rem;
@@ -265,6 +260,27 @@ div#information-box i {
     padding: 0;
     max-width: 20rem;
     height: auto;
+}
+
+.close-gym-information-btn {
+    background-color: none;
+    z-index: 2;
+    background-color: transparent;
+    cursor: pointer;
+    border:none;
+    padding:0;
+
+}
+
+.close-gym-information-btn i{
+    color: #F39237;
+    font-size: 2rem;
+    line-height: 2.2rem;
+    transition: .2s ease-in;
+}
+
+.close-gym-information-btn i:hover {
+    font-size: 2.4rem;
 }
 
 #address-form {
