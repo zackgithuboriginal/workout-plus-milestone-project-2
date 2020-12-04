@@ -254,6 +254,13 @@ div#information-box {
     max-width: 8rem;
     height: 3.4rem;
     border-radius: 0rem 2rem 2rem 0rem;
+    transition: .2s;
+}
+
+.gym-search-btn-straight-edge:hover,
+.gym-search-btn-straight-edge:focus {
+    background-color: rgba(243, 146, 55, .4);
+    color:#F39237;
 }
 
 .location-image {
