@@ -213,6 +213,7 @@ div.search-box {
     top: 0rem;
     display:flex;
     flex-direction: column;
+    justify-content: center;
 }
 
 
@@ -292,6 +293,7 @@ div#information-box i {
 
 div.side-panel.col-md-4{
     height: 100%;
+    padding: 0% 10%;
 }
 
 div#information-box div.information-box-bottom-row {
@@ -316,13 +318,16 @@ input#address-input {
     box-shadow: 0rem .4rem rgba(33, 37, 41, 0.1);
 }
 
+.search-box .address-search {
+    padding: 0rem;
+}
 
 div.row.justify-content-center {
+    display:flex;
     padding: 0rem 2rem;
 }
 
-.search-box .justify-content-between {
-    max-width: 50rem;
+.search-box .local-search {
     padding-right:0;
     padding-left:0;
     margin-right:0;
@@ -363,6 +368,9 @@ footer p {
          overflow: hidden;
      }
 
+    div.side-panel.col-md-4 {
+        padding: 0;
+    }
     .page-heading {
         margin-bottom: 4rem;
     }
