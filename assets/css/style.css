@@ -26,7 +26,7 @@ body {
 /* navbar styling */
 nav.navbar {
     z-index: 10;
-    position: fixed;
+    position: absolute;
     line-height: 2.8rem;
     padding:0;
     margin:0;
@@ -51,7 +51,7 @@ nav.navbar {
 }
 
 ul.navbar-nav.nav {
-    position: fixed;
+    position: absolute;
     top: 5rem;
     padding: 0;
     height: 4rem;
