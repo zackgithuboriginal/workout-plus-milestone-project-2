@@ -25,26 +25,26 @@
     </nav>
     <section class="map-section row justify-content-center">
         <div class="side-panel col-md-4">
-        <div class="page-heading">
-            <h1>Gym Finder</h1>
-        </div>  
-        <div class="search-box">
-            <div class="address-search">
-                <h2>Search an area</h2>
-                <form class="row justify-content-between" action="" id="address-form">
-                    <input id="address-input" class="col" type="text" placeholder="Address" required>
-                    <button type="submit" class="gym-search-btn-straight-edge col"><i class="fas fa-arrow-right"></i></button>
-                </form>
+            <div class="page-heading">
+                <h1>Gym Finder</h1>
+            </div>  
+            <div class="search-box">
+                <div class="address-search">
+                    <h2>Search an area</h2>
+                    <form class="row justify-content-between" action="" id="address-form">
+                        <input id="address-input" class="col" type="text" placeholder="Address" required>
+                        <button type="submit" class="gym-search-btn-straight-edge col"><i class="fas fa-arrow-right"></i></button>
+                    </form>
+                </div>
+                <div class="row local-search justify-content-between">
+                    <h2 class="col">Use your location</h2>
+                    <button class="gym-search-btn-straight-edge col" onclick="getGeoLocation()"><i class="fas fa-arrow-right"></i></button>
+                </div>
             </div>
-            <div class="row local-search justify-content-between">
-                <h2 class="col">Use your location</h2>
-                <button class="gym-search-btn-straight-edge col" onclick="getGeoLocation()"><i class="fas fa-arrow-right"></i></button>
-            </div>
-        </div>
             <div id="information-box" class="justify-content-center">
                 <div class="information-box-top-row row justify-content-between">
                     <h3 class="location-name col-10"></h3>
-                    <button class="col-2" onclick="hideInformation()"><i class="fas fa-times"></i></button>
+                    <button class="col-2 close-gym-information-btn" onclick="hideInformation()"><i class="fas fa-times"></i></button>
                 </div>
                 <div class="information-box-bottom-row row justify-content-between">
                     <div class="col">
