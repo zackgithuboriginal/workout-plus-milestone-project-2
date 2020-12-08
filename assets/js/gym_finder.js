@@ -166,11 +166,19 @@ function showGymDetails(gym) {
         gymDetailsDOM.gymWebsite.href = ""
         gymDetailsDOM.gymWebsite.target = ""
     }
-
     if (gym.photos != null) {
-    let firstPhoto = gym.photos[0];
-    gymDetailsDOM.gymPhoto.alt=  `Photo of ${gym.name}`
-    gymDetailsDOM.gymPhoto.src = firstPhoto.getUrl();
+        let firstPhoto;
+        if(firstPhoto == null)
+            for(i=0; i<gym.photos.length; i++){
+                if(gym.photos[i].height < gym.photos[i].width){
+                    firstPhoto = gym.photos[i];
+                    console.log(firstPhoto)
+                    gymDetailsDOM.gymPhoto.alt=  `Photo of ${gym.name}`
+                    gymDetailsDOM.gymPhoto.src = firstPhoto.getUrl();
+                }   else {
+                    console.log("test")
+                }
+            }
     } else {
         gymDetailsDOM.gymPhoto = "";
         gymDetailsDOM.gymPhoto.src = "";
