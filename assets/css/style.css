@@ -31,7 +31,7 @@ nav.navbar {
     padding:0;
     margin:0;
     width: 100%;
-    height: 9rem;
+    height: 6rem;
     box-shadow: 0rem .4rem rgba(33, 37, 41, 0.1);
     background-color: #F39237;
 }
@@ -56,6 +56,7 @@ ul.navbar-nav.nav {
     padding: 0;
     height: 4rem;
     justify-content: center;
+    background-color: #F39237;
 }
 
 .navbar .nav-item a.nav-link {
@@ -85,6 +86,16 @@ ul div {
     flex-direction: row;
 }
 
+.navbar-toggler {
+    line-height: 2.8rem;
+    font-size: 2.8rem;
+    position: absolute;
+    top: 2rem;
+    margin: 0;
+    padding: 0;
+    right: 0;
+    width: 2.8rem;
+}
 
 /* landing page styling */
 .landing-page div.landing-information {
@@ -420,12 +431,13 @@ footer p {
         position: relative;
         justify-content: flex-end;
     }
-    
+
     ul.navbar-nav.nav {
         position: relative;
         top: 0rem;
         right: 0rem;
         height:auto;
+        justify-content: flex-end;
     }
 
     .navbar a.navbar-brand {
