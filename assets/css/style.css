@@ -416,12 +416,16 @@ footer p {
         border-color:#ffffff;
     }
 
+    div#navbarCollapseTarget {
+        position: relative;
+        justify-content: flex-end;
+    }
+    
     ul.navbar-nav.nav {
         position: relative;
         top: 0rem;
         right: 0rem;
         height:auto;
-        justify-content: flex-end;
     }
 
     .navbar a.navbar-brand {
