@@ -440,6 +440,7 @@ footer p {
         height:auto;
         justify-content: flex-end;
         max-width: 50%;
+        box-shadow: none;
     }
 
     .navbar a.navbar-brand {
