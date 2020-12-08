@@ -11,12 +11,15 @@
 </head>
 <body>
     <!--===============================    Navbar           ===============================-->
-    <nav class="navbar navbar-light bg-color-primary row justify-content-between">
+    <nav class="navbar navbar-expand-md navbar-light bg-color-primary row justify-content-between">
         <a class="navbar-brand font-color-light col">workout plus</a>
-        <ul class="navbar-nav nav bg-color font-color-light col-md">
+        <button class="navbar-toggler col" type="button" data-toggle="collapse" data-target="#navbarCollapseTarget" aria-controls="navbarCollapseTarget" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="font-color-light"><i class="fas fa-bars fa-1x"></i></span>
+        </button>
+        <ul class="collapse navbar-collapse col-md navbar-nav nav bg-color font-color-light" id="navbarCollapseTarget">
             <div class="">
                 <li class="nav-item">
-                    <a class="nav-link active" href="#">home</a>
+                    <a class="nav-link active" href="index.html">home</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link text-nowrap" href="gym_finder.html">gym finder</a>
