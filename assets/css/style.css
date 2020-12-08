@@ -57,6 +57,7 @@ ul.navbar-nav.nav {
     height: 4rem;
     justify-content: center;
     background-color: #F39237;
+    box-shadow: 0rem .4rem rgba(33, 37, 41, 0.1);
 }
 
 .navbar .nav-item a.nav-link {
@@ -438,6 +439,7 @@ footer p {
         right: 0rem;
         height:auto;
         justify-content: flex-end;
+        max-width: 50%;
     }
 
     .navbar a.navbar-brand {
