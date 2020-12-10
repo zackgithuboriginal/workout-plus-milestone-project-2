@@ -151,6 +151,9 @@ function displayDetails(placeResult, marker, status) {
 // Displays more extensive info in side panel when marker is clicked
 function showGymDetails(gym) {
 
+    gymDetailsDOM.gymName.textContent = gym.name;
+    gymDetailsDOM.gymAddress.textContent = gym.formatted_address;
+
     if (gym.rating != null) {
         gymDetailsDOM.gymRating.textContent = `Rating: ${gym.rating}`
     } else {
@@ -166,26 +169,25 @@ function showGymDetails(gym) {
         gymDetailsDOM.gymWebsite.href = ""
         gymDetailsDOM.gymWebsite.target = ""
     }
+    
     if (gym.photos != null) {
-        let firstPhoto;
-        if(firstPhoto == null)
+        let activePhoto;
+        if(activePhoto == null)
             for(i=0; i<gym.photos.length; i++){
                 if(gym.photos[i].height < gym.photos[i].width){
-                    firstPhoto = gym.photos[i];
-                    console.log(firstPhoto)
+                    activePhoto = gym.photos[i];
+                    console.log(activePhoto)
+                    console.log(i)
                     gymDetailsDOM.gymPhoto.alt=  `Photo of ${gym.name}`
-                    gymDetailsDOM.gymPhoto.src = firstPhoto.getUrl();
-                }   else {
-                    console.log("test")
+                    gymDetailsDOM.gymPhoto.src = activePhoto.getUrl();
+                    break;
                 }
             }
     } else {
-        gymDetailsDOM.gymPhoto = "";
-        gymDetailsDOM.gymPhoto.src = "";
+        gymDetailsDOM.gymPhoto.alt = "";
+        gymDetailsDOM.gymPhoto.src = "/assets/images/workout-plus.png";
     }
 
-    gymDetailsDOM.gymName.textContent = gym.name;
-    gymDetailsDOM.gymAddress.textContent = gym.formatted_address;
 
     gymDetailsDOM.gymDetails.css("display", "inline-block")
 }
