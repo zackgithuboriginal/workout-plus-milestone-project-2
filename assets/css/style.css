@@ -252,6 +252,7 @@ div.search-box h2 {
 div#information-box {
     display: none;
     width: 100%;
+    height: 100%
 }
 
 
@@ -284,8 +285,8 @@ div#information-box {
 
 .location-image {
     padding: 0;
-    max-width: 20rem;
-    height: auto;
+    max-width: 100%;
+    max-height: auto;
 }
 
 .close-gym-information-btn {
