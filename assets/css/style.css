@@ -223,7 +223,7 @@ section.landing-page {
 
 section.map-section {
     position: relative;
-    top: 9rem;
+    top: 6rem;
     margin: 0;
 }
 
@@ -341,6 +341,11 @@ div.side-panel.col-md-4{
 div#information-box div.information-box-bottom-row {
     position: relative;
     margin: 2rem 0rem;
+    padding:0;
+}
+
+div.information-box-bottom-row div.col {
+    padding: 0;
 }
 
 .location-address, .location-website {
