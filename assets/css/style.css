@@ -284,9 +284,17 @@ div#information-box {
 }
 
 .location-image {
+    display: flex;
     padding: 0;
+    margin-bottom: 1rem;
     max-width: 100%;
-    max-height: auto;
+    width: auto;
+    max-height: 30vh;
+    text-align:center ;
+}
+
+#information-box div.col-lg-6.order-lg-12.justify-content-center {
+    display: flex;
 }
 
 .close-gym-information-btn {
@@ -490,6 +498,15 @@ footer p {
     div#information-box {
         position: relative;
         top: 0;
+    }
+
+    div#information-box div.col-lg-6 {
+        padding:0;
+
+    }
+
+    .location-image {
+        margin: 0;
     }
 
     div.search-box div {
