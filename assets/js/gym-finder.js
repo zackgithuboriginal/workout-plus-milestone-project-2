@@ -27,7 +27,6 @@ window.onload = function() {
 };
 
 function createCountryOptions(results){
-    console.log("progress")
     console.log(results.length)
     for(i=0; i<results.length; i++){
         let newOption = document.createElement("option")
