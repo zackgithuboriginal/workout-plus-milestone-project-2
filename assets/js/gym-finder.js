@@ -15,6 +15,27 @@ let gymDetailsDOM = {
     gymWebsite: document.querySelector(".location-website"),
     gymPhoto: document.querySelector(".location-image"),
 }
+let selectTarget = $("#country");
+
+window.onload = function() {
+  Papa.parse("../assets/data/country-codes.csv", {
+    download: true,
+    complete: function(results){
+        createCountryOptions(results.data)
+    }
+});
+};
+
+function createCountryOptions(results){
+    console.log("progress")
+    console.log(results.length)
+    for(i=0; i<results.length; i++){
+        let newOption = document.createElement("option")
+        newOption.innerText = results[i][1]
+        newOption.value = results[i][0]
+        selectTarget.append(newOption);
+    }
+}
 
 // Handles the initial map creation
 function initMap() {
