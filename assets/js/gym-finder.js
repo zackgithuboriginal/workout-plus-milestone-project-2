@@ -6,6 +6,7 @@ let infoWindow;
 let currentInfoWindow;
 let geocoder;
 let options;
+let autocomplete;
 let currentMarkers = [];
 let gymDetailsDOM = {
     gymDetails: $("#information-box"),
@@ -15,9 +16,9 @@ let gymDetailsDOM = {
     gymWebsite: document.querySelector(".location-website"),
     gymPhoto: document.querySelector(".location-image"),
 }
-let selectTarget = $("#country");
+let selectTarget = document.getElementById("country");
 
-window.onload = function() {
+function parseCountryCodes() {
   Papa.parse("../assets/data/country-codes.csv", {
     download: true,
     complete: function(results){
@@ -49,24 +50,36 @@ function initMap() {
         rotateControl: false,
         mapId: '6be0d83f76395e4'
     });
+    parseCountryCodes();
+    document.getElementById("country").addEventListener("change", setAutocompleteCountry);
 
 // Handles autocomplete requests on address input
     let input = document.getElementById("address-input");
-    let autocomplete = new google.maps.places.Autocomplete(input, options);
-    options = {
+    autocomplete = new google.maps.places.Autocomplete(input, {
         types: ['address']
-    }
+    });
     google.maps.event.addListener(autocomplete, 'place_changed', function () {
             let place=autocomplete.getPlace();
             if (!place.geometry){
                 return;
             }
             else if (place.geometry) {
-                repositionMap(place.geometry.location) 
+                repositionMap(place.geometry.location)
             }
         });
     findLocalGyms(mapLocation);
 };
+
+function setAutocompleteCountry() {
+  const targetCountry = selectTarget.value;
+  console.log(document.getElementById("country").value)
+  if (country == "all") {
+    autocomplete.setComponentRestrictions({ country: [] });
+  } else {
+    autocomplete.setComponentRestrictions({ country: targetCountry });
+  }
+  console.log(country)
+}
 
 // Handles the repositioning of the map due to search or geolocation
 function repositionMap(mapLocation) {
