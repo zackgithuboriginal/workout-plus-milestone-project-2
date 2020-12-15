@@ -32,7 +32,7 @@ nav.navbar {
     margin:0;
     width: 100%;
     height: 6rem;
-    box-shadow: 0rem .4rem rgba(33, 37, 41, 0.1);
+    box-shadow: 0rem .2rem rgba(33, 37, 41, 0.1);
     background-color: #F39237;
 }
 
@@ -58,7 +58,7 @@ ul.navbar-nav.nav {
     height: 4rem;
     justify-content: center;
     background-color: #F39237;
-    box-shadow: 0rem .4rem rgba(33, 37, 41, 0.1);
+    box-shadow: 0rem .2rem rgba(33, 37, 41, 0.1);
 }
 
 .navbar .nav-item a.nav-link {
@@ -267,14 +267,36 @@ div#information-box {
     background-color: #F39237;
     color: #ffffff;
     border-style: none;
-    box-shadow: 0rem .4rem rgba(33, 37, 41, 0.1);
+    box-shadow: 0rem .2rem rgba(33, 37, 41, 0.1);
     font-weight: normal;
     line-height: 2.4rem;
     width: 8rem;
     max-width: 8rem;
-    height: 3.4rem;
+    height: 2.8rem;
     border-radius: 0rem 2rem 2rem 0rem;
     transition: .2s;
+}
+
+div#country-select {
+    margin: 0;
+    padding: 0;
+    max-width: 100%;
+}
+
+div#country-select select {
+    padding: 0;
+    margin: 0;
+    height: 2rem;
+    font-size: 1.6rem;
+    max-width: 100%;
+    border: none;
+    background-color: #F9F9F9;
+    box-shadow: 0rem .2rem rgba(33, 37, 41, 0.1);
+    margin-bottom: 1rem;
+}
+
+select#country option {
+    max-width: 100%;
 }
 
 .gym-search-btn-straight-edge:hover,
@@ -319,7 +341,7 @@ div#information-box {
 }
 
 #address-form {
-    margin: 0rem 0rem 2rem 0rem;
+    margin: 0rem;
 }
 
 .gym-info-icon {
@@ -362,7 +384,7 @@ div.information-box-bottom-row div.col {
 }
 
 input#address-input {
-    height: 3.4rem;
+    height: 2.8rem;
     font-size: 1.8rem;
     width: auto;
     min-width: 15rem;
@@ -370,11 +392,11 @@ input#address-input {
     padding-left: .5rem;
     border: none;
     background-color: #F9F9F9;
-    box-shadow: 0rem .4rem rgba(33, 37, 41, 0.1);
 }
 
 .search-box .address-search {
     padding: 0rem;
+    margin: 0rem 0rem .5rem 0rem;
 }
 
 div.row.justify-content-center {
@@ -510,7 +532,7 @@ footer p {
     }
 
     div.search-box div {
-        margin-top: 2rem;
+        margin-top: 0.5rem;
         padding: 0rem 2rem;
     }
 
@@ -522,10 +544,16 @@ footer p {
         max-width: 50rem;
     }
 
+    .search-box .justify-content-between h3 {
+        padding: 0;
+        color: #F39237;
+        text-decoration: underline;
+        font-size: 1.4rem;
+    }
     hr {
         margin-top: 4rem;
         border-bottom: .4rem solid #F39237;
-        box-shadow: 0rem .4rem rgba(33, 37, 41, 0.1);
+        box-shadow: 0rem .2rem rgba(33, 37, 41, 0.1);
     }
 
     section.landing-page {
