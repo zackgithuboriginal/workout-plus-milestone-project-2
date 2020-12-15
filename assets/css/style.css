@@ -309,6 +309,8 @@ div#country-select select {
 
 select#country option {
     max-width: 100%;
+    font-size: 1.6rem;
+    padding: 0;
 }
 
 .gym-search-btn-straight-edge:hover,
