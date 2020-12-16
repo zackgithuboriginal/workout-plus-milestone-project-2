@@ -35,9 +35,9 @@
             </div>  
             <div class="search-box">
                 <h2>Search an area</h2>
-                <div id="country-select">
+                <div id="country-select" class="select-container">
                     <select id="country" class="form-control">
-                        <option value="all">Select a country</option>
+                        <option value="all" selected>Select a country</option>
                     </select>
                 </div>
                 <div class="address-search">
@@ -47,7 +47,7 @@
                     </form>
                 </div>
                 <div class="row local-search justify-content-between">
-                    <h3 class="col" onclick="getGeoLocation()"><em>Use device's location</em></h3>
+                    <h3 class="col" onclick="getGeoLocation()">Use device's location</h3>
                 </div>
             </div>
             <div id="information-box" class="justify-content-center">
