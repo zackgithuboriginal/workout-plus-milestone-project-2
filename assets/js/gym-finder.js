@@ -8,14 +8,7 @@ let geocoder;
 let options;
 let autocomplete;
 let currentMarkers = [];
-let gymDetailsDOM = {
-    gymDetails: $("#information-box"),
-    gymName: document.querySelector(".location-name"),
-    gymAddress: document.querySelector(".location-address"),
-    gymRating: document.querySelector(".location-rating"),
-    gymWebsite: document.querySelector(".location-website"),
-    gymPhoto: document.querySelector(".location-image"),
-}
+let gymDetails = $("#information-box")
 let selectTarget = document.getElementById("country");
 
 function parseCountryCodes() {
@@ -190,24 +183,33 @@ function displayDetails(placeResult, marker, status) {
 
 // Displays more extensive info in side panel when marker is clicked
 function showGymDetails(gym) {
+    let gymName = document.querySelector(".location-name");
+    let gymAddress = document.querySelector(".location-address");
+    let gymRating = document.querySelector(".location-rating");
+    let gymWebsite = document.querySelector(".location-website");
+    let gymPhoto = document.querySelector(".location-image");
 
-    gymDetailsDOM.gymName.textContent = gym.name;
-    gymDetailsDOM.gymAddress.textContent = gym.formatted_address;
+    gymName.textContent = gym.name;
+    gymAddress.textContent = gym.formatted_address;
 
     if (gym.rating != null) {
-        gymDetailsDOM.gymRating.textContent = `Rating: ${gym.rating}`
+        gymRating.textContent = `Rating: ${gym.rating}`
     } else {
-        gymDetailsDOM.gymRating.textContent = "Rating: Not yet rated."
+        gymRating.textContent = "Rating: Not yet rated."
     };
 
     if(gym.website) {
-        gymDetailsDOM.gymWebsite.innerHTML =`${gym.name}'s Website`
-        gymDetailsDOM.gymWebsite.href = gym.website
-        gymDetailsDOM.gymWebsite.target ="_blank"
+        gymWebsite.innerHTML = gym.website;
+        gymWebsite.href = gym.website;
+        gymWebsite.target ="_blank";
+        gymWebsite.classList.remove("website-unavailable");
+        document.getElementById("website-alternative").classList.add("website-unavailable");
     } else {
-        gymDetailsDOM.gymWebsite.innerHTML = ""
-        gymDetailsDOM.gymWebsite.href = ""
-        gymDetailsDOM.gymWebsite.target = ""
+        gymWebsite.innerHTML = "No available website";
+        gymWebsite.classList.add("website-unavailable");
+        gymWebsite.href = "";
+        gymWebsite.target = "";
+        document.getElementById("website-alternative").classList.remove("website-unavailable");
     }
     
     if (gym.photos != null) {
@@ -218,23 +220,23 @@ function showGymDetails(gym) {
                     activePhoto = gym.photos[i];
                     console.log(activePhoto)
                     console.log(i)
-                    gymDetailsDOM.gymPhoto.alt=  `Photo of ${gym.name}`
-                    gymDetailsDOM.gymPhoto.src = activePhoto.getUrl();
+                    gymPhoto.alt = `Photo of ${gym.name}`
+                    gymPhoto.src = activePhoto.getUrl();
                     break;
                 }
             }
     } else {
-        gymDetailsDOM.gymPhoto.alt = "";
-        gymDetailsDOM.gymPhoto.src = "/assets/images/workout-plus.png";
+        gymPhoto.alt = "Alternative image";
+        gymPhoto.src = "/assets/images/workout-plus.png";
     }
 
 
-    gymDetailsDOM.gymDetails.css("display", "inline-block")
+    gymDetails.css("display", "inline-block")
 }
 
 //Hides the gym details section when button is clicked
 function hideInformation() {
-    gymDetailsDOM.gymDetails.css("display", "none")
+    gymDetails.css("display", "none")
 }
 
 //Handles the clearing of the existing markers array, calls function to clear markers from map

@@ -336,6 +336,14 @@ select#country option {
     display: flex;
 }
 
+#website-alternative {
+    font-size: 1.4rem;
+}
+
+.website-unavailable {
+    display: none;
+}
+
 .close-gym-information-btn {
     background-color: none;
     z-index: 2;
