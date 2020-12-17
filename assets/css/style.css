@@ -354,6 +354,11 @@ select#country option {
 
 }
 
+.location-information-row {
+    display: flex;
+    flex-direction: row;
+}
+
 .close-gym-information-btn i{
     color: #F39237;
     font-size: 2rem;
@@ -407,6 +412,7 @@ div.information-box-bottom-row div.col {
 
 .location-address, .location-website {
     font-size: 1.4rem;
+    overflow-wrap: anywhere;
 }
 
 input#address-input {
