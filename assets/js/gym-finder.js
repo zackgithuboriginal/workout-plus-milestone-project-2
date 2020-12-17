@@ -10,6 +10,13 @@ let autocomplete;
 let currentMarkers = [];
 let gymDetails = $("#information-box")
 let selectTarget = document.getElementById("country");
+let gymDOM = {
+    name: document.querySelector(".location-name"),
+    formatted_address: document.querySelector(".location-address"),
+    rating: document.querySelector(".location-rating"),
+    website: document.querySelector(".location-website"),
+    photos: document.querySelector(".location-image")
+}
 
 function parseCountryCodes() {
   Papa.parse("../assets/data/country-codes.csv", {
@@ -21,7 +28,6 @@ function parseCountryCodes() {
 };
 
 function createCountryOptions(results){
-    console.log(results.length)
     for(i=0; i<results.length; i++){
         let newOption = document.createElement("option")
         newOption.innerText = results[i][1]
@@ -65,13 +71,11 @@ function initMap() {
 
 function setAutocompleteCountry() {
   const targetCountry = selectTarget.value;
-  console.log(document.getElementById("country").value)
   if (country == "all") {
     autocomplete.setComponentRestrictions({ country: [] });
   } else {
     autocomplete.setComponentRestrictions({ country: targetCountry });
   }
-  console.log(country)
 }
 
 // Handles the repositioning of the map due to search or geolocation
@@ -183,56 +187,62 @@ function displayDetails(placeResult, marker, status) {
 
 // Displays more extensive info in side panel when marker is clicked
 function showGymDetails(gym) {
-    let gymName = document.querySelector(".location-name");
-    let gymAddress = document.querySelector(".location-address");
-    let gymRating = document.querySelector(".location-rating");
-    let gymWebsite = document.querySelector(".location-website");
-    let gymPhoto = document.querySelector(".location-image");
-
-    gymName.textContent = gym.name;
-    gymAddress.textContent = gym.formatted_address;
-
-    if (gym.rating != null) {
-        gymRating.textContent = `Rating: ${gym.rating}`
-    } else {
-        gymRating.textContent = "Rating: Not yet rated."
-    };
-
-    if(gym.website) {
-        gymWebsite.innerHTML = gym.website;
-        gymWebsite.href = gym.website;
-        gymWebsite.target ="_blank";
-        gymWebsite.classList.remove("website-unavailable");
-        document.getElementById("website-alternative").classList.add("website-unavailable");
-    } else {
-        gymWebsite.innerHTML = "No available website";
-        gymWebsite.classList.add("website-unavailable");
-        gymWebsite.href = "";
-        gymWebsite.target = "";
-        document.getElementById("website-alternative").classList.remove("website-unavailable");
+    if(!gym.photos){
+        renderAltValue("photos");
     }
-    
-    if (gym.photos != null) {
-        let activePhoto;
-        if(activePhoto == null)
-            for(i=0; i<gym.photos.length; i++){
-                if(gym.photos[i].height < gym.photos[i].width){
-                    activePhoto = gym.photos[i];
-                    console.log(activePhoto)
-                    console.log(i)
-                    gymPhoto.alt = `Photo of ${gym.name}`
-                    gymPhoto.src = activePhoto.getUrl();
+    if(!gym.rating){
+        renderAltValue("rating");
+    }
+    if(!gym.website){
+        renderAltValue("website")
+    }
+    for (const prop in gym) {
+        renderGymDetail(prop, gym[prop]);
+    }
+}
+
+function renderGymDetail(property, value) {
+    if(gymDOM[property]){
+        let DOMTarget = gymDOM[property];
+        if(property === "photos") {
+            for(i=0; i<value.length; i++){
+                if(value[i].height < value[i].width){
+                    DOMTarget.alt = `Photo of location`
+                    DOMTarget.src = value[i].getUrl();
                     break;
+                } else if(i === value.length){
+                    DOMTarget.alt = "Alternative image";
+                    DOMTarget.src = "/assets/images/workout-plus.png";
                 }
-            }
-    } else {
-        gymPhoto.alt = "Alternative image";
-        gymPhoto.src = "/assets/images/workout-plus.png";
+            }    
+        }   else if(property === "website") {
+            DOMTarget.innerHTML = value;
+            DOMTarget.href = value;
+            DOMTarget.classList.remove("website-unavailable")
+            document.getElementById("website-alternative").classList.add("website-unavailable");
+        }   else {
+            DOMTarget.textContent = value;
+        }
+        
     }
-
-
     gymDetails.css("display", "inline-block")
 }
+
+
+function renderAltValue(property) {
+        let DOMTarget = gymDOM[property];
+            if(property === "photos") {
+                DOMTarget.alt = "Alternative image";
+                DOMTarget.src = "/assets/images/workout-plus.png";
+            } else if(property === "website"){
+                DOMTarget.innerHTML = "No available website";
+                DOMTarget.href = "";
+                DOMTarget.classList.add("website-unavailable")
+                document.getElementById("website-alternative").classList.remove("website-unavailable");
+            } else if(property === "rating"){
+                DOMTarget.textContent = "Not yet rated."
+            }
+        }
 
 //Hides the gym details section when button is clicked
 function hideInformation() {
