@@ -327,7 +327,8 @@ select#country option {
     padding: 0;
     margin-bottom: 1rem;
     max-width: 100%;
-    width: auto;
+    width: 100%;
+    height: auto;
     max-height: 30vh;
     text-align:center ;
 }
@@ -344,26 +345,28 @@ select#country option {
     display: none;
 }
 
-.close-gym-information-btn {
-    background-color: none;
-    z-index: 2;
-    background-color: transparent;
-    cursor: pointer;
-    border:none;
-    padding:0;
-
-}
 
 .location-information-row {
     display: flex;
     flex-direction: row;
 }
-
+.close-gym-information-btn{
+    text-align: right;
+}
 .close-gym-information-btn i{
+    z-index: 2;
+    cursor: pointer;
+    padding:0;
     color: #F39237;
     font-size: 2rem;
     line-height: 2.2rem;
     transition: .2s ease-in;
+    width: 100%;
+    height: 100%;
+}
+
+.gym-image-container {
+    height:100%;
 }
 
 .close-gym-information-btn i:hover {
@@ -410,9 +413,15 @@ div.information-box-bottom-row div.col {
     padding: 0;
 }
 
-.location-address, .location-website {
+.location-address {
     font-size: 1.4rem;
-    overflow-wrap: anywhere;
+    overflow-wrap: anywhere;}
+
+.location-website {
+    font-size: 1.4rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 input#address-input {
