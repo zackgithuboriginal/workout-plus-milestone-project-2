@@ -16,7 +16,7 @@ body {
 }
 
 .font-color-light {
-    color: #ffffff;
+    color: #F9F9F9;
 }
 
 .font-color-orange {
@@ -37,7 +37,7 @@ nav.navbar {
 }
 
 .navbar a.navbar-brand {
-    color: #ffffff;
+    color: #F9F9F9;
     font-size: 2.8rem;
     position: absolute;
     top: 2rem;
@@ -46,7 +46,7 @@ nav.navbar {
 }
 
 .navbar a.navbar-brand:hover {
-    color: #ffffff;
+    color: #F9F9F9;
     cursor: pointer;
 }
 
@@ -63,7 +63,7 @@ ul.navbar-nav.nav {
 
 .navbar .nav-item a.nav-link {
     font-size: 2rem;
-    color: #ffffff;
+    color: #F9F9F9;
     padding: 0px 3px;
     text-align: center;
     display: flex;
@@ -71,15 +71,15 @@ ul.navbar-nav.nav {
 }
 
 .navbar .nav-item a.nav-link.active {
-    color: #ffffff;
+    color: #F9F9F9;
     border-bottom: solid 3px;
-    border-color: #ffffff;
+    border-color: #F9F9F9;
 }
 
 .navbar .nav-item a.nav-link:hover {
-    color: #ffffff;
+    color: #F9F9F9;
     border-bottom: solid 3px;
-    border-color: #ffffff;
+    border-color: #F9F9F9;
 }
 
 ul div {
@@ -172,7 +172,7 @@ section.landing-page {
 }
 
 .h1-link {
-    color: #ffffff;
+    color: #F9F9F9;;
     background-color: #F39237;
     border-radius: 3.5rem;
     padding: .5rem 2rem;  
@@ -189,7 +189,7 @@ section.landing-page {
 .h1-link span {
     font-size: 3rem;
     font-weight: 200;
-    color:#ffffff;
+    color:#F9F9F9;
 }
 
 .landing-page p {
@@ -276,7 +276,7 @@ div#information-box {
     padding: .4rem 2rem;
     font-family: 'Montserrat';
     background-color: #F39237;
-    color: #ffffff;
+    color: #F9F9F9;
     border-style: none;
     box-shadow: 0rem .2rem rgba(33, 37, 41, 0.1);
     font-weight: normal;
@@ -367,6 +367,7 @@ select#country option {
 
 .gym-image-container {
     height:100%;
+    padding: 0;
 }
 
 .close-gym-information-btn i:hover {
@@ -457,7 +458,7 @@ footer {
     position: relative;
     z-index: 5;
     margin-top: 6rem;
-    height: 4.5rem;
+    height: 2rem;
     background-color: #F39237;
 }
 
@@ -487,23 +488,24 @@ footer p {
 
     div.side-panel.col-md-4 {
         padding: 0rem 2rem;
+        width:30rem;
     }
     .page-heading {
         margin-bottom: 2rem;
     }
     .navbar .nav-item a.nav-link {
-        color: #ffffff;
-        border-color:#ffffff;
+        color: #F9F9F9;
+        border-color:#F9F9F9;
     }
 
     .navbar .nav-item a.nav-link:hover {
-        border-color:#ffffff;
-        color:#ffffff;
+        border-color:#F9F9F9;
+        color:#F9F9F9;
     }
 
     .navbar .nav-item a.nav-link.active{
-        color:#ffffff;
-        border-color:#ffffff;
+        color:#F9F9F9;
+        border-color:#F9F9F9;
     }
 
     div#navbarCollapseTarget {
@@ -546,7 +548,7 @@ footer p {
     }
 
     section.map-section {
-        padding:6rem 0rem 5rem 0rem;
+        padding:6rem 0rem 0rem 0rem;
         top:0;
         height:100%;
         max-height:100%;
