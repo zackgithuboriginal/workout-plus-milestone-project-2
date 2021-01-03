@@ -178,6 +178,7 @@ section.landing-page {
     padding: .5rem 2rem;  
     line-height: 3rem;
     transition: .2s ease-in;
+    display: inline-block;
 }
 
 .h1-link:hover {
@@ -640,15 +641,15 @@ footer p {
 
     .landing-page h1 {
         padding:0;
-        margin-top: 8rem;
+        margin-top: 5rem;
         color:#1E3231;
         font-size: 4.2rem;
-        max-height: 25vh;
+        height: 40vh;
     }
 
     .landing-page p {
         border: none;
-        font-size: 2rem;
+        font-size: 1.8rem;
         margin-top: 2rem;
     }
 
