@@ -20,7 +20,7 @@ let gymDOM = {
 
 function parseCountryCodes() {
     console.log("Parse Begin")
-    Papa.parse("../assets/data/country-codes.csv", {
+    Papa.parse("assets/data/country-codes.csv", {
         download: true,
         complete: function(results){
             console.log("Complete")
