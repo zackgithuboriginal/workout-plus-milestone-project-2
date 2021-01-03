@@ -612,9 +612,10 @@ footer p {
     .landing-page div.landing-information {
         position: relative;
         background-color: rgba(243, 146, 55, .8);
-        padding: 0rem 3rem;
+        padding: 0;
         left: 0;
         right: 0;
+        max-height: 100%;
     }
     .image-container {
         margin: 0;
@@ -643,19 +644,19 @@ footer p {
     .landing-page h1 {
         padding:0;
         margin-top: 5rem;
+        width:90%;
+        left:5%;
         color:#1E3231;
         font-size: 4.2rem;
         height: 40vh;
     }
 
     .landing-page p {
+        width:90%;
+        left:5%;
         border: none;
         font-size: 1.8rem;
         margin-top: 2rem;
-    }
-
-    div.landing-information {
-        max-height: 100%;
     }
 
     footer {
