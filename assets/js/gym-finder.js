@@ -19,12 +19,14 @@ let gymDOM = {
 }
 
 function parseCountryCodes() {
-  Papa.parse("../assets/data/country-codes.csv", {
-    download: true,
-    complete: function(results){
-        createCountryOptions(results.data)
-    }
-});
+    console.log("Parse Begin")
+    Papa.parse("../assets/data/country-codes.csv", {
+        download: true,
+        complete: function(results){
+            console.log("Complete")
+            createCountryOptions(results.data)
+        }
+    });
 };
 
 function createCountryOptions(results){
@@ -233,7 +235,7 @@ function renderAltValue(property) {
         let DOMTarget = gymDOM[property];
             if(property === "photos") {
                 DOMTarget.alt = "Alternative image";
-                DOMTarget.src = "/assets/images/workout-plus.png";
+                DOMTarget.src = "assets/images/workout-plus.png";
             } else if(property === "website"){
                 DOMTarget.innerHTML = "No available website";
                 DOMTarget.href = "";
