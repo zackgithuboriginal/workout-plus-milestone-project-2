@@ -8,6 +8,7 @@ body {
     padding:0;
     margin:0;
     min-height: 100vh;
+    color: #1E3231;
 }
 
 /* colour styles */
@@ -125,7 +126,7 @@ section.landing-page {
     font-size: 3.5rem;
     color: #F9F9F9;
     position: relative;
-    padding-top: 10rem;
+    padding-top: 5rem;
     width: 100%;
     height:50vh;
 }
@@ -173,12 +174,16 @@ section.landing-page {
 
 .h1-link {
     color: #F9F9F9;;
-    background-color: #F39237;
     border-radius: 3.5rem;
     padding: .5rem 2rem;  
     line-height: 3rem;
     transition: .2s ease-in;
     display: inline-block;
+}
+
+.h1-link i {
+    font-size: 3rem;
+    margin-left: 1rem;
 }
 
 .h1-link:hover {
@@ -187,16 +192,11 @@ section.landing-page {
     background-color:#F9F9F9;
 }
 
-.h1-link span {
-    font-size: 3rem;
-    font-weight: 200;
-    color:#F9F9F9;
-}
 
 .landing-page p {
-    position: relative;
+    position: absolute;
     border-top: #F39237 2px solid;
-    margin-top: 4rem;
+    top: 55vh;
     font-size: 2rem;
     font-weight: 500;
     text-align: left;
@@ -494,7 +494,8 @@ footer p {
          width: 100vw;
          position: absolute;
          top:0;
-         overflow: hidden;
+         overflow-x: hidden;
+         min-height: 100vh;
      }
 
     div.side-panel.col-md-4 {
@@ -609,8 +610,8 @@ footer p {
 
     section.landing-page {
         top: 0rem;
-        margin-top: 6rem;
-        margin-bottom: 5rem;
+        padding-top: 6rem;
+        padding-bottom: 4rem;
     }  
 
     nav.navbar {
@@ -624,6 +625,7 @@ footer p {
         left: 0;
         right: 0;
         max-height: 100%;
+        overflow-y: auto;
     }
     .image-container {
         margin: 0;
@@ -656,21 +658,22 @@ footer p {
         left:5%;
         color:#1E3231;
         font-size: 4.2rem;
-        height: 40vh;
+        height: auto;
     }
 
     .landing-page p {
+        position: relative;
+        top: 0;
         width:90%;
         left:5%;
         border: none;
         font-size: 1.8rem;
-        margin-top: 2rem;
+        margin-top: 6rem;
     }
 
     footer {
         position: absolute;
         bottom:0;
-        margin-top: 2rem;
     }
 }
 
