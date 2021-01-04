@@ -46,7 +46,9 @@ function initMap() {
         center: mapLocation,
         zoom: 15,
         mapTypeControl: false,
+        streetViewControl: false,
         rotateControl: false,
+        fullscreenControl: false,
         mapId: '6be0d83f76395e4'
     });
     parseCountryCodes();
