@@ -110,6 +110,7 @@ ul div {
     justify-content: center;
     align-content: center;
     text-align: left;
+    padding: 0;
 }
 
 section.landing-page {
@@ -119,6 +120,7 @@ section.landing-page {
     position: relative;
     background-color: #F9F9F9;
     padding:6rem 0rem 0rem 0rem;
+    overflow-y: auto;
 }
 
 .landing-page h1 {
