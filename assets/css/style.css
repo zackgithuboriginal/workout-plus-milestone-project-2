@@ -113,12 +113,12 @@ ul div {
 }
 
 section.landing-page {
-    height: 100vh;
-    top: 6rem;
+    height: auto;
+    min-height: 100vh;
     margin:0;
     position: relative;
     background-color: #F9F9F9;
-    padding:0;
+    padding:6rem 0rem 0rem 0rem;
 }
 
 .landing-page h1 {
@@ -226,9 +226,10 @@ section.landing-page {
 
 section.map-section {
     position: relative;
-    top: 6rem;
+    padding:6rem 0rem 0rem 0rem;
     margin: 0;
     height: auto;
+    min-height: 100vh;
 }
 
 div.search-box {
@@ -469,7 +470,7 @@ div.row.justify-content-center {
 footer {
     position: relative;
     z-index: 5;
-    margin-top: 6rem;
+    margin: 0;
     height: 4rem;
     background-color: #F39237;
 }
@@ -567,6 +568,7 @@ footer p {
 
     section.map-section {
         padding:6rem 0rem 4rem 0rem;
+        margin: 0;
         top:0;
         height:100%;
         max-height:100%;
@@ -615,9 +617,9 @@ footer p {
     }
 
     section.landing-page {
-        top: 0rem;
-        padding-top: 6rem;
+        height: 100%;
         padding-bottom: 4rem;
+        top: 0rem;
     }  
 
     nav.navbar {
