@@ -373,6 +373,11 @@ select#country option {
 .gym-image-container {
     height:100%;
     padding: 0;
+    display: flex;
+}
+
+.gym-information-container {
+    display: flex;
 }
 
 .close-gym-information-btn i:hover {
