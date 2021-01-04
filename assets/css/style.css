@@ -415,6 +415,15 @@ div.information-box-bottom-row div.col {
     padding: 0;
 }
 
+div.information-box-top-row {
+    padding: 0rem 1.5rem 0rem 1.5rem;
+}
+
+div.information-box-top-row h3,
+div.information-box-top-row div {
+    padding: 0;
+}
+
 .location-address {
     font-size: 1.4rem;
     overflow-wrap: anywhere;}
