@@ -602,6 +602,7 @@ footer p {
     .location-image {
         margin: 0;
         max-height: 20vh;
+        margin-bottom: 3rem;
     }
 
     div.search-box div {
