@@ -175,7 +175,8 @@ section.landing-page {
 }
 
 .h1-link {
-    color: #F9F9F9;;
+    color: #F9F9F9;
+    background-color: #F39237;
     border-radius: 3.5rem;
     padding: .5rem 2rem;  
     line-height: 3rem;
