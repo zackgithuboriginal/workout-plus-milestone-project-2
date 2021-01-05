@@ -22,7 +22,7 @@ let gymDOM = {
  * It initialises the map with desired settings and sets the detault location to Dublin, Ireland 
  */
 function initMap() {
-    infoWindow = new google.maps.InfoWindow;
+    infoWindow = new google.maps.InfoWindow();
     currentInfoWindow = infoWindow;
     geocoder = new google.maps.Geocoder();
     mapLocation = { lat: 53.3498, lng: -6.2603 };
@@ -88,7 +88,7 @@ function createCountryOptions(results) {
  */
 function setAutocompleteCountry() {
     const targetCountry = selectTarget.value;
-    if (country == "all") {
+    if (targetCountry === "all") {
         autocomplete.setComponentRestrictions({ country: [] });
     } else {
         autocomplete.setComponentRestrictions({ country: targetCountry });
@@ -122,7 +122,7 @@ $(document).ready(function () {
 function searchAddress() {
     let address = document.getElementById("address-input").value;
     geocoder.geocode({ "address": address }, function (results, status) {
-        if (status == "OK") {
+        if (status === "OK") {
             repositionMap(results[0].geometry.location);
         } else {
             console.log("Geocode was not successful for the following reason: " + status);
@@ -136,6 +136,7 @@ function searchAddress() {
  * Makes a request to the user to use their IP address as the coordinates for a map search
  */
 function getGeoLocation() {
+    let userLocation;
     if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(position => {
             userLocation = {
@@ -169,7 +170,7 @@ function findLocalGyms(userLocation) {
  * This function takes the results of the nearbySearch request and calls a function to place a marker on each one
  */
 function markLocations(results, status) {
-    if (status == google.maps.places.PlacesServiceStatus.OK) {
+    if (status === google.maps.places.PlacesServiceStatus.OK) {
         for (var i = 0; i < results.length; i++) {
             createMarker(results[i]);
         }
@@ -190,7 +191,7 @@ function createMarker(gym) {
             fillColor: "#F39237",
             fillOpacity: 1,
             strokeWeight: 0,
-            scale: .075
+            scale: 0.075
         }
     });
     currentMarkers.push(marker);
@@ -217,7 +218,7 @@ function createMarker(gym) {
  * it also calls a function to display the full gym details in the sidebar
  */
 function displayDetails(placeResult, marker, status) {
-    if (status == google.maps.places.PlacesServiceStatus.OK) {
+    if (status === google.maps.places.PlacesServiceStatus.OK) {
         let placeInfowindow = new google.maps.InfoWindow();
         placeInfowindow.setContent('<div>' + '<span class="gym-info-title">' + placeResult.name + '</span>' + '</div>');
         placeInfowindow.open(marker.map, marker);
@@ -245,9 +246,12 @@ function showGymDetails(gym) {
         renderAltValue("website");
     }
     for (const prop in gym) {
-        renderGymDetail(prop, gym[prop]);
+        if(gym.hasOwnProperty(prop)) {
+            renderGymDetail(prop, gym[prop]);
+        }
     }
 }
+
 
 /**
  * This function takes the gym location object and loops through each property that it is looking for, rendering a html element using the values as the html attributes
