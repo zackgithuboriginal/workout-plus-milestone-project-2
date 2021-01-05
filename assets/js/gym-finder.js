@@ -1,14 +1,13 @@
 //initialising variables
 let map;
 let mapLocation;
-let service;   
+let service;
 let infoWindow;
 let currentInfoWindow;
 let geocoder;
-let options;
 let autocomplete;
 let currentMarkers = [];
-let gymDetails = $("#information-box")
+let gymDetails = $("#information-box");
 let selectTarget = document.getElementById("country");
 let gymDOM = {
     name: document.querySelector(".location-name"),
@@ -16,22 +15,22 @@ let gymDOM = {
     rating: document.querySelector(".location-rating"),
     website: document.querySelector(".location-website"),
     photos: document.querySelector(".location-image")
-}
+};
 
 function parseCountryCodes() {
     Papa.parse("assets/data/country-codes.csv", {
         download: true,
         complete: function(results){
-            createCountryOptions(results.data)
+            createCountryOptions(results.data);
         }
     });
-};
+}
 
 function createCountryOptions(results){
     for(i=0; i<results.length; i++){
-        let newOption = document.createElement("option")
-        newOption.innerText = results[i][1]
-        newOption.value = results[i][0]
+        let newOption = document.createElement("option");
+        newOption.innerText = results[i][1];
+        newOption.value = results[i][0];
         selectTarget.append(newOption);
     }
 }
@@ -49,7 +48,7 @@ function initMap() {
         streetViewControl: false,
         rotateControl: false,
         fullscreenControl: false,
-        mapId: '6be0d83f76395e4'
+        mapId: "6be0d83f76395e4"
     });
     parseCountryCodes();
     document.getElementById("country").addEventListener("change", setAutocompleteCountry);
@@ -57,19 +56,19 @@ function initMap() {
 // Handles autocomplete requests on address input
     let input = document.getElementById("address-input");
     autocomplete = new google.maps.places.Autocomplete(input, {
-        types: ['address']
+        types: ["address"]
     });
-    google.maps.event.addListener(autocomplete, 'place_changed', function () {
+    google.maps.event.addListener(autocomplete, "place_changed", function () {
             let place=autocomplete.getPlace();
             if (!place.geometry){
                 return;
             }
             else if (place.geometry) {
-                repositionMap(place.geometry.location)
+                repositionMap(place.geometry.location);
             }
         });
     findLocalGyms(mapLocation);
-};
+}
 
 function setAutocompleteCountry() {
   const targetCountry = selectTarget.value;
@@ -88,7 +87,7 @@ function repositionMap(mapLocation) {
 
 // Listens to the search input form and returns false on submission to prevent the page from refreshing
 $(document).ready(function() {
-    $(document).on('submit', '#address-form', function() {
+    $(document).on("submit", "#address-form", function() {
         searchAddress();
         return false;
      });
@@ -96,14 +95,14 @@ $(document).ready(function() {
 
 // Handles geocoder request
 function searchAddress() {
-    let address = document.getElementById('address-input').value;
-    geocoder.geocode({'address': address}, function(results, status) {
-      if (status == 'OK') {
+    let address = document.getElementById("address-input").value;
+    geocoder.geocode({"address": address}, function(results, status) {
+      if (status == "OK") {
         repositionMap(results[0].geometry.location);
       } else {
-        console.log('Geocode was not successful for the following reason: ' + status);
+        console.log("Geocode was not successful for the following reason: " + status);
       }
-        document.getElementById('address-input').value="";
+        document.getElementById("address-input").value="";
     });
 }
 
@@ -114,7 +113,7 @@ function getGeoLocation() {
            userLocation = {
                lat: position.coords.latitude,
                lng: position.coords.longitude
-           }
+           };
            repositionMap(userLocation);
         });
     }
@@ -125,14 +124,14 @@ function getGeoLocation() {
     let request = {
         location: userLocation,
         rankBy: google.maps.places.RankBy.DISTANCE,
-        keyword: 'gym'
+        keyword: "gym"
     };
 
     service = new google.maps.places.PlacesService(map);
     service.nearbySearch(request, markLocations);
 
     deleteMarkers();
-};
+}
 
 // Callback function for nearbySearch method, loops through results
 function markLocations(results, status) {
@@ -151,7 +150,7 @@ function createMarker(gym) {
       position: gym.geometry.location,
       icon: {
         path: "M172.268 501.67C26.97 291.031 0 269.413 0 192 0 85.961 85.961 0 192 0s192 85.961 192 192c0 77.413-26.97 99.031-172.268 309.67-9.535 13.774-29.93 13.773-39.464 0zM192 272c44.183 0 80-35.817 80-80s-35.817-80-80-80-80 35.817-80 80 35.817 80 80 80z",
-        fillColor: '#F39237',
+        fillColor: "#F39237",
         fillOpacity: 1,
         strokeWeight: 0,
         scale: .075
@@ -168,8 +167,8 @@ function createMarker(gym) {
     };
 
     service.getDetails(request, (placeResult, status) => {
-        displayDetails(placeResult, marker, status)
-    })
+        displayDetails(placeResult, marker, status);
+    });
 });
 }
 
@@ -196,7 +195,7 @@ function showGymDetails(gym) {
         renderAltValue("rating");
     }
     if(!gym.website){
-        renderAltValue("website")
+        renderAltValue("website");
     }
     for (const prop in gym) {
         renderGymDetail(prop, gym[prop]);
@@ -209,7 +208,7 @@ function renderGymDetail(property, value) {
         if(property === "photos") {
             for(i=0; i<value.length; i++){
                 if(value[i].height < value[i].width){
-                    DOMTarget.alt = `Photo of location`
+                    DOMTarget.alt = `Photo of location`;
                     DOMTarget.src = value[i].getUrl();
                     break;
                 } else if(i === value.length){
@@ -220,14 +219,14 @@ function renderGymDetail(property, value) {
         }   else if(property === "website") {
             DOMTarget.innerHTML = value;
             DOMTarget.href = value;
-            DOMTarget.classList.remove("website-unavailable")
+            DOMTarget.classList.remove("website-unavailable");
             document.getElementById("website-alternative").classList.add("website-unavailable");
         }   else {
             DOMTarget.textContent = value;
         }
         
     }
-    gymDetails.css("display", "inline-block")
+    gymDetails.css("display", "inline-block");
 }
 
 
@@ -239,16 +238,16 @@ function renderAltValue(property) {
             } else if(property === "website"){
                 DOMTarget.innerHTML = "No available website";
                 DOMTarget.href = "";
-                DOMTarget.classList.add("website-unavailable")
+                DOMTarget.classList.add("website-unavailable");
                 document.getElementById("website-alternative").classList.remove("website-unavailable");
             } else if(property === "rating"){
-                DOMTarget.textContent = "Not yet rated."
+                DOMTarget.textContent = "Not yet rated.";
             }
         }
 
 //Hides the gym details section when button is clicked
 function hideInformation() {
-    gymDetails.css("display", "none")
+    gymDetails.css("display", "none");
 }
 
 //Handles the clearing of the existing markers array, calls function to clear markers from map
