@@ -25,7 +25,7 @@ function initMap() {
     infoWindow = new google.maps.InfoWindow;
     currentInfoWindow = infoWindow;
     geocoder = new google.maps.Geocoder();
-    mapLocation =  {lat: 53.3498, lng: -6.2603};
+    mapLocation = { lat: 53.3498, lng: -6.2603 };
     map = new google.maps.Map(document.getElementById("map"), {
         center: mapLocation,
         zoom: 15,
@@ -35,25 +35,25 @@ function initMap() {
         fullscreenControl: false,
         mapId: "6be0d83f76395e4"
     });
-/**  This section calls the function to populate the country selection list and places an event listener to listen for a coutnry selection */
+    /**  This section calls the function to populate the country selection list and places an event listener to listen for a coutnry selection */
     parseCountryCodes();
     document.getElementById("country").addEventListener("change", setAutocompleteCountry);
 
-/** This section handles autocomplete requests on address input field input */ 
+    /** This section handles autocomplete requests on address input field input */
     let input = document.getElementById("address-input");
     autocomplete = new google.maps.places.Autocomplete(input, {
         types: ["address"]
     });
     google.maps.event.addListener(autocomplete, "place_changed", function () {
-            let place=autocomplete.getPlace();
-            if (!place.geometry){
-                return;
-            }
-            else if (place.geometry) {
-                repositionMap(place.geometry.location);
-            }
-        });
-/** It calls a function to request a place request on the default map location */
+        let place = autocomplete.getPlace();
+        if (!place.geometry) {
+            return;
+        }
+        else if (place.geometry) {
+            repositionMap(place.geometry.location);
+        }
+    });
+    /** It calls a function to request a place request on the default map location */
     findLocalGyms(mapLocation);
 }
 
@@ -64,7 +64,7 @@ function initMap() {
 function parseCountryCodes() {
     Papa.parse("assets/data/country-codes.csv", {
         download: true,
-        complete: function(results){
+        complete: function (results) {
             createCountryOptions(results.data);
         }
     });
@@ -73,8 +73,8 @@ function parseCountryCodes() {
 /**
  * This function processes each country object and outputs the data as html option elements for a select input field
  */
-function createCountryOptions(results){
-    for(i=0; i<results.length; i++){
+function createCountryOptions(results) {
+    for (i = 0; i < results.length; i++) {
         let newOption = document.createElement("option");
         newOption.innerText = results[i][1];
         newOption.value = results[i][0];
@@ -87,12 +87,12 @@ function createCountryOptions(results){
  * It sets the autocomplete country restriction to the chosen value
  */
 function setAutocompleteCountry() {
-  const targetCountry = selectTarget.value;
-  if (country == "all") {
-    autocomplete.setComponentRestrictions({ country: [] });
-  } else {
-    autocomplete.setComponentRestrictions({ country: targetCountry });
-  }
+    const targetCountry = selectTarget.value;
+    if (country == "all") {
+        autocomplete.setComponentRestrictions({ country: [] });
+    } else {
+        autocomplete.setComponentRestrictions({ country: targetCountry });
+    }
 }
 
 /**
@@ -108,11 +108,11 @@ function repositionMap(mapLocation) {
  * This function listens to the search input form and stops the page refreshing on form submission
  * It also calls a function to handle the value input in the form in case an autocomplete option is not selected
  */
-$(document).ready(function() {
-    $(document).on("submit", "#address-form", function() {
+$(document).ready(function () {
+    $(document).on("submit", "#address-form", function () {
         searchAddress();
         return false;
-     });
+    });
 });
 
 /**
@@ -121,13 +121,13 @@ $(document).ready(function() {
  */
 function searchAddress() {
     let address = document.getElementById("address-input").value;
-    geocoder.geocode({"address": address}, function(results, status) {
-      if (status == "OK") {
-        repositionMap(results[0].geometry.location);
-      } else {
-        console.log("Geocode was not successful for the following reason: " + status);
-      }
-        document.getElementById("address-input").value="";
+    geocoder.geocode({ "address": address }, function (results, status) {
+        if (status == "OK") {
+            repositionMap(results[0].geometry.location);
+        } else {
+            console.log("Geocode was not successful for the following reason: " + status);
+        }
+        document.getElementById("address-input").value = "";
     });
 }
 
@@ -136,13 +136,13 @@ function searchAddress() {
  * Makes a request to the user to use their IP address as the coordinates for a map search
  */
 function getGeoLocation() {
-    if(navigator.geolocation) {
+    if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(position => {
-           userLocation = {
-               lat: position.coords.latitude,
-               lng: position.coords.longitude
-           };
-           repositionMap(userLocation);
+            userLocation = {
+                lat: position.coords.latitude,
+                lng: position.coords.longitude
+            };
+            repositionMap(userLocation);
         });
     }
 }
@@ -152,7 +152,7 @@ function getGeoLocation() {
  * Calls a function to create markers on each result location
  * Also calls function to clears previous markers to prevent the map becoming populated with unecessary markers
  */
-  function findLocalGyms(userLocation) {
+function findLocalGyms(userLocation) {
     let request = {
         location: userLocation,
         rankBy: google.maps.places.RankBy.DISTANCE,
@@ -169,8 +169,8 @@ function getGeoLocation() {
  * This function takes the results of the nearbySearch request and calls a function to place a marker on each one
  */
 function markLocations(results, status) {
-    if(status == google.maps.places.PlacesServiceStatus.OK){
-        for(var i = 0; i<results.length; i++){
+    if (status == google.maps.places.PlacesServiceStatus.OK) {
+        for (var i = 0; i < results.length; i++) {
             createMarker(results[i]);
         }
     }
@@ -182,34 +182,34 @@ function markLocations(results, status) {
  */
 function createMarker(gym) {
     let marker = new google.maps.Marker({
-      map: map,
-      title: gym.name,
-      position: gym.geometry.location,
-      icon: {
-        path: "M172.268 501.67C26.97 291.031 0 269.413 0 192 0 85.961 85.961 0 192 0s192 85.961 192 192c0 77.413-26.97 99.031-172.268 309.67-9.535 13.774-29.93 13.773-39.464 0zM192 272c44.183 0 80-35.817 80-80s-35.817-80-80-80-80 35.817-80 80 35.817 80 80 80z",
-        fillColor: "#F39237",
-        fillOpacity: 1,
-        strokeWeight: 0,
-        scale: .075
-      }
+        map: map,
+        title: gym.name,
+        position: gym.geometry.location,
+        icon: {
+            path: "M172.268 501.67C26.97 291.031 0 269.413 0 192 0 85.961 85.961 0 192 0s192 85.961 192 192c0 77.413-26.97 99.031-172.268 309.67-9.535 13.774-29.93 13.773-39.464 0zM192 272c44.183 0 80-35.817 80-80s-35.817-80-80-80-80 35.817-80 80 35.817 80 80 80z",
+            fillColor: "#F39237",
+            fillOpacity: 1,
+            strokeWeight: 0,
+            scale: .075
+        }
     });
     currentMarkers.push(marker);
 
 
-/** 
- * Upon clicking a marker this will request properties of the place object and call a function to display them
- * */
+    /** 
+     * Upon clicking a marker this will request properties of the place object and call a function to display them
+     * */
     google.maps.event.addListener(marker, 'click', () => {
-    let request = {
-    placeId: gym.place_id,
-    fields: ['name', 'formatted_address', 'geometry', 'rating',
-        'website', 'photos']
-    };
+        let request = {
+            placeId: gym.place_id,
+            fields: ['name', 'formatted_address', 'geometry', 'rating',
+                'website', 'photos']
+        };
 
-    service.getDetails(request, (placeResult, status) => {
-        displayDetails(placeResult, marker, status);
+        service.getDetails(request, (placeResult, status) => {
+            displayDetails(placeResult, marker, status);
+        });
     });
-});
 }
 
 /**
@@ -235,13 +235,13 @@ function displayDetails(placeResult, marker, status) {
  * For all other fields it calls a function to render the specific information
  */
 function showGymDetails(gym) {
-    if(!gym.photos){
+    if (!gym.photos) {
         renderAltValue("photos");
     }
-    if(!gym.rating){
+    if (!gym.rating) {
         renderAltValue("rating");
     }
-    if(!gym.website){
+    if (!gym.website) {
         renderAltValue("website");
     }
     for (const prop in gym) {
@@ -253,31 +253,31 @@ function showGymDetails(gym) {
  * This function takes the gym location object and loops through each property that it is looking for, rendering a html element using the values as the html attributes
  */
 function renderGymDetail(property, value) {
-    if(gymDOM[property]){
+    if (gymDOM[property]) {
         let DOMTarget = gymDOM[property];
-/** If the property is photos it will loop through the photos until it finds one with a landscape orientation, if it cannot it will render the default image */
-        if(property === "photos") {
-            for(i=0; i<value.length; i++){
-                if(value[i].height < value[i].width){
+        /** If the property is photos it will loop through the photos until it finds one with a landscape orientation, if it cannot it will render the default image */
+        if (property === "photos") {
+            for (i = 0; i < value.length; i++) {
+                if (value[i].height < value[i].width) {
                     DOMTarget.alt = `Photo of location`;
                     DOMTarget.src = value[i].getUrl();
                     break;
-                } else if(i === value.length){
+                } else if (i === value.length) {
                     DOMTarget.alt = "Alternative image";
                     DOMTarget.src = "/assets/images/workout-plus.png";
                 }
             }
-        }   else if(property === "website") {
+        } else if (property === "website") {
             DOMTarget.innerHTML = value;
             DOMTarget.href = value;
             DOMTarget.classList.remove("website-unavailable");
             document.getElementById("website-alternative").classList.add("website-unavailable");
-        }   else {
+        } else {
             DOMTarget.textContent = value;
         }
-        
+
     }
-/** This section changes to the CSS attribute of the element so that it will display on the webpage */
+    /** This section changes to the CSS attribute of the element so that it will display on the webpage */
     gymDetails.css("display", "inline-block");
 }
 
@@ -286,21 +286,21 @@ function renderGymDetail(property, value) {
  * It assigns premade default attributes to the HTML element
  */
 function renderAltValue(property) {
-        let DOMTarget = gymDOM[property];
-            if(property === "photos") {
-                DOMTarget.alt = "Alternative image";
-                DOMTarget.src = "assets/images/workout-plus.png";
-            } else if(property === "website"){
-                DOMTarget.innerHTML = "No available website";
-                DOMTarget.href = "";
-                DOMTarget.classList.add("website-unavailable");
-                document.getElementById("website-alternative").classList.remove("website-unavailable");
-            } else if(property === "rating"){
-                DOMTarget.textContent = "Not yet rated.";
-            }
-        }
+    let DOMTarget = gymDOM[property];
+    if (property === "photos") {
+        DOMTarget.alt = "Alternative image";
+        DOMTarget.src = "assets/images/workout-plus.png";
+    } else if (property === "website") {
+        DOMTarget.innerHTML = "No available website";
+        DOMTarget.href = "";
+        DOMTarget.classList.add("website-unavailable");
+        document.getElementById("website-alternative").classList.remove("website-unavailable");
+    } else if (property === "rating") {
+        DOMTarget.textContent = "Not yet rated.";
+    }
+}
 
-        
+
 /** This function changes the CSS attribute of the gym details element to hide it if the HTML button is clicked */
 function hideInformation() {
     gymDetails.css("display", "none");
@@ -310,16 +310,16 @@ function hideInformation() {
  * This function clears the list of current markers and calls a function to clear the markers appearing on the map
  */
 function deleteMarkers() {
-  setMapOnAll(null);
-  currentMarkers = [];
+    setMapOnAll(null);
+    currentMarkers = [];
 }
 
 /**
  * This function loops through the list of current markers and sets their location to null removing them from the map
  */
 function setMapOnAll(map) {
-  for (let i = 0; i < currentMarkers.length; i++) {
-    currentMarkers[i].setMap(map);
-  }
+    for (let i = 0; i < currentMarkers.length; i++) {
+        currentMarkers[i].setMap(map);
+    }
 }
 
