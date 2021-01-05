@@ -24,6 +24,28 @@ body {
     color: #F39237;
 }
 
+/* font sizes */
+.font-size-xl-scale,
+.font-size-xl {
+    font-size: 4rem;
+}
+
+.font-size-l {
+    font-size: 3rem;
+}
+
+.font-size-md {
+    font-size: 2rem;
+}
+
+.font-size-s {
+    font-size: 1.8rem;
+}
+
+.font-size-xs {
+    font-size: 1.6rem;
+}
+
 /* navbar styling */
 nav.navbar {
     z-index: 15;
@@ -62,7 +84,6 @@ ul.navbar-nav.nav {
 }
 
 .navbar .nav-item a.nav-link {
-    font-size: 2rem;
     color: #F9F9F9;
     padding: 0 3px;
     text-align: center;
@@ -98,11 +119,6 @@ ul div {
     width: 2.8rem;
 }
 
-.navbar a.navbar-brand,
-.navbar-toggler {
-    font-size: 2.8rem;
-}
-
 /* landing page styling */
 .landing-page div.landing-information {
     position: absolute;
@@ -126,9 +142,8 @@ section.landing-page {
     overflow-y: auto;
 }
 
-.landing-page-heading {
+h1.landing-page-heading {
     font-family: 'Raleway', sans-serif;
-    font-size: 3.5rem;
     color: #F9F9F9;
     position: relative;
     margin-top: 5rem;
@@ -187,7 +202,6 @@ section.landing-page {
 }
 
 .h1-link i {
-    font-size: 3rem;
     margin-left: 1rem;
 }
 
@@ -201,7 +215,6 @@ section.landing-page {
     position: absolute;
     border-top: #F39237 2px solid;
     top: 55vh;
-    font-size: 2rem;
     font-weight: 500;
     text-align: left;
     color: #1E3231;
@@ -209,9 +222,8 @@ section.landing-page {
 }
 
 /* map styling */
-.gym-finder-heading {
+h1.gym-finder-heading {
     font-family: 'Raleway', sans-serif;
-    font-size: 4rem;
     color: #F39237;
     text-align:center;
 }
@@ -249,16 +261,17 @@ div.search-box {
 
 div.search-box h2 {
     padding-left: 0;
-    font-size: 2.2rem;
     font-weight: 600;
     font-family: 'Raleway', sans-serif;
 }
-
+ 
+.gym-info-title {
+    font-size: 1.8rem;
+}
 .search-box .justify-content-between h3 {
     padding: 0;
     color: #F39237;
     text-decoration: underline;
-    font-size: 1.6rem;
     cursor: pointer;
 }
 
@@ -270,13 +283,7 @@ div.search-box h2 {
     padding-top: 1.5rem;
 }
 
-
-.gym-info-title {
-    font-size: 1.8rem;
-}
-
 .gym-search-btn-straight-edge {
-    font-size: 2rem;
     padding: .4rem 2rem;
     font-family: 'Montserrat';
     background-color: #F39237;
@@ -304,18 +311,17 @@ div.search-box h2 {
     padding: 0;
     margin: 0;
     height: 2.8rem;
-    font-size: 1.8rem;
     max-width: 100%;
     border: none;
     background-color: #F9F9F9;
     box-shadow: 0 .2rem rgba(33, 37, 41, 0.1);
     margin-bottom: 1rem;
     cursor: pointer;
-}
+} 
 
 select#country option {
+    font-size: 1.6rem;
     max-width: 100%;
-    font-size: 1.5rem;
     padding: 0;
 }
 
@@ -340,9 +346,6 @@ select#country option {
     display: flex;
 }
 
-#website-alternative {
-    font-size: 1.4rem;
-}
 
 .website-unavailable {
     display: none;
@@ -362,11 +365,14 @@ select#country option {
     cursor: pointer;
     padding:0;
     color: #F39237;
-    font-size: 2rem;
     line-height: 2.2rem;
     transition: .2s ease-in;
     width: 100%;
     height: 100%;
+}
+
+.close-gym-information-btn i:hover {
+    font-size: 2rem;
 }
 
 .gym-image-container {
@@ -379,9 +385,6 @@ select#country option {
     display: flex;
 }
 
-.close-gym-information-btn i:hover {
-    font-size: 2.4rem;
-}
 
 #address-form {
     margin: 0;
@@ -389,21 +392,18 @@ select#country option {
 
 .gym-info-icon {
     color: #F39237;
-    font-size: 1.4rem;
     margin-right: 1rem;
     float:left;
 }
 
 .location-name {
     letter-spacing: .1rem;
-    font-size:2rem;
     font-weight: 500;
     font-family: 'Raleway', sans-serif;
 }
 
 .location-rating {
     padding: 0;
-    font-size: 1.4rem;
     font-family: 'Montserrat', sans-serif;
 }
 
@@ -431,11 +431,9 @@ div.information-box-top-row div {
 }
 
 .location-address {
-    font-size: 1.4rem;
     overflow-wrap: anywhere;}
 
 .location-website {
-    font-size: 1.4rem;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -443,7 +441,6 @@ div.information-box-top-row div {
 
 input#address-input {
     height: 2.8rem;
-    font-size: 1.8rem;
     width: auto;
     min-width: 15rem;
     padding-left: .5rem;
@@ -479,7 +476,6 @@ footer {
 
 footer p {
     padding-top: 1.2rem;
-    font-size: 1.6rem;
     line-height:1.6rem;
 }
 
@@ -489,9 +485,9 @@ footer p {
     margin-left: 2rem;
     }
 
-    .page-heading h1 {
-        font-size:5rem;
-    }
+    .font-size-xl-scale {
+    font-size: 5rem;
+}
 }
 
 @media(min-width: 768px) {
@@ -599,7 +595,6 @@ footer p {
         width:90%;
         left:5%;
         color:#1E3231;
-        font-size: 4.2rem;
         height: auto;
     }
 
@@ -609,7 +604,6 @@ footer p {
         width:90%;
         left:5%;
         border: none;
-        font-size: 2.2rem;
         margin-top: 12rem;
     }
 

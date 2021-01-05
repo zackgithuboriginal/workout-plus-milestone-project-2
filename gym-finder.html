@@ -16,18 +16,18 @@
 <body>
     <!--===============================    Navbar           ===============================-->
     <nav class="navbar navbar-expand-md navbar-light bg-color-primary row justify-content-between">
-        <a class="navbar-brand font-color-light col" href="index.html">Workout Plus</a>
-        <button class="navbar-toggler col" type="button" data-toggle="collapse" data-target="#navbarCollapseTarget"
+        <a class="navbar-brand font-color-light col font-size-l" href="index.html">Workout Plus</a>
+        <button class="navbar-toggler col font-size-l" type="button" data-toggle="collapse" data-target="#navbarCollapseTarget"
             aria-controls="navbarCollapseTarget" aria-expanded="false" aria-label="Toggle navigation">
             <span class="font-color-light"><i class="fas fa-bars fa-1x"></i></span>
         </button>
         <ul class="collapse navbar-collapse col-md navbar-nav nav bg-color font-color-light" id="navbarCollapseTarget">
             <div class="">
                 <li class="nav-item">
-                    <a class="nav-link" href="index.html" aria-label="Home Page Link">Home</a>
+                    <a class="nav-link font-size-md" href="index.html" aria-label="Home Page Link">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link text-nowrap active" href="gym-finder.html" aria-label="Gym Finder Link">Gym
+                    <a class="nav-link text-nowrap active font-size-md" href="gym-finder.html" aria-label="Gym Finder Link">Gym
                         Finder</a>
                 </li>
             </div>
@@ -37,31 +37,31 @@
     <section class="map-section row justify-content-center">
         <div class="side-panel col-md-4">
             <div class="page-heading">
-                <h1 class="gym-finder-heading">Gym Finder</h1>
+                <h1 class="gym-finder-heading font-size-xl-scale">Gym Finder</h1>
             </div>
             <div class="search-box">
-                <h2>Search an area</h2>
+                <h2 class="font-size-md">Search an area</h2>
                 <div id="country-select" class="select-container">
-                    <select id="country" class="form-control" aria-label="Dropdown selection for country search">
+                    <select id="country" class="form-control font-size-s" aria-label="Dropdown selection for country search">
                         <option value="all" selected>Country: ex. Ireland</option>
                     </select>
                 </div>
                 <div class="address-search">
                     <form class="row justify-content-between" action="" id="address-form">
-                        <input id="address-input" class="col" type="text" placeholder="Address: ex. Dublin City"
+                        <input id="address-input" class="col font-size-s" type="text" placeholder="Address: ex. Dublin City"
                             required aria-label="Address Input Box">
-                        <button type="submit" class="gym-search-btn-straight-edge col"
-                            aria-label="Address Search Submit Button"><i class="fas fa-arrow-right"></i></button>
+                        <button type="submit" class="gym-search-btn-straight-edge col font-size-md"
+                            aria-label="Address Search Submit Button"><i class="fas fa-arrow-right font-size-s"></i></button>
                     </form>
                 </div>
                 <div class="row local-search justify-content-between">
-                    <h3 class="col" onclick="getGeoLocation()" aria-label="Activate Browser GeoLocation">Use device's
+                    <h3 class="col font-size-xs" onclick="getGeoLocation()" aria-label="Activate Browser GeoLocation">Use device's
                         location</h3>
                 </div>
             </div>
             <div id="information-box" class="justify-content-center">
                 <div class="information-box-top-row row justify-content-between">
-                    <h3 class="location-name col-11"></h3>
+                    <h3 class="location-name col-11 font-size-s"></h3>
                     <div class="close-gym-information-btn col-1"><i class="fas fa-times" onclick="hideInformation()"
                             aria-label="Close Gym Details"></i></div>
                 </div>
@@ -71,16 +71,16 @@
                     </div>
                     <div class="gym-details-container col-xl-6 ">
                         <div class="location-information-row">
-                            <i class="gym-info-icon fas fa-star"></i>
-                            <p class="location-rating"></p>
+                            <i class="gym-info-icon fas fa-star font-size-xs"></i>
+                            <p class="location-rating font-size-xs"></p>
                         </div>
                         <div class="location-information-row">
-                            <i class="gym-info-icon fas fa-map-signs"></i>
-                            <p class="location-address"></p>
+                            <i class="gym-info-icon fas fa-map-signs font-size-xs"></i>
+                            <p class="location-address font-size-xs"></p>
                         </div>
                         <div class="location-information-row">
-                            <i class="gym-info-icon fas fa-desktop"></i><a class="location-website" target="_blank"></a>
-                            <p id="website-alternative" class="website-unavailable">No available website</p>
+                            <i class="gym-info-icon fas fa-desktop font-size-xs"></i><a class="location-website  font-size-xs" target="_blank"></a>
+                            <p id="website-alternative" class="website-unavailable font-size-xs">No available website</p>
                         </div>
                     </div>
                 </div>
@@ -90,7 +90,7 @@
     </section>
     <!--===============================    Footer           ===============================-->
     <footer class="page-footer container-fluid">
-        <p class="justify-content-center text-center font-color-light">workout plus - Zack Gibbons</p>
+        <p class="justify-content-center text-center font-color-light font-size-xs">workout plus - Zack Gibbons</p>
     </footer>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
