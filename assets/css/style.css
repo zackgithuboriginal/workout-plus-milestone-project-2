@@ -482,12 +482,12 @@ footer p {
 /* media queries */
 @media(min-width: 1100px) {
     .gym-search-btn-straight-edge {
-    margin-left: 2rem;
+        margin-left: 2rem;
     }
 
     .font-size-xl-scale {
-    font-size: 5rem;
-}
+        font-size: 5rem;
+    }
 }
 
 @media(min-width: 768px) {
@@ -506,7 +506,7 @@ footer p {
         bottom:0;
     }
 
-    /* Navbar Styling */
+/* Navbar Styling */
     .navbar .nav-item a.nav-link {
         color: #F9F9F9;
         border-color:#F9F9F9;
@@ -553,7 +553,7 @@ footer p {
         justify-content: end;
     }
 
-    /* Landing Page Styling */
+/* Landing Page Styling */
     section.landing-page {
         height: 100%;
         padding-bottom: 4rem;
@@ -607,7 +607,7 @@ footer p {
         margin-top: 12rem;
     }
 
-    /* Gym Finder Styling */
+/* Gym Finder Styling */
     div.side-panel.col-md-4 {
         padding: 0 2rem;
         width: 30rem;
