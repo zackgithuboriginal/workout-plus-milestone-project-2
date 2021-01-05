@@ -1,4 +1,4 @@
-#Workout Plus - Milestone Project 2
+# Workout Plus - Milestone Project 2
 
 ![Image of Landing Page](https://github.com/zackgithuboriginal/workout-plus-milestone-project-2/blob/master/assets/images/multi-screen-display.PNG)
 
@@ -27,7 +27,7 @@ The purpose of the website is to connect visitors with potential exercise locati
 #### Design Overview
 The main principles behind the design of the website was to create a space that was easy to navigate, that offered clear and easy to understand information and easy to use. The driving force behind the design was my desire to create a website that melded high energy colour and imagery with clear and legible information and an immediately understandable structure.
 #### Colour Scheme
-The colour scheme is quite simple, essentially consisting of only three colours. The primary colour, which is used frequently throughout the design is #f!!F!. This is a very strong and eye-catching colour that conveys the sense of energy and activity that I wanted to associate with the website. I believe that by using an energetic colour in this manner it will help to build the identity of the website as well as subconsciously create a link between the website and the energetic activities involved in exercising in the mind of any visitor to the site. The other two colours in use are #fasfASF and #FEFW, and they used for accent and contrasting purposes. #ASFAF is a shade of dark – grey navy and I find that it stands out quite well against both the white background of certain sections and the reduced opacity #FAFAF which is used as a background colour in other sections. #ASFAF is therefore used as the primary font colour for most instances of text on the website as I believe it to be more comfortable and easy on the eyes than a typical black font colour. #FEFW is an offwhite shade that is used as a text colour for navbar elements and any links or CTA buttons. Reserving this colour only for actionable elements helps a visitor to understand the navigation and structure of the site more quickly and easily as they can identify clickable links just through their colour.
+The colour scheme is quite simple, essentially consisting of only three colours. The primary colour, which is used frequently throughout the design is #F39237. This is a very strong and eye-catching colour that conveys the sense of energy and activity that I wanted to associate with the website. I believe that by using an energetic colour in this manner it will help to build the identity of the website as well as subconsciously create a link between the website and the energetic activities involved in exercising in the mind of any visitor to the site. The other two colours in use are #F9F9F9 and #1E3231, and they used for accent and contrasting purposes. #1E3231 is a shade of dark – grey navy and I find that it stands out quite well against both the white background of certain sections and the reduced opacity #F39237 which is used as a background colour in other sections. #1E3231 is therefore used as the primary font colour for most instances of text on the website as I believe it to be more comfortable and easy on the eyes than a typical black font colour. #F9F9F9 is an offwhite shade that is used as a text colour for navbar elements and any links or CTA buttons. Reserving this colour only for actionable elements helps a visitor to understand the navigation and structure of the site more quickly and easily as they can identify clickable links just through their colour.
 ![Image of the colour scheme](https://github.com/zackgithuboriginal/workout-plus-milestone-project-2/blob/master/assets/images/workout-plus-colour-scheme.png)
 
 
@@ -36,21 +36,24 @@ There are two fonts used in the website. The first, Montserrat is a very minimal
 #### Imagery
 There are not a lot of images used in the design of the website. The most notable example, however, is the background image of the landing page. This is an energetic image of a man in the process of working out. This image I believe is very effective at setting the tone and further reinforcing the theme and purpose of the website alongside the name and general branding. This image ties in with the theming of the design well, evoking high energy but by overlaying a low opacity screen on it does not overpower the page.
 Additionally, whenever a user selects a gym on the map, an image of the gym is supplied in the additional information section. Using JavaScript I was able to access the photos attached to the location in the Google Places Library, and then loop through the images until one with a suitable landscape orientation was encountered. This image is then be displayed alongside the other location details and with the screening process, the layout and display of information would be consistent and clear while clicking between different locations. I believe that this was necessary to not only maintain the neat display of information but to provide a pleasurable experience to the user, as they clicked through different gyms to compare their details and appearance.
-In the event that a location did not have any images associated with it in the Google Places Library or that it did not have any available images in the correct orientation. A simple placeholder image is used. This image, created by me, contains the text “No Image Available” with a background colour of #FAFAFAFAFAAF to maintain the site’s consistent theme while also informing the user for the reason that no image is displayed as I believe that this provides a better user experience than just displaying a blank space.
+In the event that a location did not have any images associated with it in the Google Places Library or that it did not have any available images in the correct orientation. A simple placeholder image is used. This image, created by me, contains the text “No Image Available” with a background colour of #F39237 to maintain the site’s consistent theme while also informing the user for the reason that no image is displayed as I believe that this provides a better user experience than just displaying a blank space.
 
 ### Wireframes
 
 The wireframes for the website were developed using [Figma](https://www.figma.com/) 
 
- -   Landing Page Wireframe - [View]()
+ -   Landing Page Wireframe - [View](https://github.com/zackgithuboriginal/workout-plus-milestone-project-2/blob/master/assets/wireframes/landing-page-desktop-wireframe.png)
 
--   Landing Page - Mobile Wireframe - [View]()
+-   Landing Page - Mobile Wireframe - [View](https://github.com/zackgithuboriginal/workout-plus-milestone-project-2/blob/master/assets/wireframes/landing-page-mobile-wireframe.png)
 
- -   Gym Finder Wireframe - [View]()
+ -   Gym Finder Wireframe - [View](https://github.com/zackgithuboriginal/workout-plus-milestone-project-2/blob/master/assets/wireframes/gym-finder-desktop-wireframe.png)
 
- -   Gym Finder - Mobile Wireframe - [View]()
+ -   Gym Finder - Mobile Wireframe - [View](https://github.com/zackgithuboriginal/workout-plus-milestone-project-2/blob/master/assets/wireframes/gym-finder-mobile-wireframe.png)
 
 ## Features
+
+![Image of Gym Search Feature](https://github.com/zackgithuboriginal/workout-plus-milestone-project-2/blob/master/assets/images/gym-finder-application.png)
+The most important feature of the site is the gym finder application. The gym finder application allowsa user to search
 
 ## Technologies Used
 
@@ -121,9 +124,14 @@ The website was viewed and tested through the following browsers and devices:
 - A full range of sizes and devices using Chrome DevTools and [Responsive Viewer](https://chrome.google.com/webstore/detail/responsive-viewer/inmopeiepgfljkpkidclfgbgbmfcennb?hl=en)
 
 At the end of the project, the code was put through CSS and HTML validators to ensure there were no errors presented.
--   [Markup Validator](https://validator.w3.org/nu/) - [HTML Testing Results]()
--   [W3C CSS Validator](https://jigsaw.w3.org/css-validator/#validate_by_input) - [CSS Testing Results]()
 
+![Image of html validator for landing page](https://github.com/zackgithuboriginal/workout-plus-milestone-project-2/blob/master/assets/images/html-validator-index.PNG)
+
+![Image of html validator for gym finder](https://github.com/zackgithuboriginal/workout-plus-milestone-project-2/blob/master/assets/images/html-validator-gym-finder.png)
+
+![Image of css validator](https://github.com/zackgithuboriginal/workout-plus-milestone-project-2/blob/master/assets/images/css-validator.PNG)
+
+![Image of Js linter results](https://github.com/zackgithuboriginal/workout-plus-milestone-project-2/blob/master/assets/images/js-validator.PNG)
 ### Testing User Stories from User Experience (UX) Section
 
 - ### First Time Visitor Goals
