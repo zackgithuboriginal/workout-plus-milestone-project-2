@@ -1,4 +1,4 @@
-//initialising variables
+/** initialising variables */
 let map;
 let mapLocation;
 let service;
@@ -17,25 +17,10 @@ let gymDOM = {
     photos: document.querySelector(".location-image")
 };
 
-function parseCountryCodes() {
-    Papa.parse("assets/data/country-codes.csv", {
-        download: true,
-        complete: function(results){
-            createCountryOptions(results.data);
-        }
-    });
-}
-
-function createCountryOptions(results){
-    for(i=0; i<results.length; i++){
-        let newOption = document.createElement("option");
-        newOption.innerText = results[i][1];
-        newOption.value = results[i][0];
-        selectTarget.append(newOption);
-    }
-}
-
-// Handles the initial map creation
+/**
+ * This function is the callback function called on the load of Google maps api script
+ * It initialises the map with desired settings and sets the detault location to Dublin, Ireland 
+ */
 function initMap() {
     infoWindow = new google.maps.InfoWindow;
     currentInfoWindow = infoWindow;
@@ -50,10 +35,11 @@ function initMap() {
         fullscreenControl: false,
         mapId: "6be0d83f76395e4"
     });
+/**  This section calls the function to populate the country selection list and places an event listener to listen for a coutnry selection */
     parseCountryCodes();
     document.getElementById("country").addEventListener("change", setAutocompleteCountry);
 
-// Handles autocomplete requests on address input
+/** This section handles autocomplete requests on address input field input */ 
     let input = document.getElementById("address-input");
     autocomplete = new google.maps.places.Autocomplete(input, {
         types: ["address"]
@@ -67,9 +53,39 @@ function initMap() {
                 repositionMap(place.geometry.location);
             }
         });
+/** It calls a function to request a place request on the default map location */
     findLocalGyms(mapLocation);
 }
 
+/**
+ * The functions parses the CSV file containing full country list and associated country codes
+ * Outputs result object containing countries as individual objects
+ */
+function parseCountryCodes() {
+    Papa.parse("assets/data/country-codes.csv", {
+        download: true,
+        complete: function(results){
+            createCountryOptions(results.data);
+        }
+    });
+}
+
+/**
+ * This function processes each country object and outputs the data as html option elements for a select input field
+ */
+function createCountryOptions(results){
+    for(i=0; i<results.length; i++){
+        let newOption = document.createElement("option");
+        newOption.innerText = results[i][1];
+        newOption.value = results[i][0];
+        selectTarget.append(newOption);
+    }
+}
+
+/**
+ * This function is called when a country is selected
+ * It sets the autocomplete country restriction to the chosen value
+ */
 function setAutocompleteCountry() {
   const targetCountry = selectTarget.value;
   if (country == "all") {
@@ -79,13 +95,19 @@ function setAutocompleteCountry() {
   }
 }
 
-// Handles the repositioning of the map due to search or geolocation
+/**
+ * This function handles the respositioning of the map
+ * as a result of a search or a geolocation request
+ */
 function repositionMap(mapLocation) {
     map.setCenter(mapLocation);
     findLocalGyms(mapLocation);
 }
 
-// Listens to the search input form and returns false on submission to prevent the page from refreshing
+/**
+ * This function listens to the search input form and stops the page refreshing on form submission
+ * It also calls a function to handle the value input in the form in case an autocomplete option is not selected
+ */
 $(document).ready(function() {
     $(document).on("submit", "#address-form", function() {
         searchAddress();
@@ -93,7 +115,10 @@ $(document).ready(function() {
      });
 });
 
-// Handles geocoder request
+/**
+ * This function handles the geocoder request if an autocomplete option is not selected
+ * 
+ */
 function searchAddress() {
     let address = document.getElementById("address-input").value;
     geocoder.geocode({"address": address}, function(results, status) {
@@ -106,7 +131,10 @@ function searchAddress() {
     });
 }
 
-// Handles geolocation request
+/**
+ * This function handles a geolocation request using the geolocator api
+ * Makes a request to the user to use their IP address as the coordinates for a map search
+ */
 function getGeoLocation() {
     if(navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(position => {
@@ -119,7 +147,11 @@ function getGeoLocation() {
     }
 }
 
-// Handles placeservice request whenever the map repositions or intialises
+/**
+ * This function handles the google places request whenever the map repositions
+ * Calls a function to create markers on each result location
+ * Also calls function to clears previous markers to prevent the map becoming populated with unecessary markers
+ */
   function findLocalGyms(userLocation) {
     let request = {
         location: userLocation,
@@ -133,7 +165,9 @@ function getGeoLocation() {
     deleteMarkers();
 }
 
-// Callback function for nearbySearch method, loops through results
+/**
+ * This function takes the results of the nearbySearch request and calls a function to place a marker on each one
+ */
 function markLocations(results, status) {
     if(status == google.maps.places.PlacesServiceStatus.OK){
         for(var i = 0; i<results.length; i++){
@@ -142,7 +176,10 @@ function markLocations(results, status) {
     }
 }
 
-// Handles the creation of markers on each identified result
+/**
+ * This function takes each location result and places a marker with a custom marker icon on it's location
+ * and then adds the marker to the list containing all the markers
+ */
 function createMarker(gym) {
     let marker = new google.maps.Marker({
       map: map,
@@ -158,7 +195,10 @@ function createMarker(gym) {
     });
     currentMarkers.push(marker);
 
-// Upon clicking a marker this will request properties of the place object
+
+/** 
+ * Upon clicking a marker this will request properties of the place object and call a function to display them
+ * */
     google.maps.event.addListener(marker, 'click', () => {
     let request = {
     placeId: gym.place_id,
@@ -172,21 +212,28 @@ function createMarker(gym) {
 });
 }
 
-// Displays basic info in an infowindow above marker when marker is clicked
+/**
+ * Whenever a marker is clicked this function displays html box above the marker with the gym name
+ * it also calls a function to display the full gym details in the sidebar
+ */
 function displayDetails(placeResult, marker, status) {
     if (status == google.maps.places.PlacesServiceStatus.OK) {
-    let placeInfowindow = new google.maps.InfoWindow();
-    placeInfowindow.setContent('<div>' + '<span class="gym-info-title">' + placeResult.name + '</span>' + '</div>');
-    placeInfowindow.open(marker.map, marker);
-    currentInfoWindow.close();
-    currentInfoWindow = placeInfowindow;
-    showGymDetails(placeResult);
+        let placeInfowindow = new google.maps.InfoWindow();
+        placeInfowindow.setContent('<div>' + '<span class="gym-info-title">' + placeResult.name + '</span>' + '</div>');
+        placeInfowindow.open(marker.map, marker);
+        currentInfoWindow.close();
+        currentInfoWindow = placeInfowindow;
+        showGymDetails(placeResult);
     } else {
-    console.log('displayDetails failed: ' + status);
+        console.log('displayDetails failed: ' + status);
     }
 }
 
-// Displays more extensive info in side panel when marker is clicked
+/**
+ * This function checks if the gym location object has the values to be shown
+ * If it doesnt have a value it calls a function to render the default, placeholder information
+ * For all other fields it calls a function to render the specific information
+ */
 function showGymDetails(gym) {
     if(!gym.photos){
         renderAltValue("photos");
@@ -202,9 +249,13 @@ function showGymDetails(gym) {
     }
 }
 
+/**
+ * This function takes the gym location object and loops through each property that it is looking for, rendering a html element using the values as the html attributes
+ */
 function renderGymDetail(property, value) {
     if(gymDOM[property]){
         let DOMTarget = gymDOM[property];
+/** If the property is photos it will loop through the photos until it finds one with a landscape orientation, if it cannot it will render the default image */
         if(property === "photos") {
             for(i=0; i<value.length; i++){
                 if(value[i].height < value[i].width){
@@ -215,7 +266,7 @@ function renderGymDetail(property, value) {
                     DOMTarget.alt = "Alternative image";
                     DOMTarget.src = "/assets/images/workout-plus.png";
                 }
-            }    
+            }
         }   else if(property === "website") {
             DOMTarget.innerHTML = value;
             DOMTarget.href = value;
@@ -226,10 +277,14 @@ function renderGymDetail(property, value) {
         }
         
     }
+/** This section changes to the CSS attribute of the element so that it will display on the webpage */
     gymDetails.css("display", "inline-block");
 }
 
-
+/**
+ * This function handles the rendering of details if the gym is missing a value for a required property
+ * It assigns premade default attributes to the HTML element
+ */
 function renderAltValue(property) {
         let DOMTarget = gymDOM[property];
             if(property === "photos") {
@@ -245,22 +300,23 @@ function renderAltValue(property) {
             }
         }
 
-//Hides the gym details section when button is clicked
+        
+/** This function changes the CSS attribute of the gym details element to hide it if the HTML button is clicked */
 function hideInformation() {
     gymDetails.css("display", "none");
 }
 
-//Handles the clearing of the existing markers array, calls function to clear markers from map
+/**
+ * This function clears the list of current markers and calls a function to clear the markers appearing on the map
+ */
 function deleteMarkers() {
-  clearMarkers();
+  setMapOnAll(null);
   currentMarkers = [];
 }
 
-function clearMarkers() {
-  setMapOnAll(null);
-}
-
-//Loops through current markers and sets their location to null, removing them from map
+/**
+ * This function loops through the list of current markers and sets their location to null removing them from the map
+ */
 function setMapOnAll(map) {
   for (let i = 0; i < currentMarkers.length; i++) {
     currentMarkers[i].setMap(map);
