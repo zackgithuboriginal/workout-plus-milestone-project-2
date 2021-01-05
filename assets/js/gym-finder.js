@@ -74,7 +74,7 @@ function parseCountryCodes() {
  * This function processes each country object and outputs the data as html option elements for a select input field
  */
 function createCountryOptions(results) {
-    for (i = 0; i < results.length; i++) {
+    for (let i = 0; i < results.length; i++) {
         let newOption = document.createElement("option");
         newOption.innerText = results[i][1];
         newOption.value = results[i][0];
@@ -261,7 +261,7 @@ function renderGymDetail(property, value) {
         let DOMTarget = gymDOM[property];
         /** If the property is photos it will loop through the photos until it finds one with a landscape orientation, if it cannot it will render the default image */
         if (property === "photos") {
-            for (i = 0; i < value.length; i++) {
+            for (let i = 0; i < value.length; i++) {
                 if (value[i].height < value[i].width) {
                     DOMTarget.alt = `Photo of location`;
                     DOMTarget.src = value[i].getUrl();
