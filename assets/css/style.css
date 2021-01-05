@@ -59,12 +59,18 @@ nav.navbar {
     background-color: #F39237;
 }
 
-.navbar a.navbar-brand {
-    color: #F9F9F9;
+.brand-container {
     position: absolute;
     top: 2rem;
     left: 2rem;
     padding: 0;
+    width: auto;
+}
+
+.navbar a.navbar-brand {
+    color: #F9F9F9;
+    padding: 0;
+    width: auto;
 }
 
 .navbar a.navbar-brand:hover {
@@ -537,9 +543,10 @@ footer p {
         box-shadow: none;
     }
 
-    .navbar a.navbar-brand {
+
+    .brand-container {
         position: relative;
-        top: 0;
+        top: .5rem;
     }
 
     nav.navbar {
@@ -558,6 +565,7 @@ footer p {
         height: 100%;
         padding-bottom: 4rem;
         top: 0;
+
     }  
 
     .landing-page div.landing-information {
