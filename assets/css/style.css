@@ -96,6 +96,8 @@ ul.navbar-nav.nav {
 	justify-content: center;
 	background-color: #F39237;
 	box-shadow: 0 .2rem rgba(33, 37, 41, 0.1);
+	display: flex;
+	flex-direction: row;
 }
 
 .navbar .nav-item a.nav-link {
@@ -117,13 +119,6 @@ ul.navbar-nav.nav {
 	border-bottom: solid 3px;
 	border-color: #F9F9F9;
 }
-
-ul div {
-	display: flex;
-	justify-content: center;
-	flex-direction: row;
-}
-
 .navbar-toggler {
 	line-height: 2.8rem;
 	position: absolute;
@@ -550,7 +545,6 @@ footer p {
 		right: 0;
 		height: auto;
 		justify-content: flex-end;
-		max-width: 50%;
 		box-shadow: none;
 	}
 	.brand-container {
