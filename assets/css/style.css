@@ -33,13 +33,12 @@ nav.navbar {
     margin:0;
     width: 100%;
     height: 6rem;
-    box-shadow: 0rem .2rem rgba(33, 37, 41, 0.1);
+    box-shadow: 0 .2rem rgba(33, 37, 41, 0.1);
     background-color: #F39237;
 }
 
 .navbar a.navbar-brand {
     color: #F9F9F9;
-    font-size: 2.8rem;
     position: absolute;
     top: 2rem;
     left: 2rem;
@@ -59,16 +58,16 @@ ul.navbar-nav.nav {
     height: 4rem;
     justify-content: center;
     background-color: #F39237;
-    box-shadow: 0rem .2rem rgba(33, 37, 41, 0.1);
+    box-shadow: 0 .2rem rgba(33, 37, 41, 0.1);
 }
 
 .navbar .nav-item a.nav-link {
     font-size: 2rem;
     color: #F9F9F9;
-    padding: 0px 3px;
+    padding: 0 3px;
     text-align: center;
     display: flex;
-    margin: 0rem 2rem;
+    margin: 0 2rem;
 }
 
 .navbar .nav-item a.nav-link.active {
@@ -91,13 +90,17 @@ ul div {
 
 .navbar-toggler {
     line-height: 2.8rem;
-    font-size: 2.8rem;
     position: absolute;
     top: 2rem;
     margin: 0;
     padding: 0;
     right: 2rem;
     width: 2.8rem;
+}
+
+.navbar a.navbar-brand,
+.navbar-toggler {
+    font-size: 2.8rem;
 }
 
 /* landing page styling */
@@ -119,20 +122,19 @@ section.landing-page {
     margin:0;
     position: relative;
     background-color: #F9F9F9;
-    padding:6rem 0rem 0rem 0rem;
+    padding:6rem 0 0 0;
     overflow-y: auto;
 }
 
-.landing-page h1 {
+.landing-page-heading {
     font-family: 'Raleway', sans-serif;
     font-size: 3.5rem;
     color: #F9F9F9;
     position: relative;
-    padding-top: 5rem;
+    margin-top: 5rem;
     width: 100%;
     height:50vh;
 }
-
 
 .image-container {
     padding: 0;
@@ -195,7 +197,6 @@ section.landing-page {
     background-color:#F9F9F9;
 }
 
-
 .landing-page p {
     position: absolute;
     border-top: #F39237 2px solid;
@@ -208,16 +209,12 @@ section.landing-page {
 }
 
 /* map styling */
-
-
-
-.page-heading h1 {
+.gym-finder-heading {
     font-family: 'Raleway', sans-serif;
     font-size: 4rem;
     color: #F39237;
     text-align:center;
 }
-
 
 .page-heading {
     position: relative;
@@ -229,7 +226,7 @@ section.landing-page {
 
 section.map-section {
     position: relative;
-    padding:6rem 0rem 0rem 0rem;
+    padding:6rem 0 0 0;
     margin: 0;
     height: auto;
     min-height: 100vh;
@@ -237,14 +234,13 @@ section.map-section {
 
 div.search-box {
     position:relative;
-    top: 0rem;
+    top: 0;
     display:flex;
     flex-direction: column;
     justify-content: center;
 }
 
-
-div#map {
+#map {
     position: relative;
     bottom: 0;
     min-height: 360px;
@@ -252,22 +248,21 @@ div#map {
 }
 
 div.search-box h2 {
-    padding-left: 0rem;
+    padding-left: 0;
     font-size: 2.2rem;
     font-weight: 600;
     font-family: 'Raleway', sans-serif;
 }
 
-
 .search-box .justify-content-between h3 {
-        padding: 0;
-        color: #F39237;
-        text-decoration: underline;
-        font-size: 1.6rem;
-        cursor: pointer;
-    }
+    padding: 0;
+    color: #F39237;
+    text-decoration: underline;
+    font-size: 1.6rem;
+    cursor: pointer;
+}
 
-div#information-box {
+#information-box {
     display: none;
     width: 100%;
     height: auto;
@@ -287,25 +282,25 @@ div#information-box {
     background-color: #F39237;
     color: #F9F9F9;
     border-style: none;
-    box-shadow: 0rem .2rem rgba(33, 37, 41, 0.1);
+    box-shadow: 0 .2rem rgba(33, 37, 41, 0.1);
     font-weight: normal;
     line-height: 2.4rem;
     width: 8rem;
     max-width: 8rem;
     height: 2.8rem;
-    border-radius: 0rem 2rem 2rem 0rem;
+    border-radius: 0 2rem 2rem 0;
     transition: .2s;
     cursor: pointer;
 }
 
-div#country-select {
+#country-select {
     margin: 0;
     padding: 0;
     max-width: 50rem;
 
 }
 
- div#country-select select {
+#country-select select {
     padding: 0;
     margin: 0;
     height: 2.8rem;
@@ -313,7 +308,7 @@ div#country-select {
     max-width: 100%;
     border: none;
     background-color: #F9F9F9;
-    box-shadow: 0rem .2rem rgba(33, 37, 41, 0.1);
+    box-shadow: 0 .2rem rgba(33, 37, 41, 0.1);
     margin-bottom: 1rem;
     cursor: pointer;
 }
@@ -353,14 +348,15 @@ select#country option {
     display: none;
 }
 
-
 .location-information-row {
     display: flex;
     flex-direction: row;
 }
+
 .close-gym-information-btn{
     text-align: right;
 }
+
 .close-gym-information-btn i{
     z-index: 2;
     cursor: pointer;
@@ -388,7 +384,7 @@ select#country option {
 }
 
 #address-form {
-    margin: 0rem;
+    margin: 0;
 }
 
 .gym-info-icon {
@@ -397,7 +393,6 @@ select#country option {
     margin-right: 1rem;
     float:left;
 }
-
 
 .location-name {
     letter-spacing: .1rem;
@@ -413,12 +408,12 @@ select#country option {
 }
 
 div.side-panel.col-md-4{
-    padding: 0% 10%;
+    padding: 0 10%;
 }
 
-div#information-box div.information-box-bottom-row {
+#information-box div.information-box-bottom-row {
     position: relative;
-    margin: 2rem 0rem;
+    margin: 2rem 0;
     padding:0;
 }
 
@@ -427,7 +422,7 @@ div.information-box-bottom-row div.col {
 }
 
 div.information-box-top-row {
-    padding: 0rem 1.5rem 0rem 1.5rem;
+    padding: 0 1.5rem 0 1.5rem;
 }
 
 div.information-box-top-row h3,
@@ -457,13 +452,13 @@ input#address-input {
 }
 
 .search-box .address-search {
-    padding: 0rem;
-    margin: 0rem 0rem .5rem 0rem;
+    padding: 0;
+    margin: 0 0 .5rem 0;
 }
 
 div.row.justify-content-center {
     display:flex;
-    padding: 0rem 2rem;
+    padding: 0 2rem;
 }
 
 .search-box .local-search {
@@ -498,26 +493,24 @@ footer p {
         font-size:5rem;
     }
 }
- @media(min-width: 768px) {
-     body{
-         height: 100vh;
-         width: 100vw;
-         position: absolute;
-         top:0;
-         overflow-x: hidden;
-         min-height: 100vh;
-     }
 
-    div.side-panel.col-md-4 {
-        padding: 0rem 2rem;
-        width:30rem;
-        height: auto;
-        overflow-y: auto;
-        max-height: 100%;
+@media(min-width: 768px) {
+/* General styling */
+    body{
+        height: 100vh;
+        width: 100vw;
+        position: absolute;
+        top:0;
+        overflow-x: hidden;
+        min-height: 100vh;
     }
-    .page-heading {
-        margin-bottom: 2rem;
+
+    footer {
+        position: absolute;
+        bottom:0;
     }
+
+    /* Navbar Styling */
     .navbar .nav-item a.nav-link {
         color: #F9F9F9;
         border-color:#F9F9F9;
@@ -533,15 +526,15 @@ footer p {
         border-color:#F9F9F9;
     }
 
-    div#navbarCollapseTarget {
+    #navbarCollapseTarget {
         position: relative;
         justify-content: flex-end;
     }
 
     ul.navbar-nav.nav {
         position: relative;
-        top: 0rem;
-        right: 0rem;
+        top: 0;
+        right: 0;
         height:auto;
         justify-content: flex-end;
         max-width: 50%;
@@ -550,12 +543,13 @@ footer p {
 
     .navbar a.navbar-brand {
         position: relative;
-        top:0rem;
+        top: 0;
     }
 
     nav.navbar {
-        margin-right: 0rem;
-        margin-left: 0rem;
+        top: 0;
+        margin-right: 0;
+        margin-left: 0;
         height: 6rem;
     }
 
@@ -563,80 +557,13 @@ footer p {
         justify-content: end;
     }
 
-    div#map.col-md-8 {
-        top: 0;
-        position: relative;
-        width: 50vw;
-        max-height: 100%;
-        min-height:100%;
-        height: 1000px;
-        margin:0;
-    }
-
-    section.map-section {
-        padding:6rem 0rem 4rem 0rem;
-        margin: 0;
-        top:0;
-        height:100%;
-        max-height:100%;
-        min-height: 50vh;
-    }
-
-    div.search-box {
-        position:relative;
-        margin-bottom: 2rem;
-        justify-content: center;
-        max-width: 90%;
-        margin-left: auto;
-        margin-right: auto;
-    }
-
-    div#information-box {
-        position: relative;
-        top: 0;
-        padding-top: 0;
-    }
-
-    div#information-box div.col-lg-6 {
-        padding:0;
-
-    }
-
-    .location-image {
-        margin: 0;
-        max-height: 20vh;
-        margin-bottom: 3rem;
-    }
-
-    div.search-box div {
-        margin-top: 0.5rem;
-        padding: 0rem 2rem;
-    }
-
-    div.row.justify-content-center {
-        padding: 0rem 2rem;
-    }
-
-    .search-box .justify-content-between {
-        max-width: 50rem;
-    }
-
-    hr {
-        margin-top: 4rem;
-        border-bottom: .4rem solid #F39237;
-        box-shadow: 0rem .2rem rgba(33, 37, 41, 0.1);
-    }
-
+    /* Landing Page Styling */
     section.landing-page {
         height: 100%;
         padding-bottom: 4rem;
-        top: 0rem;
+        top: 0;
     }  
 
-    nav.navbar {
-        top: 0;
-    }
-    
     .landing-page div.landing-information {
         position: relative;
         background-color: rgba(243, 146, 55, .8);
@@ -646,6 +573,7 @@ footer p {
         max-height: 100%;
         overflow-y: auto;
     }
+
     .image-container {
         margin: 0;
         justify-content: center;
@@ -663,11 +591,6 @@ footer p {
         top: 0;
         right: 0;
         bottom: 0;
-    }
-
-    .image-container {
-        height: 100%;
-        overflow: hidden;
     }
 
     .landing-page h1 {
@@ -690,9 +613,80 @@ footer p {
         margin-top: 12rem;
     }
 
-    footer {
-        position: absolute;
-        bottom:0;
+    /* Gym Finder Styling */
+    div.side-panel.col-md-4 {
+        padding: 0 2rem;
+        width: 30rem;
+        height: auto;
+        overflow-y: auto;
+        max-height: 100%;
+    }
+
+    .page-heading {
+        margin-bottom: 2rem;
+    }
+
+    #map.col-md-8 {
+        top: 0;
+        position: relative;
+        width: 50vw;
+        max-height: 100%;
+        min-height:100%;
+        height: 1000px;
+        margin:0;
+    }
+
+    section.map-section {
+        padding:6rem 0 4rem 0;
+        margin: 0;
+        top:0;
+        height:100%;
+        max-height:100%;
+        min-height: 50vh;
+    }
+
+    div.search-box {
+        position:relative;
+        margin-bottom: 2rem;
+        justify-content: center;
+        max-width: 90%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    #information-box {
+        position: relative;
+        top: 0;
+        padding-top: 0;
+    }
+
+    #information-box div.col-lg-6 {
+        padding:0;
+
+    }
+
+    .location-image {
+        margin: 0;
+        max-height: 20vh;
+        margin-bottom: 3rem;
+    }
+
+    div.search-box div {
+        margin-top: 0.5rem;
+        padding: 0 2rem;
+    }
+
+    div.row.justify-content-center {
+        padding: 0 2rem;
+    }
+
+    .search-box .justify-content-between {
+        max-width: 50rem;
+    }
+
+    .image-container {
+        height: 100%;
+        overflow: hidden;
     }
 }
 
