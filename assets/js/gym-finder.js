@@ -87,7 +87,7 @@ function createCountryOptions(results) {
  * It sets the autocomplete country restriction to the chosen value
  */
 function setAutocompleteCountry() {
-    const targetCountry = selectTarget.value;
+    let targetCountry = selectTarget.value;
     if (targetCountry === "all") {
         autocomplete.setComponentRestrictions({ country: [] });
     } else {
@@ -117,11 +117,22 @@ $(document).ready(function () {
 
 /**
  * This function handles the geocoder request if an autocomplete option is not selected
- * 
+ * it uses the country selection option chosen to bias search results
  */
 function searchAddress() {
     let address = document.getElementById("address-input").value;
-    geocoder.geocode({ "address": address }, function (results, status) {
+    let targetCountry = selectTarget.value;
+    let searchProperties;
+    if (targetCountry === "all") {
+        searchProperties = { "address": address };
+    } else {
+        searchProperties = {
+            "address": address, componentRestrictions: {
+                country: targetCountry
+            },
+        };
+    }
+    geocoder.geocode(searchProperties, function (results, status) {
         if (status === "OK") {
             repositionMap(results[0].geometry.location);
         } else {
@@ -246,7 +257,7 @@ function showGymDetails(gym) {
         renderAltValue("website");
     }
     for (const prop in gym) {
-        if(gym.hasOwnProperty(prop)) {
+        if (gym.hasOwnProperty(prop)) {
             renderGymDetail(prop, gym[prop]);
         }
     }
