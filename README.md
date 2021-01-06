@@ -130,16 +130,28 @@ After a marker is selected on the map a display opens beneath the search options
 12. [Chrome DevTools](https://developers.google.com/web/tools/chrome-devtools)
  - DevTools was used for analysing the code and design of the practice during development. Also used to test changes in real-time.
  
-13.[Google Maps API]
+13.[Google Maps API](https://developers.google.com/maps/documentation/javascript/overview)
+- The Google Maps API is used to support and display the map in the gym finder application.
 
-14.[Google Places API]
+14.[Google Places API](https://developers.google.com/places/web-service/overview)
+- The Google Places API is used to search for locations in the Places library and also to access information and details about the locations.
 
-15.[Google Geocoding API]
+15.[Google Geocoding API](https://developers.google.com/maps/documentation/geocoding/start)
+- The geocoding API is used to convert an address string into a lat lng attribute that can then be used in a search.
 
-16.[Papa Parse]
-- Papa Parse was used to parse the CSV file containing the full list of countries and their ISF country codes
+16.[Geolocation Web API](https://developer.mozilla.org/en-US/docs/Web/API/Geolocation_API)
+- This API was used to request the user's permission to use their device's location in a search.
 
-17.[gtMatrix] https://gtmetrix.com/reports/zackgithuboriginal.github.io/serEj5nd/
+17.[Google Autocomplete API](https://developers.google.com/places/web-service/autocomplete)
+
+18.[Harvard World Map](https://worldmap.harvard.edu/data/geonode:country_centroids_az8)
+- This website is the source of the original CSV file I edited to use for the country restrictions feature of the gym finder.
+
+16.[Papa Parse](https://www.papaparse.com)
+- Papa Parse was used to parse the CSV file containing the full list of countries and their two character country codes.
+
+17.[gtMatrix](https://gtmetrix.com/)
+- GTmatrix was used to test website performance and page load speed.
  ### Testing
 
 I tested the website thoroughly, throughout development I would ensure that it looked and behaved as designed and laid out in the wireframes. The website was tested at multiple scales, through desktop and mobile devices with no bugs or issues remaining in the deployed version.
@@ -153,24 +165,33 @@ The website was viewed and tested through the following browsers and devices:
 
 - [Opera](https://www.opera.com/)
 
-- A full range of sizes and devices using Chrome DevTools and [Responsive Viewer](https://chrome.google.com/webstore/detail/responsive-viewer/inmopeiepgfljkpkidclfgbgbmfcennb?hl=en)
+- A full range of sizes and devices using Chrome DevTools, [Responsive Viewer](https://chrome.google.com/webstore/detail/responsive-viewer/inmopeiepgfljkpkidclfgbgbmfcennb?hl=en) and [Am I Responsive?](http://ami.responsivedesign.is/)
 
 At the end of the project, the code was put through CSS and HTML validators to ensure there were no errors presented.
 
+### index.html html validation
 ![Image of html validator for landing page](https://github.com/zackgithuboriginal/workout-plus-milestone-project-2/blob/master/assets/images/html-validator-index.PNG)
 
+### gym-finder.html html validation
 ![Image of html validator for gym finder](https://github.com/zackgithuboriginal/workout-plus-milestone-project-2/blob/master/assets/images/html-validator-gym-finder.png)
 
+### style.css css validation
 ![Image of css validator](https://github.com/zackgithuboriginal/workout-plus-milestone-project-2/blob/master/assets/images/css-validator.PNG)
 
+### gym-finder.js js validation
 ![Image of Js linter results](https://github.com/zackgithuboriginal/workout-plus-milestone-project-2/blob/master/assets/images/js-validator.PNG)
+
+### Performance Testing 
+
+To ensure that the website performed well without any major delays or issues especially on the initial load I tested it using [GTMatrix](https://gtmetrix.com) where both pages received positive results.
+
+#### Landing Page 
+![Image of index.html speed test](https://github.com/zackgithuboriginal/workout-plus-milestone-project-2/blob/master/assets/images/index-speed.PNG)
+
+#### Gym Finder Page
+![Image of gym-finder.html speed test](https://github.com/zackgithuboriginal/workout-plus-milestone-project-2/blob/master/assets/images/gym-finder-speed.PNG)
+
 ### Testing User Stories from User Experience (UX) Section
-
-- ### First Time Visitor Goals
-
-- ### Potential customer goals
-
-- ### Existing Customer goals
 
 #### Initial Visitor Goals
 4.	Goal: Discern the purpose and function of the website.
@@ -215,6 +236,9 @@ Fix: Upon clicking on a new location, a check is done to determine whether the l
 Expected Behaviour: 
 
 Result:
+
+### Manual Functionality Testing
+
 
 ## Deployment
 The project is deployed and live using GitHub pages. This is a very useful tool and it is was setup very simply.
