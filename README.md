@@ -44,7 +44,7 @@ The wireframes for the website were developed using [Figma](https://www.figma.co
 
  -   Landing Page Wireframe - [View](https://github.com/zackgithuboriginal/workout-plus-milestone-project-2/blob/master/assets/wireframes/landing-page-desktop-wireframe.png)
 
--   Landing Page - Mobile Wireframe - [View](https://github.com/zackgithuboriginal/workout-plus-milestone-project-2/blob/master/assets/wireframes/landing-page-mobile-wireframe.png)
+ -   Landing Page - Mobile Wireframe - [View](https://github.com/zackgithuboriginal/workout-plus-milestone-project-2/blob/master/assets/wireframes/landing-page-mobile-wireframe.png)
 
  -   Gym Finder Wireframe - [View](https://github.com/zackgithuboriginal/workout-plus-milestone-project-2/blob/master/assets/wireframes/gym-finder-desktop-wireframe.png)
 
@@ -52,8 +52,40 @@ The wireframes for the website were developed using [Figma](https://www.figma.co
 
 ## Features
 
+### Landing Page
+
+![Image of Landing Page](https://github.com/zackgithuboriginal/workout-plus-milestone-project-2/blob/master/assets/images/landing-page.jpg)
+The landing page is the user's first introduction to the site and as such it was important to not only provide information that will inform the user about the purpose and functionality of the website but to set the tone of the website and to start to instill the identity of the website onto the user. The landing page therefore contains three primary elements. A large eye catching callout with a CTA button that links to the gym finder application. A text section containing information about the website and explaining some of how the gym finder application works and a large hero image in the background of a man in the middle of working out that helps to set the tone of the website and create a sense of energy and activity.
+
+### Gym Finder Page
+
 ![Image of Gym Search Feature](https://github.com/zackgithuboriginal/workout-plus-milestone-project-2/blob/master/assets/images/gym-finder-application.png)
-The most important feature of the site is the gym finder application. The gym finder application allowsa user to search
+The most important feature of the site is the gym finder page. The gym finder application allows a user to search a desired location for gyms and other businesses related to exsercise and fitness. It visually displays the results on a map that is powered by the Google Maps API, with the 20 nearest locations displayed with custom markers. These markers can be selected to bring up the name of the location on the map, and on the sidebar to the left of the page an information window will open with more extensive details including the address, location rating and website along with an image of the location.
+
+### Autocomplete Search
+![Image of an autocomplete search](https://github.com/zackgithuboriginal/workout-plus-milestone-project-2/blob/master/assets/images/autocomplete.PNG)
+
+The autocomplete search utilises the Google Place Autocomplete API. It reads any string typed into the text input field and turns that into an autocomplete request. The results are limited to addresses to streamline the experience for the user rather than allow for businesses and other locations to fill up the prediction options. Using the country selection dropdown input which contains a full list of countries it is possible for a user to select a specific country in which they want to search. After selecting a country the only predictions suggested to users will be located within that country. This allows for much more accurate autocomplete suggestions, and again improves the user experience of the feature.
+
+### Geocode Search
+![Image of an autocomplete search](https://github.com/zackgithuboriginal/workout-plus-milestone-project-2/blob/master/assets/images/geocode.PNG)
+
+The geocode search uses a Google Geocode API request. If a user decides to hit enter or to click the button to submit their text input, the string will be sent in a Geocoder request and be returned as a lat, lng coordinate that is then used to center the map on the location where the gym search will be carried out. As with the autocomplete search it is possible to specify a country to search in, however in the case of the geocoder search it only biases the result and if no location within the specified country is found it will default to a global search. Using a country specific search increases the accuracy of the search.
+
+### Device Geolocation Search
+![Image of an autocomplete search](https://github.com/zackgithuboriginal/workout-plus-milestone-project-2/blob/master/assets/images/geolocation.PNG)
+
+The geolocation search uses the Web Geolocation API to first request from the user permission to use their location and if they user approves it will use their device's functionality to provide a location for them. The result of this search again contains lat, lng coordinates which are used to center the map with great accuracy. This method of searching is the most covenient for searching in the immediate local area of the user as it's not necessary to know any addresses in order to search.
+
+### Map Results Display 
+![Image of an autocomplete search](https://github.com/zackgithuboriginal/workout-plus-milestone-project-2/blob/master/assets/images/map-results.PNG)
+
+The results of the search are displayed as so, with orange markers on the map. Each of these markers represent a gym or similar location around the radius of the search location. To provide a good selection of results without overloading the map, only the closest 20 locations are displayed. If a user selects one of these markers a small window will pop up above the marker with the location's name. As well as that a side panel below the search input section will open and display further details about the location.
+
+### Side Panel Results Display 
+![Image of an autocomplete search](https://github.com/zackgithuboriginal/workout-plus-milestone-project-2/blob/master/assets/images/example-gym-result.PNG)
+
+After a marker is selected on the map a display opens beneath the search options. This panel will display important information about the location selected to help the user make their decision to enable them to conduct further research and more effectively compare their options. As is visible above, in order to provide accurate information and consistent feedback to the user, if a location does not have value for a certain property in the Google Place database a pre determined placeholder response will display. In the case above the location had no affiliated website, so the gym finder application notifies the user as such instead of leaving the space blank or allowing the previous location's information to persist and cause confusion.
 
 ## Technologies Used
 
@@ -98,16 +130,28 @@ The most important feature of the site is the gym finder application. The gym fi
 12. [Chrome DevTools](https://developers.google.com/web/tools/chrome-devtools)
  - DevTools was used for analysing the code and design of the practice during development. Also used to test changes in real-time.
  
-13.[Google Maps API]
+13.[Google Maps API](https://developers.google.com/maps/documentation/javascript/overview)
+- The Google Maps API is used to support and display the map in the gym finder application.
 
-14.[Google Places API]
+14.[Google Places API](https://developers.google.com/places/web-service/overview)
+- The Google Places API is used to search for locations in the Places library and also to access information and details about the locations.
 
-15.[Google Geocoding API]
+15.[Google Geocoding API](https://developers.google.com/maps/documentation/geocoding/start)
+- The geocoding API is used to convert an address string into a lat lng attribute that can then be used in a search.
 
-16.[Papa Parse]
-- Papa Parse was used to parse the CSV file containing the full list of countries and their ISF country codes
+16.[Geolocation Web API](https://developer.mozilla.org/en-US/docs/Web/API/Geolocation_API)
+- This API was used to request the user's permission to use their device's location in a search.
 
-17.[gtMatrix] https://gtmetrix.com/reports/zackgithuboriginal.github.io/serEj5nd/
+17.[Google Autocomplete API](https://developers.google.com/places/web-service/autocomplete)
+
+18.[Harvard World Map](https://worldmap.harvard.edu/data/geonode:country_centroids_az8)
+- This website is the source of the original CSV file I edited to use for the country restrictions feature of the gym finder.
+
+16.[Papa Parse](https://www.papaparse.com)
+- Papa Parse was used to parse the CSV file containing the full list of countries and their two character country codes.
+
+17.[gtMatrix](https://gtmetrix.com/)
+- GTmatrix was used to test website performance and page load speed.
  ### Testing
 
 I tested the website thoroughly, throughout development I would ensure that it looked and behaved as designed and laid out in the wireframes. The website was tested at multiple scales, through desktop and mobile devices with no bugs or issues remaining in the deployed version.
@@ -121,24 +165,33 @@ The website was viewed and tested through the following browsers and devices:
 
 - [Opera](https://www.opera.com/)
 
-- A full range of sizes and devices using Chrome DevTools and [Responsive Viewer](https://chrome.google.com/webstore/detail/responsive-viewer/inmopeiepgfljkpkidclfgbgbmfcennb?hl=en)
+- A full range of sizes and devices using Chrome DevTools, [Responsive Viewer](https://chrome.google.com/webstore/detail/responsive-viewer/inmopeiepgfljkpkidclfgbgbmfcennb?hl=en) and [Am I Responsive?](http://ami.responsivedesign.is/)
 
 At the end of the project, the code was put through CSS and HTML validators to ensure there were no errors presented.
 
+### index.html html validation
 ![Image of html validator for landing page](https://github.com/zackgithuboriginal/workout-plus-milestone-project-2/blob/master/assets/images/html-validator-index.PNG)
 
+### gym-finder.html html validation
 ![Image of html validator for gym finder](https://github.com/zackgithuboriginal/workout-plus-milestone-project-2/blob/master/assets/images/html-validator-gym-finder.png)
 
+### style.css css validation
 ![Image of css validator](https://github.com/zackgithuboriginal/workout-plus-milestone-project-2/blob/master/assets/images/css-validator.PNG)
 
+### gym-finder.js js validation
 ![Image of Js linter results](https://github.com/zackgithuboriginal/workout-plus-milestone-project-2/blob/master/assets/images/js-validator.PNG)
+
+### Performance Testing 
+
+To ensure that the website performed well without any major delays or issues especially on the initial load I tested it using [GTMatrix](https://gtmetrix.com) where both pages received positive results.
+
+#### Landing Page 
+![Image of index.html speed test](https://github.com/zackgithuboriginal/workout-plus-milestone-project-2/blob/master/assets/images/index-speed.PNG)
+
+#### Gym Finder Page
+![Image of gym-finder.html speed test](https://github.com/zackgithuboriginal/workout-plus-milestone-project-2/blob/master/assets/images/gym-finder-speed.PNG)
+
 ### Testing User Stories from User Experience (UX) Section
-
-- ### First Time Visitor Goals
-
-- ### Potential customer goals
-
-- ### Existing Customer goals
 
 #### Initial Visitor Goals
 4.	Goal: Discern the purpose and function of the website.
@@ -183,6 +236,9 @@ Fix: Upon clicking on a new location, a check is done to determine whether the l
 Expected Behaviour: 
 
 Result:
+
+### Manual Functionality Testing
+
 
 ## Deployment
 The project is deployed and live using GitHub pages. This is a very useful tool and it is was setup very simply.
