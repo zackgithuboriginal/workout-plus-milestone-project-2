@@ -210,7 +210,7 @@ To ensure that the website performed well without any major delays or issues esp
 
 **Result:** When the user arrives at the landing page they are presented with a text paragraph giving an overview of the purpose for the website and the functionality of the web application.
 
-![Image of landing page information]()
+![Image of landing page information](https://github.com/zackgithuboriginal/workout-plus-milestone-project-2/blob/master/assets/images/landing-info.PNG)
 
 #### 2.	Goal: Navigate and explore the website.
 
@@ -218,7 +218,7 @@ To ensure that the website performed well without any major delays or issues esp
 
 **Result:** At all times the navigation bar is fixed at the top of the screen providing clear navigation opportunities to the user.
 
-![Image of the navbar]()
+![Image of the navbar](https://github.com/zackgithuboriginal/workout-plus-milestone-project-2/blob/master/assets/images/navbar.PNG)
 
 #### 3.	Goal: Find and understand how to use the gym search application.
 
@@ -230,7 +230,7 @@ To ensure that the website performed well without any major delays or issues esp
 1.	When landing page is accessed, there is a clear navigation option “Gym Search” at the top of the page. There is also a large CTA button in the page heading. Both of these options will navigate the user directly to the gym search page.
 2.	On the gym search page the user is presented with a number of clear input options with labels and example search options of “Ireland” and “Dublin” as placeholders. The map by default is centred on this location to provide the user with an example search result.
 
-![Image of the navbar]()
+![Image of the search options](https://github.com/zackgithuboriginal/workout-plus-milestone-project-2/blob/master/assets/images/search-inteface.PNG)
 
 #### 4.	Goal: Identify potential new workout locations in a specific area..
 
@@ -238,7 +238,7 @@ To ensure that the website performed well without any major delays or issues esp
 
 **Result:** The user can enter their desired address, they will then be presented with autocomplete options. When the user selects an option the map will navigate to that spot and display markers on the map representing identified locations. 
 
-![Image of the navbar]()
+![Image of the map results](https://github.com/zackgithuboriginal/workout-plus-milestone-project-2/blob/master/assets/images/map-results.PNG)
 
 #### 5.	Goal: Identify potential new workout locations around their location.
 
@@ -246,7 +246,7 @@ To ensure that the website performed well without any major delays or issues esp
 
 **Result:** The user can click the "Use device's location" button which will then send a request to the user to allow permission to use their device's location. When they accept, the map will navigate to their device's location and display results.
 
-![Image of the navbar]()
+![Image of the geolocation request](https://github.com/zackgithuboriginal/workout-plus-milestone-project-2/blob/master/assets/images/geolocation.PNG)
 
 #### 6.	Select a location and access contact information for it.
 
@@ -254,7 +254,7 @@ To ensure that the website performed well without any major delays or issues esp
 
 **Result:** After submitting a desired search location the user is presented with 20 potential locations marked on the map. When the user clicks on any of the markers the application will display a window containing important information regarding the location.
 
-![Image of the navbar]()
+![Image of location details](https://github.com/zackgithuboriginal/workout-plus-milestone-project-2/blob/master/assets/images/example-gym-result.PNG)
 
 #### 7.	Goal: Search through potential locations comparing ratings.
 
@@ -266,7 +266,7 @@ To ensure that the website performed well without any major delays or issues esp
 
 **Fix:** Upon clicking on a new location, a check is done to determine whether the location has a rating attribute. If it does not have a rating available the website now provides a “No available rating” message to ensure accurate feedback for the user.
 
-![Image of the navbar]()
+![Image of the alternate rating response](https://github.com/zackgithuboriginal/workout-plus-milestone-project-2/blob/master/assets/images/rating.PNG)
 
 #### 8. Search a location that does not appear using the autocomplete results.
 
@@ -274,11 +274,15 @@ To ensure that the website performed well without any major delays or issues esp
 
 **Result:** The user can enter their desired location and hit submit. The application will use a geocoder search to convert their address to coordinates and navigate the map to that location.
 
+![Image of the geolocation request](https://github.com/zackgithuboriginal/workout-plus-milestone-project-2/blob/master/assets/images/geolocation.PNG)
+
 #### 9. Prioritise a search country to get more accurate results.
 
 **Expected:** The user should be able to narrow down the search area to a country to guarantee a more accurate result.
 
 **Result:** The user can select any country from the dropdown list. Both the autocomplete search and the address search will then restrict the results to locations within the chosen country when possible.
+
+![Image of the dropdown country selection](https://github.com/zackgithuboriginal/workout-plus-milestone-project-2/blob/master/assets/images/country-search.PNG)
 
 ### Manual Functionality Testing
 
