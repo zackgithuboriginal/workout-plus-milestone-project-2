@@ -9,18 +9,23 @@ The purpose of the website is to connect visitors with potential exercise locati
 ## User Experience / UX
 ### User stories
 
-#### Initial Visitor Goals
-1.	Discern the purpose and function of the website.
+#### 1.	Discern the purpose and function of the website.
 
-2.	Navigate and explore website.
+#### 2.	Navigate and explore website.
 
-3.	Find and understand how to use the map search.
-#### Return Visitor Goals
-1.	Use the gym search functionality to search through potential locations comparing ratings.
+#### 3.	Find and understand how to use the map search.
 
-2.	Use the gym search functionality to explore a new location and access contact information for it.
+#### 4.	Identify potential new workout locations in a specific area.
 
-3.	Use the gym search a specific address to identify potential new workout locations.
+#### 5. Identify potential new workout locations around their location.
+
+#### 6.	Select a location and access contact information for it.
+
+#### 7.	Search through potential locations comparing ratings.
+
+#### 8. Search a location that does not appear using the autocomplete results.
+
+#### 9. Prioritise a search country to get more accurate results.
 
 ### Design
 
@@ -127,33 +132,36 @@ After a marker is selected on the map a display opens beneath the search options
 10. [Responsive Viewer](https://chrome.google.com/webstore/detail/responsive-viewer/inmopeiepgfljkpkidclfgbgbmfcennb?hl=en)
   - This chrome web extension was used as it allows for multiple views of a website at multiple scales and device sizes at once. It was used for testing of responsive design.
   
-12. [Chrome DevTools](https://developers.google.com/web/tools/chrome-devtools)
+11. [Chrome DevTools](https://developers.google.com/web/tools/chrome-devtools)
  - DevTools was used for analysing the code and design of the practice during development. Also used to test changes in real-time.
  
-13.[Google Maps API](https://developers.google.com/maps/documentation/javascript/overview)
+12.[Google Maps API](https://developers.google.com/maps/documentation/javascript/overview)
 - The Google Maps API is used to support and display the map in the gym finder application.
 
-14.[Google Places API](https://developers.google.com/places/web-service/overview)
+13.[Google Places API](https://developers.google.com/places/web-service/overview)
 - The Google Places API is used to search for locations in the Places library and also to access information and details about the locations.
 
-15.[Google Geocoding API](https://developers.google.com/maps/documentation/geocoding/start)
+14.[Google Geocoding API](https://developers.google.com/maps/documentation/geocoding/start)
 - The geocoding API is used to convert an address string into a lat lng attribute that can then be used in a search.
+
+15.[Google Autocomplete API](https://developers.google.com/places/web-service/autocomplete)
+- This API is used to supply autocomplete suggestions for the address search input.
 
 16.[Geolocation Web API](https://developer.mozilla.org/en-US/docs/Web/API/Geolocation_API)
 - This API was used to request the user's permission to use their device's location in a search.
 
-17.[Google Autocomplete API](https://developers.google.com/places/web-service/autocomplete)
-
-18.[Harvard World Map](https://worldmap.harvard.edu/data/geonode:country_centroids_az8)
-- This website is the source of the original CSV file I edited to use for the country restrictions feature of the gym finder.
-
-16.[Papa Parse](https://www.papaparse.com)
+17.[Papa Parse](https://www.papaparse.com)
 - Papa Parse was used to parse the CSV file containing the full list of countries and their two character country codes.
 
-17.[gtMatrix](https://gtmetrix.com/)
+18.[gtMatrix](https://gtmetrix.com/)
 - GTmatrix was used to test website performance and page load speed.
- ### Testing
 
+18.[Multi Device Website Mockup Generator](https://techsini.com/multi-mockup/index.php)
+- This website was used to generate the image at the top of the readme.md file.
+
+### Testing
+
+### Browser and Device Size Testing
 I tested the website thoroughly, throughout development I would ensure that it looked and behaved as designed and laid out in the wireframes. The website was tested at multiple scales, through desktop and mobile devices with no bugs or issues remaining in the deployed version.
 The website was viewed and tested through the following browsers and devices:
 
@@ -166,6 +174,8 @@ The website was viewed and tested through the following browsers and devices:
 - [Opera](https://www.opera.com/)
 
 - A full range of sizes and devices using Chrome DevTools, [Responsive Viewer](https://chrome.google.com/webstore/detail/responsive-viewer/inmopeiepgfljkpkidclfgbgbmfcennb?hl=en) and [Am I Responsive?](http://ami.responsivedesign.is/)
+
+### Code Validation
 
 At the end of the project, the code was put through CSS and HTML validators to ensure there were no errors presented.
 
@@ -191,51 +201,84 @@ To ensure that the website performed well without any major delays or issues esp
 #### Gym Finder Page
 ![Image of gym-finder.html speed test](https://github.com/zackgithuboriginal/workout-plus-milestone-project-2/blob/master/assets/images/gym-finder-speed.PNG)
 
+
 ### Testing User Stories from User Experience (UX) Section
 
-#### Initial Visitor Goals
-4.	Goal: Discern the purpose and function of the website.
+#### 1.	Goal: Discern the purpose and function of the website.
 
-Expected behaviour: When the user accesses the website for the first time they will be presented with information about the website and the web application.
+**Expected:** When the user accesses the website for the first time they should be presented with information about the website and the web application.
 
-Result: When the landing page loads the user is presented with a text paragraph giving an overview of the purpose for the website and the functionality of the web application.
+**Result:** When the user arrives at the landing page they are presented with a text paragraph giving an overview of the purpose for the website and the functionality of the web application.
 
-5.	Goal: Navigate and explore website.
+![Image of landing page information]()
 
-Expected behaviour: Wherever the user is on the website they should be able to immediately identify and locate the navigation structure for the website.
+#### 2.	Goal: Navigate and explore the website.
 
-Result: At all times the navigation bar is fixed at the top of the screen providing clear navigation opportunities to the user.
+**Expected:** Wherever the user is on the website they should be able to immediately identify and locate the navigation structure for the website.
 
-6.	Goal: Find and understand how to use the gym search application.
+**Result:** At all times the navigation bar is fixed at the top of the screen providing clear navigation opportunities to the user.
 
-Expected Behaviour: 
-1.	Upon loading landing page, user is presented with clear navigation options to gym search application.
-2.	Upon using navigation, user is presented with gym search application and can easily understand its use.
-Result: 
-1.	When landing page is accessed, there is a clear navigation option “Gym Search” at the top of the page, and a large CTA button in the page heading both of which will navigate the user directly to the gym search page.
-2.	When the Gym Search Page is loaded, the user is presented with a number of input options with clear labels and the example search options of “Ireland” and “Dublin”. The map by default is centred on this location to provide the user with an example search result.
-#### Return Visitor Goals
-1.	Goal: Search a specific address to identify potential new workout locations.
+![Image of the navbar]()
 
-Expected Behaviour: Navigate to Gym Search application, select country to restrict search in, enter desired address of placename and submit. Then be presented with a selection of locations around that area.
+#### 3.	Goal: Find and understand how to use the gym search application.
 
-Result:
+**Expected:**
+1.	Upon loading landing page, user should be presented with clear navigation options to gym search application.
+2.	User should then find gym search application and easily understand how to use it.
 
-2.	Goal: to search through potential locations comparing ratings.
+**Result:**
+1.	When landing page is accessed, there is a clear navigation option “Gym Search” at the top of the page. There is also a large CTA button in the page heading. Both of these options will navigate the user directly to the gym search page.
+2.	On the gym search page the user is presented with a number of clear input options with labels and example search options of “Ireland” and “Dublin” as placeholders. The map by default is centred on this location to provide the user with an example search result.
 
-Expected Behaviour: The user should be able to search for gyms around a location and then click on a marker on the map to view rating information for that gym.
+![Image of the navbar]()
 
-Result: Upon entering their search details in the input field and submitting, a selection of the nearest twenty gyms are presented on the map. The user can then click on any of these markers for a information pane to appear displaying rating information for that gym.
+#### 4.	Goal: Identify potential new workout locations in a specific area..
 
-Issue: Some locations do not have rating information available through the Google Places Library which results in the previous location’s rating persisting incorrectly.
+**Expected:** The user should be able to enter their desired address or area and submit. They should then be presented with a selection of potential locations around that area.
 
-Fix: Upon clicking on a new location, a check is done to determine whether the location has a rating attribute. If it does not have a rating available the website now provides a “No available rating” message to ensure accurate feedback for the user.
+**Result:** The user can enter their desired address, they will then be presented with autocomplete options. When the user selects an option the map will navigate to that spot and display markers on the map representing identified locations. 
 
-3.	Goal: Use the gym search application to search explore a new location and access contact information for it.
+![Image of the navbar]()
 
-Expected Behaviour: 
+#### 5.	Goal: Identify potential new workout locations around their location.
 
-Result:
+**Expected:**  The user should be able to use their device's location to search the map quickly and conveniently.
+
+**Result:** The user can click the "Use device's location" button which will then send a request to the user to allow permission to use their device's location. When they accept, the map will navigate to their device's location and display results.
+
+![Image of the navbar]()
+
+#### 6.	Select a location and access contact information for it.
+
+**Expected:** The user should be able to submit a search and then click on any of the displayed locations to access information for them. 
+
+**Result:** After submitting a desired search location the user is presented with 20 potential locations marked on the map. When the user clicks on any of the markers the application will display a window containing important information regarding the location.
+
+![Image of the navbar]()
+
+#### 7.	Goal: Search through potential locations comparing ratings.
+
+**Expected:** The user should be able to click on multiple markers to compare rating information for them.
+
+**Result:** The user can click on a marker which will then display the information for that gym. They can then either close their selection using the "x" and click a new marker or they can simply click on a new marker to overwrite the existing information to view the new results.
+
+**Issue:** Some locations do not have rating information available through the Google Places Library which results in the previous location’s rating persisting incorrectly.
+
+**Fix:** Upon clicking on a new location, a check is done to determine whether the location has a rating attribute. If it does not have a rating available the website now provides a “No available rating” message to ensure accurate feedback for the user.
+
+![Image of the navbar]()
+
+#### 8. Search a location that does not appear using the autocomplete results.
+
+**Expected:** The user should be able to search for more general areas such as "London" or "East London" and not have to find the exact address to search.
+
+**Result:** The user can enter their desired location and hit submit. The application will use a geocoder search to convert their address to coordinates and navigate the map to that location.
+
+#### 9. Prioritise a search country to get more accurate results.
+
+**Expected:** The user should be able to narrow down the search area to a country to guarantee a more accurate result.
+
+**Result:** The user can select any country from the dropdown list. Both the autocomplete search and the address search will then restrict the results to locations within the chosen country when possible.
 
 ### Manual Functionality Testing
 
@@ -248,6 +291,12 @@ The project is deployed and live using GitHub pages. This is a very useful tool 
 
 ## Credits
 
+### Resources Used 
+
+- [Google Codelabs Tutorial](https://developers.google.com/codelabs/maps-platform/google-maps-nearby-search-js#0) Was used to learn how the basic gym finder functionality could work using Google Maps API and Google Places API.
+
+- [Harvard World Map](https://worldmap.harvard.edu/data/geonode:country_centroids_az8) is the source of the original CSV file I edited to use for the country restrictions feature of the gym finder.
+
 ### Code
 
 -   [Bootstrap](https://getbootstrap.com/) library ver. 4.1.3 is used throughout the project to make the site responsive and provide the base components/ structure.
@@ -259,8 +308,13 @@ The project is deployed and live using GitHub pages. This is a very useful tool 
 ### Media
 
 -   All icons were sourced and imported from [FontAwesome](https://fontawesome.com/)
+-   [Map marker](https://fontawesome.com/icons/map-marker-alt?style=solid) was downloaded from FontAwesome and used as an svg.
 
 #### Original creators and links to images
+
+-Karsten Winegeart is the original creator of [this](https://unsplash.com/photos/0Wra5YYVQJE) image used as the background of the landing page.
+
+-All images of businesses and locations supplied by the Google Places library are owned by their respective creators.
 
 ### Acknowledgements
 
