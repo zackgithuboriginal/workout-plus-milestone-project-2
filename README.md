@@ -44,7 +44,7 @@ The wireframes for the website were developed using [Figma](https://www.figma.co
 
  -   Landing Page Wireframe - [View](https://github.com/zackgithuboriginal/workout-plus-milestone-project-2/blob/master/assets/wireframes/landing-page-desktop-wireframe.png)
 
--   Landing Page - Mobile Wireframe - [View](https://github.com/zackgithuboriginal/workout-plus-milestone-project-2/blob/master/assets/wireframes/landing-page-mobile-wireframe.png)
+ -   Landing Page - Mobile Wireframe - [View](https://github.com/zackgithuboriginal/workout-plus-milestone-project-2/blob/master/assets/wireframes/landing-page-mobile-wireframe.png)
 
  -   Gym Finder Wireframe - [View](https://github.com/zackgithuboriginal/workout-plus-milestone-project-2/blob/master/assets/wireframes/gym-finder-desktop-wireframe.png)
 
@@ -52,8 +52,40 @@ The wireframes for the website were developed using [Figma](https://www.figma.co
 
 ## Features
 
+### Landing Page
+
+![Image of Landing Page](https://github.com/zackgithuboriginal/workout-plus-milestone-project-2/blob/master/assets/images/landing-page.jpg)
+The landing page is the user's first introduction to the site and as such it was important to not only provide information that will inform the user about the purpose and functionality of the website but to set the tone of the website and to start to instill the identity of the website onto the user. The landing page therefore contains three primary elements. A large eye catching callout with a CTA button that links to the gym finder application. A text section containing information about the website and explaining some of how the gym finder application works and a large hero image in the background of a man in the middle of working out that helps to set the tone of the website and create a sense of energy and activity.
+
+### Gym Finder Page
+
 ![Image of Gym Search Feature](https://github.com/zackgithuboriginal/workout-plus-milestone-project-2/blob/master/assets/images/gym-finder-application.png)
-The most important feature of the site is the gym finder application. The gym finder application allowsa user to search
+The most important feature of the site is the gym finder page. The gym finder application allows a user to search a desired location for gyms and other businesses related to exsercise and fitness. It visually displays the results on a map that is powered by the Google Maps API, with the 20 nearest locations displayed with custom markers. These markers can be selected to bring up the name of the location on the map, and on the sidebar to the left of the page an information window will open with more extensive details including the address, location rating and website along with an image of the location.
+
+### Autocomplete Search
+![Image of an autocomplete search](https://github.com/zackgithuboriginal/workout-plus-milestone-project-2/blob/master/assets/images/autocomplete.PNG)
+
+The autocomplete search utilises the Google Place Autocomplete API. It reads any string typed into the text input field and turns that into an autocomplete request. The results are limited to addresses to streamline the experience for the user rather than allow for businesses and other locations to fill up the prediction options. Using the country selection dropdown input which contains a full list of countries it is possible for a user to select a specific country in which they want to search. After selecting a country the only predictions suggested to users will be located within that country. This allows for much more accurate autocomplete suggestions, and again improves the user experience of the feature.
+
+### Geocode Search
+![Image of an autocomplete search](https://github.com/zackgithuboriginal/workout-plus-milestone-project-2/blob/master/assets/images/geocode.PNG)
+
+The geocode search uses a Google Geocode API request. If a user decides to hit enter or to click the button to submit their text input, the string will be sent in a Geocoder request and be returned as a lat, lng coordinate that is then used to center the map on the location where the gym search will be carried out. As with the autocomplete search it is possible to specify a country to search in, however in the case of the geocoder search it only biases the result and if no location within the specified country is found it will default to a global search. Using a country specific search increases the accuracy of the search.
+
+### Device Geolocation Search
+![Image of an autocomplete search](https://github.com/zackgithuboriginal/workout-plus-milestone-project-2/blob/master/assets/images/geolocation.PNG)
+
+The geolocation search uses the Web Geolocation API to first request from the user permission to use their location and if they user approves it will use their device's functionality to provide a location for them. The result of this search again contains lat, lng coordinates which are used to center the map with great accuracy. This method of searching is the most covenient for searching in the immediate local area of the user as it's not necessary to know any addresses in order to search.
+
+### Map Results Display 
+![Image of an autocomplete search](https://github.com/zackgithuboriginal/workout-plus-milestone-project-2/blob/master/assets/images/map-results.PNG)
+
+The results of the search are displayed as so, with orange markers on the map. Each of these markers represent a gym or similar location around the radius of the search location. To provide a good selection of results without overloading the map, only the closest 20 locations are displayed. If a user selects one of these markers a small window will pop up above the marker with the location's name. As well as that a side panel below the search input section will open and display further details about the location.
+
+### Side Panel Results Display 
+![Image of an autocomplete search](https://github.com/zackgithuboriginal/workout-plus-milestone-project-2/blob/master/assets/images/example-gym-result.PNG)
+
+After a marker is selected on the map a display opens beneath the search options. This panel will display important information about the location selected to help the user make their decision to enable them to conduct further research and more effectively compare their options. As is visible above, in order to provide accurate information and consistent feedback to the user, if a location does not have value for a certain property in the Google Place database a pre determined placeholder response will display. In the case above the location had no affiliated website, so the gym finder application notifies the user as such instead of leaving the space blank or allowing the previous location's information to persist and cause confusion.
 
 ## Technologies Used
 
