@@ -162,7 +162,8 @@ h1.landing-page-heading {
 	color: #F9F9F9;
 	position: relative;
 	width: 100%;
-	height: 45vh;
+    height: 45vh;
+    min-height: 35rem;
 }
 
 .landing-page p {
@@ -184,7 +185,8 @@ h1.landing-page-heading {
 	height: 50vh;
 	max-height: 50vh;
 	width: 100%;
-	overflow: hidden;
+    overflow: hidden;
+    min-height: 35rem;
 }
 
 .dark-overlay {
@@ -602,7 +604,8 @@ footer p {
 		width: 90%;
 		left: 5%;
 		color: #1E3231;
-		height: auto;
+        height: auto;
+        min-height: 15rem;
 	}
 	.landing-page p {
 		position: relative;
