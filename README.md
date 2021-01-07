@@ -76,12 +76,12 @@ The most important feature of the site is the gym finder page. The gym finder ap
 ### Autocomplete Search
 ![Image of an autocomplete search](https://github.com/zackgithuboriginal/workout-plus-milestone-project-2/blob/master/assets/images/autocomplete.PNG)
 
-The autocomplete search utilises the Google Place Autocomplete API. It reads any string typed into the text input field and turns that into an autocomplete request. The results are limited to addresses to streamline the experience for the user rather than allow for businesses and other locations to fill up the prediction options. Using the country selection dropdown input which contains a full list of countries a user can select a specific country in which they want to search. After selecting a country the only predictions suggested to users will be located within that country. This allows for much more accurate autocomplete suggestions, and again improves the user experience of the feature.
+The autocomplete search utilises the Google Place Autocomplete API. It reads any string typed into the text input field and turns that into an autocomplete request. The results are limited to addresses to streamline the experience for the user rather than allow for businesses and other locations to fill up the prediction options. Using the country selection dropdown input which contains a full list of countries a user can select a specific country in which they want to search. After selecting a country the map will relocate to that country and all predictions suggested to users will be located within that country. This allows for much more accurate autocomplete suggestions, and again improves the user experience of the feature.
 
 ### Geocode Search
 ![Image of an autocomplete search](https://github.com/zackgithuboriginal/workout-plus-milestone-project-2/blob/master/assets/images/geocode.PNG)
 
-The geocode search uses a Google Geocode API request. If a user decides to hit enter or to click the button to submit their text input, the string will be sent in a Geocoder request and be returned as lat, lng coordinates that are then used to centre the map on the location where the gym search will be carried out. As with the autocomplete search it is possible to specify a country to search in, however in the case of the geocoder search it only biases the result and if no location within the specified country is found it will default to a global search. Using a country-specific search increases the accuracy of the search.
+The geocode search uses a Google Geocode API request. If a user decides to hit enter or to click the button to submit their text input, the string will be sent in a Geocoder request and be returned as lat, lng coordinates that are then used to centre the map on the location where the gym search will be carried out. As with the autocomplete search it is possible to specify a country to search in which will recenter the map, however in the case of the geocoder search it only biases the result and if no location within the specified country is found it will not return any result. Using a country-specific search increases the accuracy of the search but restricts the results.
 
 ### Device Geolocation Search
 ![Image of an autocomplete search](https://github.com/zackgithuboriginal/workout-plus-milestone-project-2/blob/master/assets/images/geolocation.PNG)
@@ -285,7 +285,7 @@ To ensure that the website performed well without any major delays or issues esp
 
 **Expected:** The user should be able to narrow down the search area to a country to guarantee a more accurate result.
 
-**Result:** The user can select any country from the dropdown list. Both the autocomplete search and the address search will then restrict the results to locations within the chosen country when possible.
+**Result:** The user can select any country from the dropdown list. This will recenter the map to display the centroid coordinates of that country. Both the autocomplete search and the address search will then restrict the results to locations within the chosen country when possible.
 
 ![Image of the dropdown country selection](https://github.com/zackgithuboriginal/workout-plus-milestone-project-2/blob/master/assets/images/country-search.PNG)
 
