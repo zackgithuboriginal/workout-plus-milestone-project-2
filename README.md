@@ -310,7 +310,31 @@ gym-finder.html | Enter "Toledo" into the input field, select Spain as the searc
 gym-finder.html | Select a map marker and then click on the website URL | The browser should open another tab to display the website | Pass
 gym-finder.html | Conduct a search using country selection and autocompleted address, and then select another country option | The search input field will clear | Pass
 
+### Bugs Discovered 
 
+One noteworthy bug that was discovered towards the end of the project that had to be addressed was the tendency of the landing page elements to compress upwards on short screen sizes. This resulted in text elements being displayed on top of each other and white font being displayed against a white background.
+
+![Image of bug](https://github.com/zackgithuboriginal/workout-plus-milestone-project-2/blob/master/assets/images/bug.png)
+
+I solved this problem by first identifying that the issue was being caused by the image container element having a height that was set with vh as its unit. This would normally not be a large issue however on a screen with a small width the text would wrap and push downwards as the image it was supposed to be overlaying on was compressing upwards. I solved this issue by assigning a min-height attribute to the image container so that it would not compress past a certain height, and as the window got shorter the content would simply overflow the page. Since the overflow setting of the parent container was set to scroll this was an acceptable solution that allowed the page to maintain it's sctructure while allowing all of the content to be accessible.
+
+```
+.image-container {
+    position: absolute;
+    padding: 0;
+    margin: 0;
+    justify-content: center;
+    align-content: center;
+    right: 0;
+    overflow: hidden;
+    width: 100%;
+    height: 50vh;
+    max-height: 50vh;
+    min-height: 35rem;  /* This was the fix that enabled the page to retain it's shape as it was made shorter*/ 
+} 
+```
+
+![Image of bug fix](https://github.com/zackgithuboriginal/workout-plus-milestone-project-2/blob/master/assets/images/bug-fix.png)
 
 ## Deployment
 
@@ -331,6 +355,8 @@ gym-finder.html | Conduct a search using country selection and autocompleted add
 3. After filling out these two options and selecting the "Save" button and you will be presented with a URL on which the project is now hosted.
 
 ![Image of the published URL](https://github.com/zackgithuboriginal/workout-plus-milestone-project-2/blob/master/assets/images/published.PNG)
+
+The master branch is fully up to date.
 
 ### To Clone the Repository and Run Locally
 
@@ -371,6 +397,10 @@ gym-finder.html | Conduct a search using country selection and autocompleted add
 5. Enter the desired location to clone the repository to and click the clone button. 
 
 6. The repository will then be cloned to that location.
+
+#### To Run the Project Locally
+
+Running the project locally after either method of cloning is as straight forward as opening the directory location of the project using your preferred IDE.
 
 ## Credits
 
