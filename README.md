@@ -210,7 +210,7 @@ To ensure that the website performed well without any major delays or issues esp
 
 **Result:** When the user arrives at the landing page they are presented with a text paragraph giving an overview of the purpose for the website and the functionality of the web application.
 
-![Image of landing page information]()
+![Image of landing page information](https://github.com/zackgithuboriginal/workout-plus-milestone-project-2/blob/master/assets/images/landing-info.PNG)
 
 #### 2.	Goal: Navigate and explore the website.
 
@@ -218,7 +218,7 @@ To ensure that the website performed well without any major delays or issues esp
 
 **Result:** At all times the navigation bar is fixed at the top of the screen providing clear navigation opportunities to the user.
 
-![Image of the navbar]()
+![Image of the navbar](https://github.com/zackgithuboriginal/workout-plus-milestone-project-2/blob/master/assets/images/navbar.PNG)
 
 #### 3.	Goal: Find and understand how to use the gym search application.
 
@@ -230,7 +230,7 @@ To ensure that the website performed well without any major delays or issues esp
 1.	When landing page is accessed, there is a clear navigation option “Gym Search” at the top of the page. There is also a large CTA button in the page heading. Both of these options will navigate the user directly to the gym search page.
 2.	On the gym search page the user is presented with a number of clear input options with labels and example search options of “Ireland” and “Dublin” as placeholders. The map by default is centred on this location to provide the user with an example search result.
 
-![Image of the navbar]()
+![Image of the search options](https://github.com/zackgithuboriginal/workout-plus-milestone-project-2/blob/master/assets/images/search-inteface.PNG)
 
 #### 4.	Goal: Identify potential new workout locations in a specific area..
 
@@ -238,7 +238,7 @@ To ensure that the website performed well without any major delays or issues esp
 
 **Result:** The user can enter their desired address, they will then be presented with autocomplete options. When the user selects an option the map will navigate to that spot and display markers on the map representing identified locations. 
 
-![Image of the navbar]()
+![Image of the map results](https://github.com/zackgithuboriginal/workout-plus-milestone-project-2/blob/master/assets/images/map-results.PNG)
 
 #### 5.	Goal: Identify potential new workout locations around their location.
 
@@ -246,7 +246,7 @@ To ensure that the website performed well without any major delays or issues esp
 
 **Result:** The user can click the "Use device's location" button which will then send a request to the user to allow permission to use their device's location. When they accept, the map will navigate to their device's location and display results.
 
-![Image of the navbar]()
+![Image of the geolocation request](https://github.com/zackgithuboriginal/workout-plus-milestone-project-2/blob/master/assets/images/geolocation.PNG)
 
 #### 6.	Select a location and access contact information for it.
 
@@ -254,7 +254,7 @@ To ensure that the website performed well without any major delays or issues esp
 
 **Result:** After submitting a desired search location the user is presented with 20 potential locations marked on the map. When the user clicks on any of the markers the application will display a window containing important information regarding the location.
 
-![Image of the navbar]()
+![Image of location details](https://github.com/zackgithuboriginal/workout-plus-milestone-project-2/blob/master/assets/images/example-gym-result.PNG)
 
 #### 7.	Goal: Search through potential locations comparing ratings.
 
@@ -266,7 +266,7 @@ To ensure that the website performed well without any major delays or issues esp
 
 **Fix:** Upon clicking on a new location, a check is done to determine whether the location has a rating attribute. If it does not have a rating available the website now provides a “No available rating” message to ensure accurate feedback for the user.
 
-![Image of the navbar]()
+![Image of the alternate rating response](https://github.com/zackgithuboriginal/workout-plus-milestone-project-2/blob/master/assets/images/rating.PNG)
 
 #### 8. Search a location that does not appear using the autocomplete results.
 
@@ -274,13 +274,34 @@ To ensure that the website performed well without any major delays or issues esp
 
 **Result:** The user can enter their desired location and hit submit. The application will use a geocoder search to convert their address to coordinates and navigate the map to that location.
 
+![Image of the geolocation request](https://github.com/zackgithuboriginal/workout-plus-milestone-project-2/blob/master/assets/images/geocode.PNG)
+
 #### 9. Prioritise a search country to get more accurate results.
 
 **Expected:** The user should be able to narrow down the search area to a country to guarantee a more accurate result.
 
 **Result:** The user can select any country from the dropdown list. Both the autocomplete search and the address search will then restrict the results to locations within the chosen country when possible.
 
+![Image of the dropdown country selection](https://github.com/zackgithuboriginal/workout-plus-milestone-project-2/blob/master/assets/images/country-search.PNG)
+
 ### Manual Functionality Testing
+
+Page | Action | Expected Result | Result
+------------ | ------------- | ------------- | -------------
+index.html | Click on navbar branding | Page reloads | Pass
+index.html | Click on CTA button | Browser navigates to gym-finder.html | Pass
+gym-finder.html | Refresh Page | Page reloads and map resets | Pass
+gym-finder.html | Click the "Use device's location" button | Browser prompts user to allow location permission | Pass
+gym-finder.html | Allow location permission | Map navigates to tester's location, displays nearby locations | Pass
+gym-finder.html | Click the submit button without entering text into input field | Box will outline in red and tester will be informed it is a required field | Pass
+gym-finder.html | Click the dropdown country selection element | Dropdown box of country options will appear | Pass
+gym-finder.html | Select one of the orange markers on the map | Name of location will appear above marker and information panel will open below search options | Pass
+gym-finder.html | Click the "x" button in the gym information panel | Information panel will dissapear | Pass
+gym-finder.html | Submit a search nearby to the default location, ie "Howth" and zoom out | The map should navigate to Howth and when zoomed out it should be clear that the original markers have been replaced by the new ones | Pass
+gym-finder.html | Select one map marker and then select another one | The information panel for the original gym should open and then all of the information should be replaced by the details of the second | Pass
+gym-finder.html | Enter "Toledo" into the input field, select Spain as the search country and submit | The map will navigate to Toledo, Spain | Pass
+gym-finder.html | Enter "Toledo" into the input field without selecting a search country and submit | The map will navigate to a Toledo not in Spain | Pass
+gym-finder.html | Select a map marker and then click on the website url | The browser should open another tab to display the website | Pass
 
 
 ## Deployment
