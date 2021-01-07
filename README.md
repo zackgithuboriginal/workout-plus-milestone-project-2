@@ -33,6 +33,7 @@ The purpose of the website is to connect visitors with potential exercise locati
 
 #### Design Overview
 The main principle behind the design of the website was to create a space that was easy to navigate, that offered clear and easy to understand information and easy to use. The driving force behind the design was my desire to create a website that melded high energy colour and imagery with clear and legible information and an immediately understandable structure.
+
 #### Colour Scheme
 The colour scheme is quite simple, essentially consisting of only three colours. The primary colour, which is used frequently throughout the design is #F39237. This is a very strong and eye-catching colour that conveys the sense of energy and activity that I wanted to associate with the website. I believe that by using an energetic colour in this manner it will help to build the identity of the website as well as subconsciously create a link between the website and the energetic activities involved in exercising in the mind of any visitor to the site. The other two colours in use are #F9F9F9 and #1E3231, and they used for accent and contrasting purposes. #1E3231 is a shade of dark – grey navy and I find that it stands out quite well against both the white background of certain sections and the reduced opacity #F39237 which is used as a background colour in other sections. #1E3231 is therefore used as the primary font colour for most instances of text on the website as I believe it to be more comfortable and easy on the eyes than a typical black font colour. #F9F9F9 is an offwhite shade that is used as the text colour for navbar elements and any links or CTA buttons. Reserving this colour only for actionable elements helps a visitor to understand the navigation and structure of the site more quickly and easily as they can identify clickable links just through their colour.
 ![Image of the colour scheme](https://github.com/zackgithuboriginal/workout-plus-milestone-project-2/blob/master/assets/images/workout-plus-colour-scheme.png)
@@ -40,9 +41,12 @@ The colour scheme is quite simple, essentially consisting of only three colours.
 
 #### Typography
 There are two fonts used on the website. The first, Montserrat is a very minimal and clean font and is used for the navigation options and important headings. The second font used is Raleway and is used for information paragraphs, I chose this font for this function because I consider it to be a very readable font and it allows for fast legibility and information digestion. I intentionally used two separate fonts for these functions to enable a user to discern the content and importance of text from a quick scan and allow a user to intuit and learn the structure of the website more easily than they would have been able to if the website used only one font type.
+
 #### Imagery
 There are not a lot of images used in the design of the website. The most notable example, however, is the background image of the landing page. This is an energetic image of a man in the process of working out. This image I believe is very effective at setting the tone and further reinforcing the theme and purpose of the website alongside the name and general branding. This image ties in with the theming of the design well, evoking high energy but by overlaying a low opacity screen on it does not overpower the page.
+
 Additionally, whenever a user selects a gym on the map, an image of the gym is supplied in the additional information section. Using JavaScript I was able to access the photos attached to the location in the Google Places Library, and then loop through the images until one with a suitable landscape orientation was encountered. This image is then be displayed alongside the other location details and with the screening process, the layout and display of information would be consistent and clear while clicking between different locations. I believe that this was necessary to not only maintain the neat display of information but to provide a pleasurable experience to the user, as they clicked through different gyms to compare their details and appearance.
+
 If a location did not have any images associated with it in the Google Places Library or that it did not have any available images in the correct orientation. A simple placeholder image is used. This image, created by me, contains the text “No Image Available” with a background colour of #F39237 to maintain the site’s consistent theme while also informing the user for the reason that no image is displayed as I believe that this provides a better user experience than just displaying a blank space.
 
 ### Wireframes
@@ -227,13 +231,9 @@ To ensure that the website performed well without any major delays or issues esp
 
 #### 3.	Goal: Find and understand how to use the gym search application.
 
-**Expected:**
-1.	Upon loading landing page, the user should be presented with clear navigation options to the gym search application.
-2.	User should then find gym search application and easily understand how to use it.
+**Expected:** Upon loading landing page, the user should be presented with clear navigation options to the gym search application. When they navigate to the gym finder application they should find it easy to understand and use.
 
-**Result:**
-1.	When the landing page is accessed, there is a clear navigation option “Gym Search” at the top of the page. There is also a large CTA button in the page heading. Both of these options will navigate the user directly to the gym search page.
-2.	On the gym search page the user is presented with several clear input options with labels and example search options of “Ireland” and “Dublin” as placeholders. The map by default is centred on this location to provide the user with an example search result.
+**Result:** When the landing page is accessed, there is a clear navigation option “Gym Search” at the top of the page. There is also a large CTA button in the page heading. Both of these options will navigate the user directly to the gym search page. On the gym search page the user is presented with several clear input options with labels and example search options of “Ireland” and “Dublin” as placeholders. The map by default is centred on this location to provide the user with an example search result.
 
 ![Image of the search options](https://github.com/zackgithuboriginal/workout-plus-milestone-project-2/blob/master/assets/images/search-interface.PNG)
 
