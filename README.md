@@ -140,28 +140,28 @@ After a marker is selected on the map a display opens beneath the search options
 12. [Google Cloud Platform](https://cloud.google.com/maps-platform)
 - The Google Cloud Platform was used to manage the Google APIs used in the project. It is also where I styled the Map used in the project.
  
-13.[Google Maps API](https://developers.google.com/maps/documentation/javascript/overview)
+13. [Google Maps API](https://developers.google.com/maps/documentation/javascript/overview)
 - The Google Maps API is used to support and display the map in the gym finder application.
 
-14.[Google Places API](https://developers.google.com/places/web-service/overview)
+14. [Google Places API](https://developers.google.com/places/web-service/overview)
 - The Google Places API is used to search for locations in the Places library and also to access information and details about the locations.
 
-15.[Google Geocoding API](https://developers.google.com/maps/documentation/geocoding/start)
+15. [Google Geocoding API](https://developers.google.com/maps/documentation/geocoding/start)
 - The geocoding API is used to convert an address string into a lat lng attribute that can then be used in a search.
 
-16.[Google Autocomplete API](https://developers.google.com/places/web-service/autocomplete)
+16. [Google Autocomplete API](https://developers.google.com/places/web-service/autocomplete)
 - This API is used to supply autocomplete suggestions for the address search input.
 
-17.[Geolocation Web API](https://developer.mozilla.org/en-US/docs/Web/API/Geolocation_API)
+17. [Geolocation Web API](https://developer.mozilla.org/en-US/docs/Web/API/Geolocation_API)
 - This API was used to request the user's permission to use their device's location in a search.
 
-18.[Papa Parse](https://www.papaparse.com)
+18. [Papa Parse](https://www.papaparse.com)
 - Papa Parse was used to parse the CSV file containing the full list of countries and their two-character country codes.
 
-19.[gtMatrix](https://gtmetrix.com/)
+19. [gtMatrix](https://gtmetrix.com/)
 - GTmatrix was used to test website performance and page load speed.
 
-20.[Multi Device Website Mockup Generator](https://techsini.com/multi-mockup/index.php)
+20. [Multi Device Website Mockup Generator](https://techsini.com/multi-mockup/index.php)
 - This website was used to generate the image at the top of the readme.md file.
 
 ### Testing
@@ -184,16 +184,16 @@ The website was viewed and tested through the following browsers and devices:
 
 At the end of the project, the code was put through CSS and HTML validators to ensure there were no errors presented.
 
-### index.html html validation
+### index.html html validation          [W3C HTML Validator](https://validator.w3.org/nu/)
 ![Image of HTML validator for landing page](https://github.com/zackgithuboriginal/workout-plus-milestone-project-2/blob/master/assets/images/html-validator-index.PNG)
 
-### gym-finder.html html validation
+### gym-finder.html html validation     [W3C HTML Validator](https://validator.w3.org/nu/)
 ![Image of HTML validator for gym finder](https://github.com/zackgithuboriginal/workout-plus-milestone-project-2/blob/master/assets/images/html-validator-gym-finder.png)
 
-### style.css css validation
+### style.css css validation            [W3C CSS Validator](https://jigsaw.w3.org/css-validator/)
 ![Image of css validator](https://github.com/zackgithuboriginal/workout-plus-milestone-project-2/blob/master/assets/images/css-validator.PNG)
 
-### gym-finder.js js validation
+### gym-finder.js js validation         [JSHint](https://jshint.com/)
 ![Image of Js linter results](https://github.com/zackgithuboriginal/workout-plus-milestone-project-2/blob/master/assets/images/js-validator.PNG)
 
 ### Performance Testing 
