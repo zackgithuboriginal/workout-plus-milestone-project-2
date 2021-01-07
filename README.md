@@ -135,28 +135,31 @@ After a marker is selected on the map a display opens beneath the search options
 11. [Chrome DevTools](https://developers.google.com/web/tools/chrome-devtools)
  - DevTools was used for analysing the code and design of the practice during development. Also used to test changes in real-time.
  
-12.[Google Maps API](https://developers.google.com/maps/documentation/javascript/overview)
+12. [Google Cloud Platform](https://cloud.google.com/maps-platform)
+- The Google Cloud Platform was used to manage the Google APIs used in the project. It is also where I styled the Map used in the project.
+ 
+13.[Google Maps API](https://developers.google.com/maps/documentation/javascript/overview)
 - The Google Maps API is used to support and display the map in the gym finder application.
 
-13.[Google Places API](https://developers.google.com/places/web-service/overview)
+14.[Google Places API](https://developers.google.com/places/web-service/overview)
 - The Google Places API is used to search for locations in the Places library and also to access information and details about the locations.
 
-14.[Google Geocoding API](https://developers.google.com/maps/documentation/geocoding/start)
+15.[Google Geocoding API](https://developers.google.com/maps/documentation/geocoding/start)
 - The geocoding API is used to convert an address string into a lat lng attribute that can then be used in a search.
 
-15.[Google Autocomplete API](https://developers.google.com/places/web-service/autocomplete)
+16.[Google Autocomplete API](https://developers.google.com/places/web-service/autocomplete)
 - This API is used to supply autocomplete suggestions for the address search input.
 
-16.[Geolocation Web API](https://developer.mozilla.org/en-US/docs/Web/API/Geolocation_API)
+17.[Geolocation Web API](https://developer.mozilla.org/en-US/docs/Web/API/Geolocation_API)
 - This API was used to request the user's permission to use their device's location in a search.
 
-17.[Papa Parse](https://www.papaparse.com)
+18.[Papa Parse](https://www.papaparse.com)
 - Papa Parse was used to parse the CSV file containing the full list of countries and their two character country codes.
 
-18.[gtMatrix](https://gtmetrix.com/)
+19.[gtMatrix](https://gtmetrix.com/)
 - GTmatrix was used to test website performance and page load speed.
 
-18.[Multi Device Website Mockup Generator](https://techsini.com/multi-mockup/index.php)
+20.[Multi Device Website Mockup Generator](https://techsini.com/multi-mockup/index.php)
 - This website was used to generate the image at the top of the readme.md file.
 
 ### Testing
@@ -388,9 +391,9 @@ gym-finder.html | Select a map marker and then click on the website url | The br
 
 #### Original creators and links to images
 
--Karsten Winegeart is the original creator of [this](https://unsplash.com/photos/0Wra5YYVQJE) image used as the background of the landing page.
+- Karsten Winegeart is the original creator of [this](https://unsplash.com/photos/0Wra5YYVQJE) image used as the background of the landing page.
 
--All images of businesses and locations supplied by the Google Places library are owned by their respective creators.
+- All images of businesses and locations supplied by the Google Places library are owned by their respective creators.
 
 ### Acknowledgements
 
