@@ -87,16 +87,25 @@ function createCountryOptions(results) {
  * This function is called when a country is selected
  * It sets the autocomplete country restriction to the chosen value
  * It also takes the coordinate values of the country, and calls for a repositioning of the map to those coordinates
+ * It also calls a function to clear the search input field to reset the search
  */
 function setAutocompleteCountry() {
     let targetCountry = selectTarget.value.split(",");
-    let targetCoordinates = {lat: parseFloat(targetCountry[2]), lng: parseFloat(targetCountry[1])}
+    let targetCoordinates = { lat: parseFloat(targetCountry[2]), lng: parseFloat(targetCountry[1]) }
     repositionMap(targetCoordinates, true);
+    clearField();
     if (targetCountry === "all") {
         autocomplete.setComponentRestrictions({ country: [] });
     } else {
         autocomplete.setComponentRestrictions({ country: targetCountry[0] });
     }
+}
+
+/**
+ * This function clears the search input field when called
+ */
+function clearField() {
+    document.getElementById("address-input").value = "";
 }
 
 /**
@@ -106,7 +115,7 @@ function setAutocompleteCountry() {
  */
 function repositionMap(mapLocation, zoom) {
     map.setCenter(mapLocation);
-    if(zoom){
+    if (zoom) {
         map.setZoom(8)
     } else {
         map.setZoom(15)
