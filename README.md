@@ -230,7 +230,7 @@ To ensure that the website performed well without any major delays or issues esp
 1.	When landing page is accessed, there is a clear navigation option “Gym Search” at the top of the page. There is also a large CTA button in the page heading. Both of these options will navigate the user directly to the gym search page.
 2.	On the gym search page the user is presented with a number of clear input options with labels and example search options of “Ireland” and “Dublin” as placeholders. The map by default is centred on this location to provide the user with an example search result.
 
-![Image of the search options](https://github.com/zackgithuboriginal/workout-plus-milestone-project-2/blob/master/assets/images/search-inteface.PNG)
+![Image of the search options](https://github.com/zackgithuboriginal/workout-plus-milestone-project-2/blob/master/assets/images/search-interface.PNG)
 
 #### 4.	Goal: Identify potential new workout locations in a specific area..
 
@@ -305,10 +305,65 @@ gym-finder.html | Select a map marker and then click on the website url | The br
 
 
 ## Deployment
-The project is deployed and live using GitHub pages. This is a very useful tool and it is was setup very simply.
-1. Go into the repository where the project is saved and then go to the settings menu by clicking the gear icon inside the repository. 
-2. From inside the settings menu navigated to the GitHub Pages section where you will be presented with the option to choose the Branch and Root folder of the repository from which you wish to source the project from. 
-3. After filling out these two options select the "Save" button and you will be presented with a URL on which the project is now hosted. 
+
+### To Publish to GitHub Pages 
+
+1. Go into the settings of the github respitory where the project is hosted.
+
+
+![Image of the settings tab of a github repository](https://github.com/zackgithuboriginal/workout-plus-milestone-project-2/blob/master/assets/images/settings.PNG)
+
+2. Inside the settings scroll down to GitHub Pages section, set the branch to master.
+
+![Image of the branch setting](https://github.com/zackgithuboriginal/workout-plus-milestone-project-2/blob/master/assets/images/branch.PNG)
+
+3. Then set the directory to root and click the save button. 
+
+![Image of the root setting and save button](https://github.com/zackgithuboriginal/workout-plus-milestone-project-2/blob/master/assets/images/root.PNG)
+
+3. After filling out these two options and selecting the "Save" button and you will be presented with a URL on which the project is now hosted.
+
+![Image of the published URL](https://github.com/zackgithuboriginal/workout-plus-milestone-project-2/blob/master/assets/images/published.PNG)
+
+### To Clone the Repository and Run Locally
+
+#### To Clone Using the Command Line
+
+1. Navigate to the home page of the repository.
+
+2. To the top right of the repository file directory click the "Code" button.
+
+![Image of the clone repository tab](https://github.com/zackgithuboriginal/workout-plus-milestone-project-2/blob/master/assets/images/clone.PNG)
+
+3. Make sure that the https tab is open and click the copy to clipboard button.
+
+![Image of the option to copy https link](https://github.com/zackgithuboriginal/workout-plus-milestone-project-2/blob/master/assets/images/https-clone.PNG)
+
+4. Navigate to your IDE and open the directory to which you want to clone the repository
+
+5. Open the terminal and type "git clone" followed by the contents of the clipboard which will be "https://github.com/zackgithuboriginal/workout-plus-milestone-project-2.git" click enter and the repository will then clone to that directory.
+
+![Image of the command line command](https://github.com/zackgithuboriginal/workout-plus-milestone-project-2/blob/master/assets/images/command-line.PNG)
+
+#### To Clone Using GitHub Desktop
+
+1. Navigate to the home page of the repository.
+
+2. To the top right of the repository file directory click the "Code" button.
+
+![Image of the clone repository tab](https://github.com/zackgithuboriginal/workout-plus-milestone-project-2/blob/master/assets/images/clone.PNG)
+
+3. Halfway down the tab click the "Open with GitHub Desktop" option.
+
+![Image of the open github desktop button](https://github.com/zackgithuboriginal/workout-plus-milestone-project-2/blob/master/assets/images/desktop-clone.PNG)
+
+4. If the GitHub Desktop application is installed and open it will be presented with this prompt.
+
+![Image of the github desktop prompt](https://github.com/zackgithuboriginal/workout-plus-milestone-project-2/blob/master/assets/images/desktop-url.PNG)
+
+5. Enter the desired location to clone the repository to and click the clone button. 
+
+6. The repository will then be cloned to that location.
 
 ## Credits
 
