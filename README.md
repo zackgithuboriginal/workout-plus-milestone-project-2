@@ -312,6 +312,7 @@ gym-finder.html | Conduct a search using country selection and autocompleted add
 
 ### Bugs Discovered 
 
+1.
 One noteworthy bug that was discovered towards the end of the project that had to be addressed was the tendency of the landing page elements to compress upwards on short screen sizes. This resulted in text elements being displayed on top of each other and white font being displayed against a white background.
 
 ![Image of bug](https://github.com/zackgithuboriginal/workout-plus-milestone-project-2/blob/master/assets/images/bug.png)
@@ -336,6 +337,51 @@ I solved this problem by first identifying that the issue was being caused by th
 
 ![Image of bug fix](https://github.com/zackgithuboriginal/workout-plus-milestone-project-2/blob/master/assets/images/bug-fix.png)
 
+2.
+Another noteworthy bug that I found interesting was one that caused the gym image to stretch and flex outside of its original ratio when the webpage was open in Google Chrome but not when it was open in Firefox, or Edge or Opera.
+
+#### Image being stretched in Google Chrome
+![Image of chrome image stretch bug](https://github.com/zackgithuboriginal/workout-plus-milestone-project-2/blob/master/assets/images/chrome-compression-issue.png)
+
+#### Image as it is supposed to appear in Firefox
+![Image of firefox no stretching](https://github.com/zackgithuboriginal/workout-plus-milestone-project-2/blob/master/assets/images/firefox-no-compression.png)
+
+This was a strange bug and took me a while to figure out the reason why it would be affected one browser and not the others. In the end I believe it has something to do with the way that Google Chrome and Firefox differ in the way that they interpret flex items when they don't have specified heights and widths. In this case because all of the images were going to be different sizes and ratios, resolutions etc I decided it wasn't feasible to be too strict with the size constraints so I was trying to use max-width and max-height elements with the elements height set to 100% and width set as auto in the idea that it would expand to fit the container.
+
+```
+.location-image {
+        display: flex;
+        text-align: center;
+        padding: 0;
+        margin-bottom: 1rem;
+        height: 100%;
+        width: auto;
+        max-height: 30vh;
+        max-width: 100%;
+}
+```
+I believe the issue arose becuase I also had the height of the image container set to 100% so the image had no specific number to be 100% the height of.
+
+```
+.gym-image-container {
+        display: flex;
+        padding: 0;
+        height: 100%;
+}
+```
+After a little research i determined that by changing the height attribute to be auto and maintaining the max height and width attributes the image would behave as intended. It would no longer attempt to fill the vertical space at all times but it would still be as tall as it was possible to maintain it's ratio for within the max-width and max-height constraints.
+
+```
+.location-image {
+        display: flex;
+        text-align: center;
+        padding: 0;
+        margin-bottom: 1rem;
+        height: auto;
+        max-height: 30vh;
+        max-width: 100%;
+}
+```
 ## Deployment
 
 ### To Publish to GitHub Pages 
