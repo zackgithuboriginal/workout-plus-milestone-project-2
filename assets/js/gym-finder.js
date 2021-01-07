@@ -88,11 +88,14 @@ function createCountryOptions(results) {
  * It sets the autocomplete country restriction to the chosen value
  * It also takes the coordinate values of the country, and calls for a repositioning of the map to those coordinates
  * It also calls a function to clear the search input field to reset the search
+ * It will not attempt to reposition if the country selection is set back to default value
  */
 function setAutocompleteCountry() {
     let targetCountry = selectTarget.value.split(",");
     let targetCoordinates = { lat: parseFloat(targetCountry[2]), lng: parseFloat(targetCountry[1]) }
-    repositionMap(targetCoordinates, true);
+    if (targetCountry[0] !== "all") {
+        repositionMap(targetCoordinates, true);
+    }
     clearField();
     if (targetCountry === "all") {
         autocomplete.setComponentRestrictions({ country: [] });
