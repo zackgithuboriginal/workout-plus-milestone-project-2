@@ -92,7 +92,7 @@ function createCountryOptions(results) {
  */
 function setAutocompleteCountry() {
     let targetCountry = selectTarget.value.split(",");
-    let targetCoordinates = { lat: parseFloat(targetCountry[2]), lng: parseFloat(targetCountry[1]) }
+    let targetCoordinates = { lat: parseFloat(targetCountry[2]), lng: parseFloat(targetCountry[1]) };
     if (targetCountry[0] !== "all") {
         repositionMap(targetCoordinates, true);
     }
@@ -119,10 +119,10 @@ function clearField() {
 function repositionMap(mapLocation, zoom) {
     map.setCenter(mapLocation);
     if (zoom) {
-        map.setZoom(8)
+        map.setZoom(8);
     } else {
-        map.setZoom(15)
-    };
+        map.setZoom(15);
+    }
     findLocalGyms(mapLocation);
 }
 
