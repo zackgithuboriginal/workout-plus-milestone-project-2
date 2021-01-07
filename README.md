@@ -3,8 +3,10 @@
 ![Image of Landing Page](https://github.com/zackgithuboriginal/workout-plus-milestone-project-2/blob/master/assets/images/multi-screen-display.PNG)
 
 ## Website Description
-This website contains a web application that offers the ability to connect visitors and users with Gyms and Exercise Centres either nearby to their location or around a desired location. The web application uses a suite of Google APIs to provide a map display and make use of the Places database and autocomplete search feature to display the locations and retrieve their details and ensure a more accurate user friendly search experience.
-The Gym Search feature offers two search options to the user, the first to select their desired country and then enter an address in the field that will autocomplete and offer suggestions and predictions and the second is to use the Device location search which uses the HTML geolocation API to read the device’s location and then initiates a map search on that location.
+This website contains a web application that offers the ability to connect visitors and users with Gyms and Exercise Centres either nearby to their location or around a desired location. The web application uses a suite of Google APIs to provide a map display and make use of the Places database and autocomplete search feature to display the locations and retrieve their details and ensure a more accurate user-friendly search experience.
+
+The Gym Search feature offers two search options to the user. The first allows them to select their desired country and then enter an address in the field that will autocomplete and offer suggestions and predictions. The second is to use the Device location search which uses the Geolocation Web API to read the device’s location and then initiates a map search on that location.
+
 The purpose of the website is to connect visitors with potential exercise locations as easily and conveniently as possible within a space that could be expanded to provide a more comprehensive workout planner service in the future.
 ## User Experience / UX
 ### User stories
@@ -30,18 +32,22 @@ The purpose of the website is to connect visitors with potential exercise locati
 ### Design
 
 #### Design Overview
-The main principles behind the design of the website was to create a space that was easy to navigate, that offered clear and easy to understand information and easy to use. The driving force behind the design was my desire to create a website that melded high energy colour and imagery with clear and legible information and an immediately understandable structure.
+The main principle behind the design of the website was to create a space that was easy to navigate, that offered clear and easy to understand information and easy to use. The driving force behind the design was my desire to create a website that melded high energy colour and imagery with clear and legible information and an immediately understandable structure.
+
 #### Colour Scheme
-The colour scheme is quite simple, essentially consisting of only three colours. The primary colour, which is used frequently throughout the design is #F39237. This is a very strong and eye-catching colour that conveys the sense of energy and activity that I wanted to associate with the website. I believe that by using an energetic colour in this manner it will help to build the identity of the website as well as subconsciously create a link between the website and the energetic activities involved in exercising in the mind of any visitor to the site. The other two colours in use are #F9F9F9 and #1E3231, and they used for accent and contrasting purposes. #1E3231 is a shade of dark – grey navy and I find that it stands out quite well against both the white background of certain sections and the reduced opacity #F39237 which is used as a background colour in other sections. #1E3231 is therefore used as the primary font colour for most instances of text on the website as I believe it to be more comfortable and easy on the eyes than a typical black font colour. #F9F9F9 is an offwhite shade that is used as a text colour for navbar elements and any links or CTA buttons. Reserving this colour only for actionable elements helps a visitor to understand the navigation and structure of the site more quickly and easily as they can identify clickable links just through their colour.
+The colour scheme is quite simple, essentially consisting of only three colours. The primary colour, which is used frequently throughout the design is #F39237. This is a very strong and eye-catching colour that conveys the sense of energy and activity that I wanted to associate with the website. I believe that by using an energetic colour in this manner it will help to build the identity of the website as well as subconsciously create a link between the website and the energetic activities involved in exercising in the mind of any visitor to the site. The other two colours in use are #F9F9F9 and #1E3231, and they used for accent and contrasting purposes. #1E3231 is a shade of dark – grey navy and I find that it stands out quite well against both the white background of certain sections and the reduced opacity #F39237 which is used as a background colour in other sections. #1E3231 is therefore used as the primary font colour for most instances of text on the website as I believe it to be more comfortable and easy on the eyes than a typical black font colour. #F9F9F9 is an offwhite shade that is used as the text colour for navbar elements and any links or CTA buttons. Reserving this colour only for actionable elements helps a visitor to understand the navigation and structure of the site more quickly and easily as they can identify clickable links just through their colour.
 ![Image of the colour scheme](https://github.com/zackgithuboriginal/workout-plus-milestone-project-2/blob/master/assets/images/workout-plus-colour-scheme.png)
 
 
 #### Typography
-There are two fonts used in the website. The first, Montserrat is a very minimal and clean font and is used for the navigation options and important headings. The second font used is Raleway and is used for information paragraphs, I chose this font for this function because I consider it to be a very readable font and it allows for fast legibility and information digestion. I intentionally used two separate fonts for these functions in order to enable a user to discern the content and importance of text from a quick scan and allow a user to intuit and learn the structure of the website more easily than they would have been able to if the website used only one font type.
+There are two fonts used on the website. The first, Montserrat is a very minimal and clean font and is used for the navigation options and important headings. The second font used is Raleway and is used for information paragraphs, I chose this font for this function because I consider it to be a very readable font and it allows for fast legibility and information digestion. I intentionally used two separate fonts for these functions to enable a user to discern the content and importance of text from a quick scan and allow a user to intuit and learn the structure of the website more easily than they would have been able to if the website used only one font type.
+
 #### Imagery
 There are not a lot of images used in the design of the website. The most notable example, however, is the background image of the landing page. This is an energetic image of a man in the process of working out. This image I believe is very effective at setting the tone and further reinforcing the theme and purpose of the website alongside the name and general branding. This image ties in with the theming of the design well, evoking high energy but by overlaying a low opacity screen on it does not overpower the page.
+
 Additionally, whenever a user selects a gym on the map, an image of the gym is supplied in the additional information section. Using JavaScript I was able to access the photos attached to the location in the Google Places Library, and then loop through the images until one with a suitable landscape orientation was encountered. This image is then be displayed alongside the other location details and with the screening process, the layout and display of information would be consistent and clear while clicking between different locations. I believe that this was necessary to not only maintain the neat display of information but to provide a pleasurable experience to the user, as they clicked through different gyms to compare their details and appearance.
-In the event that a location did not have any images associated with it in the Google Places Library or that it did not have any available images in the correct orientation. A simple placeholder image is used. This image, created by me, contains the text “No Image Available” with a background colour of #F39237 to maintain the site’s consistent theme while also informing the user for the reason that no image is displayed as I believe that this provides a better user experience than just displaying a blank space.
+
+If a location did not have any images associated with it in the Google Places Library or that it did not have any available images in the correct orientation. A simple placeholder image is used. This image, created by me, contains the text “No Image Available” with a background colour of #F39237 to maintain the site’s consistent theme while also informing the user for the reason that no image is displayed as I believe that this provides a better user experience than just displaying a blank space.
 
 ### Wireframes
 
@@ -60,27 +66,27 @@ The wireframes for the website were developed using [Figma](https://www.figma.co
 ### Landing Page
 
 ![Image of Landing Page](https://github.com/zackgithuboriginal/workout-plus-milestone-project-2/blob/master/assets/images/landing-page.jpg)
-The landing page is the user's first introduction to the site and as such it was important to not only provide information that will inform the user about the purpose and functionality of the website but to set the tone of the website and to start to instill the identity of the website onto the user. The landing page therefore contains three primary elements. A large eye catching callout with a CTA button that links to the gym finder application. A text section containing information about the website and explaining some of how the gym finder application works and a large hero image in the background of a man in the middle of working out that helps to set the tone of the website and create a sense of energy and activity.
+The landing page is the user's first introduction to the site and as such, it was important to not only provide information that will inform the user about the purpose and functionality of the website but to set the tone of the website and to start to instil the identity of the website onto the user. The landing page, therefore, contains three primary elements. A large eye-catching callout with a CTA button that links to the gym finder application. A text section containing information about the website and explaining some of how the gym finder application works and a large hero image in the background of a man in the middle of working out that helps to set the tone of the website and create a sense of energy and activity.
 
 ### Gym Finder Page
 
 ![Image of Gym Search Feature](https://github.com/zackgithuboriginal/workout-plus-milestone-project-2/blob/master/assets/images/gym-finder-application.png)
-The most important feature of the site is the gym finder page. The gym finder application allows a user to search a desired location for gyms and other businesses related to exsercise and fitness. It visually displays the results on a map that is powered by the Google Maps API, with the 20 nearest locations displayed with custom markers. These markers can be selected to bring up the name of the location on the map, and on the sidebar to the left of the page an information window will open with more extensive details including the address, location rating and website along with an image of the location.
+The most important feature of the site is the gym finder page. The gym finder application allows a user to search around a target location for gyms and other businesses related to exercise and fitness. It visually displays the results on a map that is powered by the Google Maps API, with the 20 nearest locations displayed with custom markers. These markers can be selected to bring up the name of the location on the map, and on the sidebar, to the left of the page, an information window will open with more extensive details including the address, location rating and website along with an image of the location.
 
 ### Autocomplete Search
 ![Image of an autocomplete search](https://github.com/zackgithuboriginal/workout-plus-milestone-project-2/blob/master/assets/images/autocomplete.PNG)
 
-The autocomplete search utilises the Google Place Autocomplete API. It reads any string typed into the text input field and turns that into an autocomplete request. The results are limited to addresses to streamline the experience for the user rather than allow for businesses and other locations to fill up the prediction options. Using the country selection dropdown input which contains a full list of countries it is possible for a user to select a specific country in which they want to search. After selecting a country the only predictions suggested to users will be located within that country. This allows for much more accurate autocomplete suggestions, and again improves the user experience of the feature.
+The autocomplete search utilises the Google Place Autocomplete API. It reads any string typed into the text input field and turns that into an autocomplete request. The results are limited to addresses to streamline the experience for the user rather than allow for businesses and other locations to fill up the prediction options. Using the country selection dropdown input which contains a full list of countries a user can select a specific country in which they want to search. After selecting a country the only predictions suggested to users will be located within that country. This allows for much more accurate autocomplete suggestions, and again improves the user experience of the feature.
 
 ### Geocode Search
 ![Image of an autocomplete search](https://github.com/zackgithuboriginal/workout-plus-milestone-project-2/blob/master/assets/images/geocode.PNG)
 
-The geocode search uses a Google Geocode API request. If a user decides to hit enter or to click the button to submit their text input, the string will be sent in a Geocoder request and be returned as a lat, lng coordinate that is then used to center the map on the location where the gym search will be carried out. As with the autocomplete search it is possible to specify a country to search in, however in the case of the geocoder search it only biases the result and if no location within the specified country is found it will default to a global search. Using a country specific search increases the accuracy of the search.
+The geocode search uses a Google Geocode API request. If a user decides to hit enter or to click the button to submit their text input, the string will be sent in a Geocoder request and be returned as lat, lng coordinates that are then used to centre the map on the location where the gym search will be carried out. As with the autocomplete search it is possible to specify a country to search in, however in the case of the geocoder search it only biases the result and if no location within the specified country is found it will default to a global search. Using a country-specific search increases the accuracy of the search.
 
 ### Device Geolocation Search
 ![Image of an autocomplete search](https://github.com/zackgithuboriginal/workout-plus-milestone-project-2/blob/master/assets/images/geolocation.PNG)
 
-The geolocation search uses the Web Geolocation API to first request from the user permission to use their location and if they user approves it will use their device's functionality to provide a location for them. The result of this search again contains lat, lng coordinates which are used to center the map with great accuracy. This method of searching is the most covenient for searching in the immediate local area of the user as it's not necessary to know any addresses in order to search.
+The geolocation search uses the Web Geolocation API to first request from the user permission to use their location and if the user approves it will use their device's functionality to provide a location for them. The result of this search again contains the lat, lng coordinates which are used to centre the map with great accuracy. This method of searching is the most convenient for searching in the immediate local area of the user as it's not necessary to know any addresses to search.
 
 ### Map Results Display 
 ![Image of an autocomplete search](https://github.com/zackgithuboriginal/workout-plus-milestone-project-2/blob/master/assets/images/map-results.PNG)
@@ -90,7 +96,7 @@ The results of the search are displayed as so, with orange markers on the map. E
 ### Side Panel Results Display 
 ![Image of an autocomplete search](https://github.com/zackgithuboriginal/workout-plus-milestone-project-2/blob/master/assets/images/example-gym-result.PNG)
 
-After a marker is selected on the map a display opens beneath the search options. This panel will display important information about the location selected to help the user make their decision to enable them to conduct further research and more effectively compare their options. As is visible above, in order to provide accurate information and consistent feedback to the user, if a location does not have value for a certain property in the Google Place database a pre determined placeholder response will display. In the case above the location had no affiliated website, so the gym finder application notifies the user as such instead of leaving the space blank or allowing the previous location's information to persist and cause confusion.
+After a marker is selected on the map a display opens beneath the search options. This panel will display important information about the location selected to help the user make their decision to enable them to conduct further research and more effectively compare their options. As is visible above, to provide accurate information and consistent feedback to the user, if a location does not have value for a certain property in the Google Place database a predetermined placeholder response will display. In the case above the location had no affiliated website, so the gym finder application notifies the user as such instead of leaving the space blank or allowing the previous location's information to persist and cause confusion.
 
 ## Technologies Used
 
@@ -135,28 +141,31 @@ After a marker is selected on the map a display opens beneath the search options
 11. [Chrome DevTools](https://developers.google.com/web/tools/chrome-devtools)
  - DevTools was used for analysing the code and design of the practice during development. Also used to test changes in real-time.
  
-12.[Google Maps API](https://developers.google.com/maps/documentation/javascript/overview)
+12. [Google Cloud Platform](https://cloud.google.com/maps-platform)
+- The Google Cloud Platform was used to manage the Google APIs used in the project. It is also where I styled the Map used in the project.
+ 
+13. [Google Maps API](https://developers.google.com/maps/documentation/javascript/overview)
 - The Google Maps API is used to support and display the map in the gym finder application.
 
-13.[Google Places API](https://developers.google.com/places/web-service/overview)
+14. [Google Places API](https://developers.google.com/places/web-service/overview)
 - The Google Places API is used to search for locations in the Places library and also to access information and details about the locations.
 
-14.[Google Geocoding API](https://developers.google.com/maps/documentation/geocoding/start)
+15. [Google Geocoding API](https://developers.google.com/maps/documentation/geocoding/start)
 - The geocoding API is used to convert an address string into a lat lng attribute that can then be used in a search.
 
-15.[Google Autocomplete API](https://developers.google.com/places/web-service/autocomplete)
+16. [Google Autocomplete API](https://developers.google.com/places/web-service/autocomplete)
 - This API is used to supply autocomplete suggestions for the address search input.
 
-16.[Geolocation Web API](https://developer.mozilla.org/en-US/docs/Web/API/Geolocation_API)
+17. [Geolocation Web API](https://developer.mozilla.org/en-US/docs/Web/API/Geolocation_API)
 - This API was used to request the user's permission to use their device's location in a search.
 
-17.[Papa Parse](https://www.papaparse.com)
-- Papa Parse was used to parse the CSV file containing the full list of countries and their two character country codes.
+18. [Papa Parse](https://www.papaparse.com)
+- Papa Parse was used to parse the CSV file containing the full list of countries and their two-character country codes.
 
-18.[gtMatrix](https://gtmetrix.com/)
+19. [gtMatrix](https://gtmetrix.com/)
 - GTmatrix was used to test website performance and page load speed.
 
-18.[Multi Device Website Mockup Generator](https://techsini.com/multi-mockup/index.php)
+20. [Multi Device Website Mockup Generator](https://techsini.com/multi-mockup/index.php)
 - This website was used to generate the image at the top of the readme.md file.
 
 ### Testing
@@ -179,16 +188,16 @@ The website was viewed and tested through the following browsers and devices:
 
 At the end of the project, the code was put through CSS and HTML validators to ensure there were no errors presented.
 
-### index.html html validation
-![Image of html validator for landing page](https://github.com/zackgithuboriginal/workout-plus-milestone-project-2/blob/master/assets/images/html-validator-index.PNG)
+#### index.html html validation          [W3C HTML Validator](https://validator.w3.org/nu/)
+![Image of HTML validator for landing page](https://github.com/zackgithuboriginal/workout-plus-milestone-project-2/blob/master/assets/images/html-validator-index.PNG)
 
-### gym-finder.html html validation
-![Image of html validator for gym finder](https://github.com/zackgithuboriginal/workout-plus-milestone-project-2/blob/master/assets/images/html-validator-gym-finder.png)
+#### gym-finder.html html validation     [W3C HTML Validator](https://validator.w3.org/nu/)
+![Image of HTML validator for gym finder](https://github.com/zackgithuboriginal/workout-plus-milestone-project-2/blob/master/assets/images/html-validator-gym-finder.png)
 
-### style.css css validation
+#### style.css css validation            [W3C CSS Validator](https://jigsaw.w3.org/css-validator/)
 ![Image of css validator](https://github.com/zackgithuboriginal/workout-plus-milestone-project-2/blob/master/assets/images/css-validator.PNG)
 
-### gym-finder.js js validation
+#### gym-finder.js js validation         [JSHint](https://jshint.com/)
 ![Image of Js linter results](https://github.com/zackgithuboriginal/workout-plus-milestone-project-2/blob/master/assets/images/js-validator.PNG)
 
 ### Performance Testing 
@@ -222,17 +231,13 @@ To ensure that the website performed well without any major delays or issues esp
 
 #### 3.	Goal: Find and understand how to use the gym search application.
 
-**Expected:**
-1.	Upon loading landing page, user should be presented with clear navigation options to gym search application.
-2.	User should then find gym search application and easily understand how to use it.
+**Expected:** Upon loading landing page, the user should be presented with clear navigation options to the gym search application. When they navigate to the gym finder application they should find it easy to understand and use.
 
-**Result:**
-1.	When landing page is accessed, there is a clear navigation option “Gym Search” at the top of the page. There is also a large CTA button in the page heading. Both of these options will navigate the user directly to the gym search page.
-2.	On the gym search page the user is presented with a number of clear input options with labels and example search options of “Ireland” and “Dublin” as placeholders. The map by default is centred on this location to provide the user with an example search result.
+**Result:** When the landing page is accessed, there is a clear navigation option “Gym Search” at the top of the page. There is also a large CTA button in the page heading. Both of these options will navigate the user directly to the gym search page. On the gym search page the user is presented with several clear input options with labels and example search options of “Ireland” and “Dublin” as placeholders. The map by default is centred on this location to provide the user with an example search result.
 
-![Image of the search options](https://github.com/zackgithuboriginal/workout-plus-milestone-project-2/blob/master/assets/images/search-inteface.PNG)
+![Image of the search options](https://github.com/zackgithuboriginal/workout-plus-milestone-project-2/blob/master/assets/images/search-interface.PNG)
 
-#### 4.	Goal: Identify potential new workout locations in a specific area..
+#### 4.	Goal: Identify potential new workout locations in a specific area.
 
 **Expected:** The user should be able to enter their desired address or area and submit. They should then be presented with a selection of potential locations around that area.
 
@@ -252,7 +257,7 @@ To ensure that the website performed well without any major delays or issues esp
 
 **Expected:** The user should be able to submit a search and then click on any of the displayed locations to access information for them. 
 
-**Result:** After submitting a desired search location the user is presented with 20 potential locations marked on the map. When the user clicks on any of the markers the application will display a window containing important information regarding the location.
+**Result:** After submitting the desired search location the user is presented with 20 potential locations marked on the map. When the user clicks on any of the markers the application will display a window containing important information regarding the location.
 
 ![Image of location details](https://github.com/zackgithuboriginal/workout-plus-milestone-project-2/blob/master/assets/images/example-gym-result.PNG)
 
@@ -291,24 +296,79 @@ Page | Action | Expected Result | Result
 index.html | Click on navbar branding | Page reloads | Pass
 index.html | Click on CTA button | Browser navigates to gym-finder.html | Pass
 gym-finder.html | Refresh Page | Page reloads and map resets | Pass
-gym-finder.html | Click the "Use device's location" button | Browser prompts user to allow location permission | Pass
+gym-finder.html | Click the "Use device's location" button | Browser prompts the user to allow location permission | Pass
 gym-finder.html | Allow location permission | Map navigates to tester's location, displays nearby locations | Pass
 gym-finder.html | Click the submit button without entering text into input field | Box will outline in red and tester will be informed it is a required field | Pass
 gym-finder.html | Click the dropdown country selection element | Dropdown box of country options will appear | Pass
 gym-finder.html | Select one of the orange markers on the map | Name of location will appear above marker and information panel will open below search options | Pass
-gym-finder.html | Click the "x" button in the gym information panel | Information panel will dissapear | Pass
+gym-finder.html | Click the "x" button in the gym information panel | Information panel will disappear | Pass
 gym-finder.html | Submit a search nearby to the default location, ie "Howth" and zoom out | The map should navigate to Howth and when zoomed out it should be clear that the original markers have been replaced by the new ones | Pass
 gym-finder.html | Select one map marker and then select another one | The information panel for the original gym should open and then all of the information should be replaced by the details of the second | Pass
+gym-finder.html | Enter "Toledo" into the input field without selecting a search country and submit | The map will navigate to a location named Toledo | Pass
 gym-finder.html | Enter "Toledo" into the input field, select Spain as the search country and submit | The map will navigate to Toledo, Spain | Pass
-gym-finder.html | Enter "Toledo" into the input field without selecting a search country and submit | The map will navigate to a Toledo not in Spain | Pass
-gym-finder.html | Select a map marker and then click on the website url | The browser should open another tab to display the website | Pass
+gym-finder.html | Select a map marker and then click on the website URL | The browser should open another tab to display the website | Pass
 
 
 ## Deployment
-The project is deployed and live using GitHub pages. This is a very useful tool and it is was setup very simply.
-1. Go into the repository where the project is saved and then go to the settings menu by clicking the gear icon inside the repository. 
-2. From inside the settings menu navigated to the GitHub Pages section where you will be presented with the option to choose the Branch and Root folder of the repository from which you wish to source the project from. 
-3. After filling out these two options select the "Save" button and you will be presented with a URL on which the project is now hosted. 
+
+### To Publish to GitHub Pages 
+
+1. Go into the settings of the GitHub repository where the project is hosted.
+
+
+![Image of the settings tab of a GitHub repository](https://github.com/zackgithuboriginal/workout-plus-milestone-project-2/blob/master/assets/images/settings.PNG)
+
+2. Inside the settings scroll down to GitHub Pages section, set the branch to master.
+
+![Image of the branch setting](https://github.com/zackgithuboriginal/workout-plus-milestone-project-2/blob/master/assets/images/branch.PNG)
+
+3. Then set the directory to root and click the save button. 
+
+![Image of the root setting and save button](https://github.com/zackgithuboriginal/workout-plus-milestone-project-2/blob/master/assets/images/root.PNG)
+
+3. After filling out these two options and selecting the "Save" button and you will be presented with a URL on which the project is now hosted.
+
+![Image of the published URL](https://github.com/zackgithuboriginal/workout-plus-milestone-project-2/blob/master/assets/images/published.PNG)
+
+### To Clone the Repository and Run Locally
+
+#### To Clone Using the Command Line
+
+1. Navigate to the home page of the repository.
+
+2. To the top right of the repository file directory click the "Code" button.
+
+![Image of the clone repository tab](https://github.com/zackgithuboriginal/workout-plus-milestone-project-2/blob/master/assets/images/clone.PNG)
+
+3. Make sure that the HTTPS tab is open and click the copy to clipboard button.
+
+![Image of the option to copy HTTPS link](https://github.com/zackgithuboriginal/workout-plus-milestone-project-2/blob/master/assets/images/https-clone.PNG)
+
+4. Navigate to your IDE and open the directory to which you want to clone the repository
+
+5. Open the terminal and type "git clone" followed by the contents of the clipboard which will be "https://github.com/zackgithuboriginal/workout-plus-milestone-project-2.git" click enter and the repository will then clone to that directory.
+
+![Image of the command line command](https://github.com/zackgithuboriginal/workout-plus-milestone-project-2/blob/master/assets/images/command-line.PNG)
+
+#### To Clone Using GitHub Desktop
+
+1. Navigate to the home page of the repository.
+
+2. To the top right of the repository file directory click the "Code" button.
+
+![Image of the clone repository tab](https://github.com/zackgithuboriginal/workout-plus-milestone-project-2/blob/master/assets/images/clone.PNG)
+
+3. Halfway down the tab click the "Open with GitHub Desktop" option.
+
+![Image of the open GitHub desktop button](https://github.com/zackgithuboriginal/workout-plus-milestone-project-2/blob/master/assets/images/desktop-clone.PNG)
+
+4. If the GitHub Desktop application is installed and open it will be presented with this prompt.
+
+![Image of the GitHub desktop prompt](https://github.com/zackgithuboriginal/workout-plus-milestone-project-2/blob/master/assets/images/desktop-url.PNG)
+
+5. Enter the desired location to clone the repository to and click the clone button. 
+
+6. The repository will then be cloned to that location.
 
 ## Credits
 
@@ -329,13 +389,13 @@ The project is deployed and live using GitHub pages. This is a very useful tool 
 ### Media
 
 -   All icons were sourced and imported from [FontAwesome](https://fontawesome.com/)
--   [Map marker](https://fontawesome.com/icons/map-marker-alt?style=solid) was downloaded from FontAwesome and used as an svg.
+-   [Map marker](https://fontawesome.com/icons/map-marker-alt?style=solid) was downloaded from FontAwesome and used as an SVG.
 
 #### Original creators and links to images
 
--Karsten Winegeart is the original creator of [this](https://unsplash.com/photos/0Wra5YYVQJE) image used as the background of the landing page.
+- Karsten Winegeart is the original creator of [this](https://unsplash.com/photos/0Wra5YYVQJE) image used as the background of the landing page.
 
--All images of businesses and locations supplied by the Google Places library are owned by their respective creators.
+- All images of businesses and locations supplied by the Google Places library are owned by their respective creators.
 
 ### Acknowledgements
 
