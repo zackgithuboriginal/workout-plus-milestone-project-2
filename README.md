@@ -188,16 +188,16 @@ The website was viewed and tested through the following browsers and devices:
 
 At the end of the project, the code was put through CSS and HTML validators to ensure there were no errors presented.
 
-### index.html html validation          [W3C HTML Validator](https://validator.w3.org/nu/)
+#### index.html html validation          [W3C HTML Validator](https://validator.w3.org/nu/)
 ![Image of HTML validator for landing page](https://github.com/zackgithuboriginal/workout-plus-milestone-project-2/blob/master/assets/images/html-validator-index.PNG)
 
-### gym-finder.html html validation     [W3C HTML Validator](https://validator.w3.org/nu/)
+#### gym-finder.html html validation     [W3C HTML Validator](https://validator.w3.org/nu/)
 ![Image of HTML validator for gym finder](https://github.com/zackgithuboriginal/workout-plus-milestone-project-2/blob/master/assets/images/html-validator-gym-finder.png)
 
-### style.css css validation            [W3C CSS Validator](https://jigsaw.w3.org/css-validator/)
+#### style.css css validation            [W3C CSS Validator](https://jigsaw.w3.org/css-validator/)
 ![Image of css validator](https://github.com/zackgithuboriginal/workout-plus-milestone-project-2/blob/master/assets/images/css-validator.PNG)
 
-### gym-finder.js js validation         [JSHint](https://jshint.com/)
+#### gym-finder.js js validation         [JSHint](https://jshint.com/)
 ![Image of Js linter results](https://github.com/zackgithuboriginal/workout-plus-milestone-project-2/blob/master/assets/images/js-validator.PNG)
 
 ### Performance Testing 
@@ -304,8 +304,8 @@ gym-finder.html | Select one of the orange markers on the map | Name of location
 gym-finder.html | Click the "x" button in the gym information panel | Information panel will disappear | Pass
 gym-finder.html | Submit a search nearby to the default location, ie "Howth" and zoom out | The map should navigate to Howth and when zoomed out it should be clear that the original markers have been replaced by the new ones | Pass
 gym-finder.html | Select one map marker and then select another one | The information panel for the original gym should open and then all of the information should be replaced by the details of the second | Pass
+gym-finder.html | Enter "Toledo" into the input field without selecting a search country and submit | The map will navigate to a location named Toledo | Pass
 gym-finder.html | Enter "Toledo" into the input field, select Spain as the search country and submit | The map will navigate to Toledo, Spain | Pass
-gym-finder.html | Enter "Toledo" into the input field without selecting a search country and submit | The map will navigate to a Toledo not in Spain | Pass
 gym-finder.html | Select a map marker and then click on the website URL | The browser should open another tab to display the website | Pass
 
 
