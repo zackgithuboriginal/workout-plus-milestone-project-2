@@ -72,12 +72,13 @@ function parseCountryCodes() {
 
 /**
  * This function processes each country object and outputs the data as html option elements for a select input field
+ * the country's attributes of ISO two character code, latitude, and longitude are set as values of the element
  */
 function createCountryOptions(results) {
     for (let i = 0; i < results.length; i++) {
         let newOption = document.createElement("option");
         newOption.innerText = results[i][1];
-        newOption.value = results[i][0];
+        newOption.value = [results[i][0], results[i][2], results[i][3]];
         selectTarget.append(newOption);
     }
 }
@@ -85,22 +86,31 @@ function createCountryOptions(results) {
 /**
  * This function is called when a country is selected
  * It sets the autocomplete country restriction to the chosen value
+ * It also takes the coordinate values of the country, and calls for a repositioning of the map to those coordinates
  */
 function setAutocompleteCountry() {
-    let targetCountry = selectTarget.value;
+    let targetCountry = selectTarget.value.split(",");
+    let targetCoordinates = {lat: parseFloat(targetCountry[2]), lng: parseFloat(targetCountry[1])}
+    repositionMap(targetCoordinates, true);
     if (targetCountry === "all") {
         autocomplete.setComponentRestrictions({ country: [] });
     } else {
-        autocomplete.setComponentRestrictions({ country: targetCountry });
+        autocomplete.setComponentRestrictions({ country: targetCountry[0] });
     }
 }
 
 /**
  * This function handles the respositioning of the map
- * as a result of a search or a geolocation request
+ * as a result of a search, a geolocation request or a change to the selected search country
+ * if it's a reposition due to country selection change the zoom will be further to show more of the country
  */
-function repositionMap(mapLocation) {
+function repositionMap(mapLocation, zoom) {
     map.setCenter(mapLocation);
+    if(zoom){
+        map.setZoom(8)
+    } else {
+        map.setZoom(15)
+    };
     findLocalGyms(mapLocation);
 }
 
